@@ -18,7 +18,7 @@ Features
            		   - average times/weight lifted
             	  - athlete strengths/weaknesses
  	 - API
-       		 - Under Armour
+       		 - Under Armour 
            - ![Alt text](./app/assets/images/Screen Shot 2016-11-22 at 4.46.40 PM.png?=raw)
 	- Routes
 		- /Login
@@ -36,8 +36,6 @@ Features
 			- Set Notes
 			- See overall gym performance on previous workouts
 			- See overall gym performance on previous cycles
-
-
 		-/Profile/:id
 			- Display user profile picture
 			- Display previous workouts logged
