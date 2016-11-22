@@ -23,19 +23,19 @@ Features
 	- Login
 		- To gain access as Owner
 		- To gain access as athlete
-	-Register
+	- Register
 		- New User Form
-	-Home/User
+	- Home/User
 		- Today’s Workout with inputs for athlete performance
 		- Notes from the coach
 		- Link to videos on movements
 		- See other Athletes performance in a feed
-	-Home/Owner
+	- Home/Owner
 		- Set Today’s Workout Form
 		- Set Notes
 		- See overall gym performance on previous workouts
 		- See overall gym performance on previous cycles
-	-Profile/:id
+	- Profile/:id
 		- Display user profile picture
 		- Display previous workouts logged
 		- Performance chart of previous workout
