@@ -1,14 +1,22 @@
-# Basic Build with NPM scripts
-This is a project scaffolding and build tool for the TIY Austin Front-End Engineering course. Feel free to use and enjoy! Feedback and PRs welcome!
+# Lift-Tracker 
+
+## Elevator Pitch: Are you looking to track your athletes strengths and weakness throughout a lifting cycle to evaluate proformance strengths and weakness? Lift-Tracker will allow gym owners to: 
+    - Register Gym Athletes basic profile info(age, height, weight, etc) 
+    - Set daily/weekly workout routine's 
+    - Let Athletes fill out there individual efforts on each routine
+    - Allow Atheletes see their previous workouts logged 
+    - Allow Gym Owners to see overall athlete performance to find strengths/weakness of the programming cylce
 
 ## Features
-- A bare bones scaffolding for an SPA, without any libraries built in
-- A static server for serving up your dev environment via http
-- `app` directory for development, preloaded with an `index.html`, `scripts/entry.js`, `scss/main.scss` and `assets/`
-- `docs` directory for deployable code via gh-pages
-- es2015 and babel, including module syntax
-- mocha test runner
-- sass (.scss)
+  - User profile 
+        - display previously logged workouts
+        - display chart/graphics to represent their progress
+  - Gym Owners Profile
+        - Set daily/weekly workout rountines 
+        - See overall gym perfomance on graphs 
+              - average times/weight lifted
+              - athlete strengths/weaknesses
+   
 
 ## Installation
 - Clone this repo (or fork then clone, if you prefer)
