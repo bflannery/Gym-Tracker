@@ -6,5 +6,6 @@ import $ from 'jquery';
 const router = (
 
     <Router history={browserHistory}>
-      <Route path='/' component={App}
+      <Route path='/' component={App}>
+    </Router>
 )
