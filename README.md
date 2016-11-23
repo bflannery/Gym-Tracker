@@ -19,7 +19,8 @@ Features
             	  - athlete strengths/weaknesses
  	 - API
        		 - Under Armour
-           - ![Alt text](./app/assets/images/Screen Shot 2016-11-22 at 4.46.40 PM.png?=raw)
+           - ![Alt text](./app/assets/images/UA Data1.png?=raw)
+           - ![Alt text](./app/assets/images/UA Data2.png?=raw)
 	- Routes
 		- /Login
 			- To gain access as Owner
