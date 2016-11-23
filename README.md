@@ -37,8 +37,6 @@ Features
 			- Set Notes
 			- See overall gym performance on previous workouts
 			- See overall gym performance on previous cycles
-
-
 		-/Profile/:id
 			- Display user profile picture
 			- Display previous workouts logged
