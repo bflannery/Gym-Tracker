@@ -1,4 +1,5 @@
-const appKey = 'hx8r9mbvzej8spf4jrv7u72ah5armmzy'
-const secret = 'DG3U9guPGG5mrudpuGDA6NhANbVPkWerpkZKAwDP5Ak'
 
-export default({appKey, secret});
+const appId = 'A0CACF00-4C7A-F123-FFF9-76DE1B612100'
+const secretKey = '032A7133-FDAE-8BB1-FFC3-34BE5BEE3800'
+
+export default({appId, secretKey});

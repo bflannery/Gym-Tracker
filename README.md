@@ -8,31 +8,36 @@ Elevator Pitch: Are you looking to track your athletes strengths and weakness th
 - Allow Athletes see their previous workouts logged
 - Allow Gym Owners to see overall athlete performance to find strengths/weakness of the programming cycle
 
-Features
-  	- User profile
+- Features
+
+   - User profile
+
        		 - display previously logged workouts
-        		- display chart/graphics to represent their progress
+        	 - display chart/graphics to represent their progress
+
  	 - Gym Owner’s Profile
       		  - Set daily/weekly workout routines
       		  - See overall gym performance on graphs
-           		   - average times/weight lifted
+           		  - average times/weight lifted
             	  - athlete strengths/weaknesses
  	 - API
+
        		 - Under Armour
            - ![Alt text](./app/assets/images/UA Data1.png?=raw)
            - ![Alt text](./app/assets/images/UA Data2.png?=raw)
+           
 	- Routes
-		- /Login
+		- Login
 			- To gain access as Owner
 			- To gain access as athlete
-		-/Register
+		- Register
 			- New User Form
-		-/Home/User
+		- Home/:User
 			- Today’s Workout with inputs for athlete performance
 			- Notes from the coach
 			- Link to videos on movements
 			- See other Athletes performance in a feed
-		-/Home/Owner
+		- Home/Owner
 			- Set Today’s Workout Form
 			- Set Notes
 			- See overall gym performance on previous workouts
