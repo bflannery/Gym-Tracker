@@ -57,7 +57,7 @@ export default Backbone.Model.extend({
       success: ()=> {
         this.clear();
         window.localStorage.clear();
-        broswerHistory.push('/');
+        browserHistory.push('/');
       }
     })
   }
