@@ -1,0 +1,21 @@
+.athletes-container {
+    display: inline-block;
+    background: black;
+    border: 1px solid #940315;
+    border-radius: 10px;
+    color: #940315;
+    width: 75%;
+    margin-left: 2rem;
+}
+
+.athletes-list {
+  border: 1px solid #940315;
+  border-radius: 10px;
+
+}
+
+.athlete-info {
+  font-size: 1.5rem;
+  padding: .5rem;
+  margin: .5rem;
+}

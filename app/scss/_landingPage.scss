@@ -1,0 +1,47 @@
+.landing-page {
+  display: inline-block;
+  width: 75%;
+}
+
+.form-container {
+  display: inline-block;
+background: black;
+padding: 9rem 3rem;
+position: absolute;
+    margin-left: 15rem;
+
+border: 1px solid #940315;
+border-radius: 10px;
+text-align: center;
+}
+
+.login-form input {
+  display: block;
+  background: transparent;
+border: 1px solid #940315;
+border-radius: 10px;
+padding: .5rem 3rem;
+color: #9B96A3;
+text-align: center;
+margin: 1rem;
+#login-button {
+  padding: .5rem 5.9rem;
+}
+  a:visited {
+    color: #940315;
+  }
+}
+
+span {
+    color: #9B96A3;
+      a {
+        text-decoration: none;
+        color: #940315;
+      }
+}
+
+// .logged-out-nav-container {
+//   position: absolute;
+//     left: 64rem;
+//     bottom: 19.5rem;
+// }

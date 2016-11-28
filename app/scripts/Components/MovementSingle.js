@@ -1,7 +1,7 @@
 import React from 'react';
 
 //display a single movement
-//will pull from movement collection 
+//will pull from movement collection
 
 
 export default React.createClass({

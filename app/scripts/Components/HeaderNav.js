@@ -15,16 +15,7 @@ export default React.createClass({
   },
   render() {
 
-  let nav= <ul className="logged-out-nav-container">
-              <li className="nav-list">
-                  <Link to ='/' className="login"> Log In
-                  </Link>
-              </li>
-              <li className="nav-list">
-                  <Link to = "register" className="signup">Sign Up
-                  </Link>
-              </li>
-            </ul>;
+  let nav= <ul className="logged-out-nav-container"></ul>;
 
 if(this.state.authenticated) {
   nav = (
@@ -62,3 +53,13 @@ if(this.state.authenticated) {
     store.session.logout();
   }
 })
+
+
+// <li className="nav-list">
+//     <Link to ='/' className="login"> Log In
+//     </Link>
+// </li>
+// <li className="nav-list">
+//     <Link to = "register" className="signup">Sign Up
+//     </Link>
+// </li>

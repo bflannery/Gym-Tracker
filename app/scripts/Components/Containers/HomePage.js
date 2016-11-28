@@ -6,7 +6,9 @@ import store from '../../store';
 export default React.createClass ({
   render() {
     return (
-      <div> Home </div>
+      <div className="home-container">
+        <div> Home </div>
+        </div>
     );
   }
 });

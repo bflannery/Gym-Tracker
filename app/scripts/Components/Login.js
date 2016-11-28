@@ -7,12 +7,14 @@ import Register from './RegisterPage';
 export default React.createClass({
   render(){
     return (
+      <div className="form-container">
       <form onSubmit={this.handleSubmit} className="login-form">
         <input ref="login" type="email" placeholder="Email"/>
         <input ref="password" type="password" placeholder="Password"/>
-        <input type="submit" value="Log In"/>
-        <span> Not A Member?<Link to="/register">Signup Here!</Link></span>
+        <input id="login-button" type="submit" value="Log In"/>
+        <span> Not A Member? <Link to="/register">Signup Here!</Link></span>
       </form>
+      </div>
     );
   },
 
