@@ -63,4 +63,3 @@ getMovements() {
       return filteredSearchArray
     }
     });
-//

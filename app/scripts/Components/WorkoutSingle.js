@@ -13,6 +13,7 @@ export default React.createClass({
     return (
       <li className="workout-preview">
         <span className="workout-name"> Legs </span>
+
       </li>
     );
   }

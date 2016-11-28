@@ -1,9 +1,9 @@
 import React from 'react';
 
 import store from '../../store';
-//
-// import NewWorkoutForm from '../NewWorkoutForm';
+
 import MovementList from '../MovementList';
+import NewWorkoutList from '../NewWorkoutList';
 
 
 export default React.createClass ({
@@ -11,7 +11,8 @@ export default React.createClass ({
   getInitialState() {
     return {
       session: store.session.toJSON(),
-      movement: store.movement.toJSON()
+      movement: store.movement.toJSON(),
+      workout: store.workout.toJSON()
     }
   },
 
@@ -21,6 +22,10 @@ export default React.createClass ({
 
     store.movement.on('change update', () => {
       this.setState({movement: store.movement.toJSON()})
+    });
+
+    store.workout.on('change update', () => {
+      this.setState({workout: store.workout.toJSON()})
     });
   },
 
@@ -36,13 +41,15 @@ export default React.createClass ({
                   <form className="search" onSubmit={this.handleSubmit}>
                     <input type="text" ref="search" placeholder="Search Movements..."/>
                     <input type="submit" value="Search"/>
-
                   </form>
                 </section>
               </div>
           </div>
           <div className="search-results-container">
           <MovementList movements={filteredSearch} />
+          </div>
+          <div className="workout-template-container">
+          <NewWorkoutList workout={this.state.workout} />
           </div>
         </div>
     );
