@@ -8,13 +8,14 @@ import MovementSingle from './MovementSingle';
 export default React.createClass({
 
   render() {
+
     let movements = this.props.movements.map((movement, i ,arr) => {
       return <MovementSingle key={i} movement={movement}/>;
     });
 
 
     return (
-        <ul className="movement-list">
+        <ul className="results">
           {movements}
         </ul>
     );

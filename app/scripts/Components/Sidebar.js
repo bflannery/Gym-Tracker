@@ -9,7 +9,6 @@ export default React.createClass ({
     return (
       <div className="sidebar-container">
         <div className="sidebar-profile">
-          <img src="fillmurray.com/200/300"/>
           <span> Bill Murray </span>
           </div>
 

@@ -3,6 +3,7 @@ import $ from 'jquery';
 import Movement from '../Models/movementModel';
 import {browserHistory} from 'react-router';
 import _ from 'underscore';
+import store from '../store';
 
 export default Backbone.Collection.extend({
     model: Movement,
@@ -26,7 +27,7 @@ export default Backbone.Collection.extend({
             },
               success: (tokenObj) => {
               this.token = tokenObj.access_token
-              getMovements();
+              this.getMovements();
             }
         });
     },
@@ -40,12 +41,9 @@ getMovements() {
         },
         contentType: 'application/json',
         success: (data) => {
-          console.log(data);
-          this.reset();
-
           let movements = data._embedded['activity_types'];
 
-          let movementsInfo = movements.forEach((movement, i, arr) => {
+          let movementInfo = movements.forEach((movement, i, arr) => {
               this.add({
                 name: movement.name,
                 id: movement._links.self[0].id
@@ -55,14 +53,14 @@ getMovements() {
     });
   },
 
-  search(movementSeach) {
+  search(movementSearch) {
 
-    let filteredSearchArray = movements.filter((movement,i, arr) => {
-    if(_.contains(movements.name), movementSearch) {
-      return true;
+    let filteredSearchArray = this.filter((movement,i,arr)=> {
+      let lowerCaseName = movement.get('name').toLowerCase();
+      return (lowerCaseName.indexOf(movementSearch) !== -1)
+
+    });
+      return filteredSearchArray
     }
-  });
-  console.log(filteredSearchArray);
-}
     });
 //

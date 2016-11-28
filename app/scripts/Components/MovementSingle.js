@@ -6,9 +6,10 @@ import React from 'react';
 
 export default React.createClass({
   render() {
+    console.log(this.props.movement.get('name'))
     return (
       <li className="movement-preview">
-        <span className="movement-name"> {this.props.movement.name} </span>
+        <div className="movement-name"> {this.props.movement.get('name')} </div>
       </li>
     );
   }
