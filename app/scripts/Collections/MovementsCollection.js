@@ -2,6 +2,7 @@ import Backbone from 'backbone';
 import $ from 'jquery';
 import Movement from '../Models/movementModel';
 import {browserHistory} from 'react-router';
+import _ from 'underscore';
 
 export default Backbone.Collection.extend({
     model: Movement,
@@ -25,12 +26,12 @@ export default Backbone.Collection.extend({
             },
               success: (tokenObj) => {
               this.token = tokenObj.access_token
-              this.getMovements();
+              getMovements();
             }
         });
     },
 
-getMovements(movementSearch) {
+getMovements() {
     $.ajax({
         type: 'GET',
         url: 'https://api.ua.com/v7.1/activity_type/',
@@ -39,17 +40,29 @@ getMovements(movementSearch) {
         },
         contentType: 'application/json',
         success: (data) => {
+          console.log(data);
           this.reset();
+
           let movements = data._embedded['activity_types'];
-          // console.log(movements)
-          let movementInfo = movements.forEach((movement, i, arr) => {
+
+          let movementsInfo = movements.forEach((movement, i, arr) => {
               this.add({
-                name: movement.name
+                name: movement.name,
+                id: movement._links.self[0].id
               });
-            });
-          }
-
         });
-
-        }
+      }
     });
+  },
+
+  search(movementSeach) {
+
+    let filteredSearchArray = movements.filter((movement,i, arr) => {
+    if(_.contains(movements.name), movementSearch) {
+      return true;
+    }
+  });
+  console.log(filteredSearchArray);
+}
+    });
+//

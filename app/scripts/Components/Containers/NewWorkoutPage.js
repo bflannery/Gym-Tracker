@@ -12,6 +12,7 @@ export default React.createClass ({
     return {
       session: store.session.toJSON(),
       movement: store.movement.toJSON()
+    
     }
   },
   componentDidMount() {
@@ -29,9 +30,10 @@ export default React.createClass ({
       <h2> Make a New Workout </h2>
       <NewWorkoutForm />
       </div>
+      <MovementList movements={this.state.movement} />
       <div className="search-movement-container">
           <form onSubmit={this.handleSubmit} className="search-form">
-            <input id="search" ref="search" type="text" placeholder="Search Artist" className="search"/>
+            <input id="search" ref="search" type="text" placeholder="Search Movement" className="search"/>
             <input type="submit" value="Search" className = "search-submit-button"/>
           </form>
       </div>
