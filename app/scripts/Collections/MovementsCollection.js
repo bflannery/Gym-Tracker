@@ -30,7 +30,7 @@ export default Backbone.Collection.extend({
         });
     },
 
-getMovements() {
+getMovements(movementSearch) {
     $.ajax({
         type: 'GET',
         url: 'https://api.ua.com/v7.1/activity_type/',
@@ -39,8 +39,17 @@ getMovements() {
         },
         contentType: 'application/json',
         success: (data) => {
-            console.log(data);
+          this.reset();
+          let movements = data._embedded['activity_types'];
+          // console.log(movements)
+          let movementInfo = movements.forEach((movement, i, arr) => {
+              this.add({
+                name: movement.name
+              });
+            });
+          }
+
+        });
+
         }
-    })
-}
-});
+    });
