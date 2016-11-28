@@ -11,9 +11,8 @@ Elevator Pitch: Are you looking to track your athletes strengths and weakness th
 - Features
 
    - User profile
-
-       		 - display previously logged workouts
-        	 - display chart/graphics to represent their progress
+	- display previously logged workouts
+        - display chart/graphics to represent their progress
 
  	 - Gym Owner’s Profile
       		  - Set daily/weekly workout routines
@@ -46,3 +45,11 @@ Elevator Pitch: Are you looking to track your athletes strengths and weakness th
 			- Display user profile picture
 			- Display previous workouts logged
 			- Performance chart of previous workout
+			
+			
+- MVP 
+	- Owner Registartion/Login/LogOut
+	- Logged in user can view Movement Libray
+	- Logged in user can create/save workouts
+	- Logged in user can create/save cycles
+	- Logged in user can view/edit their workouts/cycles
