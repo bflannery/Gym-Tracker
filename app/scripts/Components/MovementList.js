@@ -15,9 +15,12 @@ export default React.createClass({
 
 
     return (
+      <div className="search-results-container">
+      <h2> Search Results </h2>
         <ul className="results">
           {movements}
         </ul>
+        </div>
     );
   }
 });
