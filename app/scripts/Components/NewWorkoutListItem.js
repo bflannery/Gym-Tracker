@@ -1,6 +1,5 @@
 import React from 'react';
 import Buttons from './Buttons';
-import Efforts from './Efforts'
 import store from'../store';
 
 
@@ -10,8 +9,18 @@ export default React.createClass({
     return (
       <li className="movement-preview">
         <div className="movement-name"> {this.props.movement.get('name')}</div>
-        <Buttons add={this.addToWorkout} remove={this.removeFromWorkout}/>
-        <Efforts />
+          <Buttons add={this.addToWorkout} remove={this.removeFromWorkout}/>
+        <div>
+          <label>Reps:
+            <input type="text" placeholder="0" ref="reps" id="reps"/>
+          </label>
+          <label> Sets:
+            <input type="text" placeholder="0" ref="sets" id="sets"/>
+          </label>
+          <label> Weight:
+            <input type="text" placeholder="0" ref="weight" id="weight"/>
+          </label>
+        </div>
         <input onClick={this.handleClick} type="submit" value="Save Workout"/>
       </li>
     );
@@ -26,7 +35,18 @@ export default React.createClass({
   },
 
   handleClick() {
-    console.log('save this to backend!')
+    let reps = this.refs.reps.value;
+    let sets = this.refs.sets.value;
+    let weight = this.refs.weight.value;
+
+    store.loggedWorkout.addWorkout({
+
+    name   : this.props.movement.get('name'),
+    reps   : reps,
+    sets   : sets,
+    weight : weight
+
+  });
   }
 
 });

@@ -9,7 +9,7 @@ export default Backbone.Model.extend({
 
   addMovement(movement) {
     let addedMovement = this.get('movements').concat([movement]);
-    this.set({movements: addedMovement});
+    this.set({movements : addedMovement});
   },
 
   removeMovement(movement) {

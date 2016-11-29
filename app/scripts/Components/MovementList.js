@@ -8,7 +8,6 @@ import MovementSingle from './MovementSingle';
 export default React.createClass({
 
   render() {
-    console.log(this.props)
     let movements = this.props.movements.map((movement, i ,arr) => {
       return <MovementSingle key={i} movement={movement}/>;
     });
@@ -16,11 +15,11 @@ export default React.createClass({
 
     return (
       <div className="search-results-container">
-      <h2> Search Results </h2>
-        <ul className="results">
-          {movements}
-        </ul>
-        </div>
+        <h2> Search Results </h2>
+          <ul className="results">
+            {movements}
+          </ul>
+      </div>
     );
   }
 });
