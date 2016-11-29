@@ -7,8 +7,9 @@ export default React.createClass({
   render() {
     return (
       <li className="movement-preview">
-        <div className="movement-name"> {this.props.movement.get('name')}</div>
         <Buttons add={this.addToWorkout}/>
+        <div className="movement-name"> {this.props.movement.get('name')}</div>
+
       </li>
     );
   },

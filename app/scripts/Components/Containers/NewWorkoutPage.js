@@ -33,7 +33,7 @@ export default React.createClass ({
     let filteredSearch=store.movement.search(this.state.searchTerm);
 
     return (
-      <div className="workout-container">
+      <div className="main-container">
         <div className="workout-form">
             <h2> Make a New Workout </h2>
               <div className="search-movement-container">

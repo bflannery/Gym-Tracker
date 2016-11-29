@@ -6,6 +6,7 @@ import store from'../store';
 export default React.createClass({
   render() {
     return (
+      <div className="workout-template">
       <li className="movement-preview">
         <div className="movement-name" ref="movement"> {this.props.movement.get('name')}</div>
           <Buttons remove={this.removeFromWorkout}/>
@@ -18,8 +19,12 @@ export default React.createClass({
           <label> Weight:
             <input type="text" placeholder="0" ref="weight" id="weight"/>
           </label>
+          <label> Notes:
+          <textarea type="text" placeholder="Notes" ref="notes" id="notes"/>
+          </label>
         <input onClick={this.handleClick} type="submit" value="Save Workout"/>
       </li>
+      </div>
     );
   },
 
@@ -28,18 +33,21 @@ export default React.createClass({
   },
 
   handleClick() {
+
     let reps = this.refs.reps.value;
     let sets = this.refs.sets.value;
     let weight = this.refs.weight.value;
-    let name = this.props.movement.get('name');
+    let notes = this.refs.notes.value;
+    let movement = this.props.movement.get('name');
 
 
-    store.loggedWorkout.addWorkout({
+    store.loggedMovement.addMovement({
 
-    movement   : name,
+    movement   : movement,
     reps   : reps,
     sets   : sets,
-    weight : weight
+    weight : weight,
+    notes : notes
 
   });
   }

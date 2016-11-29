@@ -1,11 +1,3 @@
-.workout-container {
-  display: inline-block;
-  background: black;
-  border: 1px solid #940315;
-  border-radius: 10px;
-  color: #940315;
-  width: 78%;
-}
 
 .workout-form-container {
   display: inline-block;
@@ -13,13 +5,6 @@
   border-radius: 10px;
   padding: 1rem;
 
-}
-
-.movement-list {
-  display: inline-block;
-  border: 1px solid #940315;
-  border-radius: 10px;
-  padding: 1rem;
 }
 
 .workout-form input {
@@ -31,4 +16,20 @@ padding: .5rem 3rem;
 color: #9B96A3;
 text-align: center;
 margin: 1rem;
+}
+
+.movement-list {
+  display: inline-block;
+  border: 1px solid #940315;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.movement-name {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.buttons {
+  display: inline-block;
 }

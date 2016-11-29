@@ -6,10 +6,10 @@ export default React.createClass({
   render() {
 
     console.log(this.props)
-    let votes;
+    let cycles;
 
     if(this.props.cycles.length < 1){
-      votes = <li> No Votes Yet </li>;
+      cycles = <li> No Votes Yet </li>;
 
     } else {
       cycles = this.props.cycles.map((cycle, i ,arr) => {

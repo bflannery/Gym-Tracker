@@ -8,7 +8,7 @@ import AthleteList from '../AthleteList';
 export default React.createClass ({
   render() {
     return (
-      <div className="athletes-container">
+      <div className="main-container">
       <h2> Athletes </h2>
       <AthleteList />
       </div>
