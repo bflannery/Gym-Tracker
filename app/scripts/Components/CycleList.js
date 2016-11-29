@@ -1,15 +1,28 @@
 import React from 'react';
 import CycleSingle from './CycleSingle';
 
-//will display list of Cycles
-// will need cycles collection props 
-
 export default React.createClass({
+
   render() {
+
+    console.log(this.props)
+    let votes;
+
+    if(this.props.cycles.length < 1){
+      votes = <li> No Votes Yet </li>;
+
+    } else {
+      cycles = this.props.cycles.map((cycle, i ,arr) => {
+        return <CycleSingle key={i} cycle={cycle}/>;
+      });
+    }
+
     return (
-        <ul className="cycle-list">
-          <CycleSingle />
-        </ul>
+
+      <ul className = "cycles-list">
+        {cycles}
+      </ul>
+
     );
   }
 });

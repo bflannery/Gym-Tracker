@@ -8,6 +8,7 @@ export default React.createClass({
     return (
       <li className="cycle-preview">
         <span className="cycle-name"> Strength </span>
+        <span> {this.props.cycle.movement}</span>
       </li>
     );
   }

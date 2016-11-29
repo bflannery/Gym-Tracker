@@ -9,15 +9,14 @@ export default React.createClass ({
     return (
       <div className="sidebar-container">
         <div className="sidebar-profile">
-          <span> Bill Murray </span>
-          </div>
-
-      <div className="sidebar-wod">
-        <h3>Todays Workout</h3>
-      </div>
-      <div className ="sidebar-calendar">
-      <h3> Todays Date </h3>
-      </div>
+          <span> Brian Flannery </span>
+        </div>
+        <div className="sidebar-wod">
+          <h3>Todays Workout</h3>
+        </div>
+        <div className ="sidebar-calendar">
+          <h3> Todays Date </h3>
+        </div>
       </div>
     );
   }

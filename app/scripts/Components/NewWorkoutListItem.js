@@ -5,12 +5,10 @@ import store from'../store';
 
 export default React.createClass({
   render() {
-    console.log(this.props)
     return (
       <li className="movement-preview">
-        <div className="movement-name"> {this.props.movement.get('name')}</div>
-          <Buttons add={this.addToWorkout} remove={this.removeFromWorkout}/>
-        <div>
+        <div className="movement-name" ref="movement"> {this.props.movement.get('name')}</div>
+          <Buttons remove={this.removeFromWorkout}/>
           <label>Reps:
             <input type="text" placeholder="0" ref="reps" id="reps"/>
           </label>
@@ -20,14 +18,9 @@ export default React.createClass({
           <label> Weight:
             <input type="text" placeholder="0" ref="weight" id="weight"/>
           </label>
-        </div>
         <input onClick={this.handleClick} type="submit" value="Save Workout"/>
       </li>
     );
-  },
-
-  addToWorkout() {
-    store.workout.addMovement(this.props.movement);
   },
 
   removeFromWorkout() {
@@ -38,10 +31,12 @@ export default React.createClass({
     let reps = this.refs.reps.value;
     let sets = this.refs.sets.value;
     let weight = this.refs.weight.value;
+    let name = this.props.movement.get('name');
+
 
     store.loggedWorkout.addWorkout({
 
-    name   : this.props.movement.get('name'),
+    movement   : name,
     reps   : reps,
     sets   : sets,
     weight : weight
