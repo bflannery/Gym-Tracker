@@ -1,21 +1,15 @@
 import React from 'react';
+import store from '../store';
+import { Link } from 'react-router';
 
-
-
-//Will display a single work made up of a list of movements
-//Will pull from movements collection
-//Will push to workouts collection
 
 export default React.createClass({
   render() {
     return (
       <div className="workout-container">
-        <h2> Workout </h2>
         <li className="workout-preview">
-          <span> {this.props.workout.movement}</span>
-          <span> Reps: {this.props.workout.reps}</span>
-          <span> Sets: {this.props.workout.sets}</span>
-          <span> Weight: {this.props.workout.weight}</span>
+          <Link to = {`/workouts/${this.props.workout.name}`} onClick={this.onClick}><h2> {this.props.workout.name} </h2>
+          </Link>
         </li>
       </div>
     );

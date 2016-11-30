@@ -24,19 +24,10 @@ if(this.state.authenticated) {
         <Link to = "home" className="home-nav">Home</Link>
       </li>
       <li className="nav-list">
-          <Link to ="workout">New Workout</Link>
+          <Link to ="workouts/new">New Workout</Link>
       </li>
       <li className="nav-list">
           <Link to ="workouts"> Workouts</Link>
-      </li>
-      <li className="nav-list">
-          <Link to ="cycles"> Cycles</Link>
-      </li>
-      <li className="nav-list">
-          <Link to ="programs"> Programs</Link>
-      </li>
-      <li className="nav-list">
-        <Link to ="athletes" className="athletes">Athletes</Link>
       </li>
       <li className="nav-list" id="logout">
         <input type="button" className="logout-button" onClick={this.handleLogout} value="Log Out"/>
@@ -59,13 +50,3 @@ if(this.state.authenticated) {
     store.session.logout();
   }
 })
-
-
-// <li className="nav-list">
-//     <Link to ='/' className="login"> Log In
-//     </Link>
-// </li>
-// <li className="nav-list">
-//     <Link to = "register" className="signup">Sign Up
-//     </Link>
-// </li>

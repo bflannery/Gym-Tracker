@@ -41,15 +41,16 @@ export default React.createClass({
     let movement = this.props.movement.get('name');
 
 
-    store.loggedMovement.addMovement({
+    store.loggedWorkout.get(this.props.workoutId).addMovementToWorkout({
 
-    movement   : movement,
+    name   : movement,
     reps   : reps,
     sets   : sets,
     weight : weight,
-    notes : notes
+    notes  : notes,
 
   });
   }
+
 
 });

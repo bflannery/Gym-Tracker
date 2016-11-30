@@ -1,14 +1,9 @@
 import React from 'react';
 import WorkoutSingle from './WorkoutSingle';
 
-
-//Will display a list of Workouts
-//Needs to pull from workout collection
-
 export default React.createClass({
   render() {
-    console.log(this.props)
-    
+
     let workouts;
 
     if(this.props.workouts.length < 1) {

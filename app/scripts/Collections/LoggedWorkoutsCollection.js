@@ -1,24 +1,12 @@
 import Backbone from 'backbone';
-import LoggedWorkout from '../Models/loggedWorkoutModel';
+import loggedWorkout from '../Models/loggedWorkoutModel';
+import store from '../store';
 
 export default Backbone.Collection.extend({
-  model: LoggedWorkout,
-  url: 'https://api.backendless.com/v1/data/workouts',
+  model: loggedWorkout,
+  url: 'https://api.backendless.com/v1/data/Workouts',
 
-parse(data) {
-  console.log(data);
-  return data.data
+parse(workouts) {
+  return workouts.data
 },
 });
-
-// addWorkout({workout, id, movement, reps, sets, weight}) {
-//   this.fetch({success: () => {
-//     let newWorkout = this.findWhere({movement: movement});
-//     if(!newWorkout) {
-//       this.create({workout, id, movement, reps, sets, weight})
-//     }
-//   }
-// })
-// }
-//
-// });

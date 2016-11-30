@@ -23,6 +23,6 @@ export default React.createClass({
     const email = this.refs.login.value;
     const password = this.refs.password.value;
     store.session.login(email, password);
-    store.movement.getToken();
+    store.movements.getToken();
   }
 })

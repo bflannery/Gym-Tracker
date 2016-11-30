@@ -5,12 +5,12 @@ import $ from 'jquery';
 import App from './Components/Containers/App';
 import Register from './Components/RegisterPage';
 import LandingPage from './Components/Containers/LandingPage';
-import HomePage from './Components/Containers/HomePage';
-import NewWorkoutPage from './Components/Containers/NewWorkoutPage';
+
+
 import WorkoutsPage from './Components/Containers/WorkoutsPage';
-import CyclesPage from './Components/Containers/CyclesPage';
-import ProgramsPage from './Components/Containers/ProgramsPage';
-import AthletesPage from './Components/Containers/AthletesPage';
+import NewWorkoutPage from './Components/Containers/NewWorkoutPage';
+import NewWorkoutHome from './Components/Containers/NewWorkoutHome';
+
 import store from './store';
 
 let getAuth = function(nextState, replace, callback){
@@ -24,12 +24,9 @@ const router = (
         <IndexRoute component={LandingPage}/>
         <Route path='/oauth' onEnter={getAuth}/>
         <Route path='/register' component={Register}/>
-        <Route path='/home' component={HomePage}/>
-        <Route path='/workout' component={NewWorkoutPage}/>
         <Route path='/workouts' component={WorkoutsPage}/>
-        <Route path='/cycles' component={CyclesPage}/>
-        <Route path='/programs' component={ProgramsPage}/>
-        <Route path='/athletes' component={AthletesPage}/>
+        <Route path='/workouts/new' component={NewWorkoutPage}/>
+        <Route path='/workouts/:name' component={NewWorkoutHome}/>
       </Route>
     </Router>
 );
