@@ -7,9 +7,6 @@ import config from './config';
 let mainContainer = document.getElementById('main-container');
 
 
-// let authURL = 'https://api.mapmyfitness.com/v7.1/oauth2/authorize/?client_id=hx8r9mbvzej8spf4jrv7u72ah5armmzy&response_type=code&redirect_uri=http://localhost:8080/oauth'
-// window.location = authURL;
-
 $(document).ajaxSend((evt, xhr, opts) => {
   if(opts.url.indexOf('backendless') > -1 ){
 

@@ -11,7 +11,9 @@ rootUrl: 'https://api.backendless.com/v1/data/Workouts',
 
   addMovementToWorkout({name, reps, sets, weight, time, notes}) {
     this.save({
-        movements: this.get('movements').concat([{
+        movements: this.get('movements').concat(
+
+          [{
           ___class: 'Movements',
           name   : name,
           reps   : reps,
@@ -19,8 +21,15 @@ rootUrl: 'https://api.backendless.com/v1/data/Workouts',
           weight : weight,
           time   : time,
           notes  : notes,
-        }])
+        }]),
 
-  });
+  }, {
+    success: (workout, response) => {
+      console.log(workout)
+      console.log(response)
+
+    }
+  }
+);
   }
 });

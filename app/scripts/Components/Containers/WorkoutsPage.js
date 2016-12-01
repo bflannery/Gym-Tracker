@@ -34,9 +34,10 @@ export default React.createClass ({
         <h2> Workouts </h2>
         <div className="workouts">
           <WorkoutList workouts={this.state.loggedWorkout}/>
-          <Link to="workouts/newworkout"> Make a New Workout</Link>
+          <Link to="workouts/newworkout" onClick={this.handleClick}> Make a New Workout</Link>
         </div>
       </div>
     );
-  }
+  },
+
 });

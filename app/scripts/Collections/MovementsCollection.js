@@ -26,7 +26,8 @@ export default Backbone.Collection.extend({
               'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
             },
               success: (tokenObj) => {
-              this.token = tokenObj.access_token
+              this.token = tokenObj.access_token;
+              window.localStorage.setItem('auth-token', this.token);
               this.getMovements();
             }
         });

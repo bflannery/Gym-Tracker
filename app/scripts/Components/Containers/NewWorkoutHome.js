@@ -10,12 +10,13 @@ export default React.createClass ({
   getInitialState() {
     return {
       workout: {},
-      loggedMovements: store.loggedMovement.toJSON()
+      loggedMovements: store.loggedMovement.toJSON(),
+
     }
   },
 
   componentDidMount() {
-
+    store.movements.getToken();
     store.loggedMovement.on('update change' , this.updateMovementsState);
     store.loggedMovement.fetch();
 
@@ -43,7 +44,7 @@ export default React.createClass ({
   },
 
   render () {
-    console.log(this.state)
+
     return (
       <div className="main-container">
         <h2>{this.props.params.name}</h2>
