@@ -8,32 +8,32 @@ export default React.createClass({
     return (
       <li className="movement-preview">
         <div className="movement-name" ref="movement"> {this.props.movement.get('name')}</div>
-        <ul className="movement-info">
-          <li>
+        <ul>
+          <li className="movement-info">
           <label>Reps:
             <input type="text" placeholder="0" ref="reps" className="workout-details"/>
           </label>
         </li>
 
-        <li>
+        <li className="movement-info">
           <label> Sets:
             <input type="text" placeholder="0" ref="sets" className="workout-details"/>
           </label>
         </li>
 
-        <li>
+        <li className="movement-info">
           <label> Weight:
             <input type="text" placeholder="0" ref="weight" className="workout-details"/>
           </label>
         </li>
 
-        <li>
+        <li className="movement-info">
           <label> Time:
             <input type="text" placeholder="Notes" ref="time" className="workout-details"/>
           </label>
         </li>
 
-        <li>
+        <li className="movement-info">
           <label> Notes:
             <textarea type="text" placeholder="Notes" ref="notes" className="workout-details"/>
           </label>

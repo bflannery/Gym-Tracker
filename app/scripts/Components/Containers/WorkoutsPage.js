@@ -29,13 +29,12 @@ export default React.createClass ({
 },
 
   render() {
-
     return (
       <div className="main-container">
         <h2> Workouts </h2>
         <div className="workouts">
           <WorkoutList workouts={this.state.loggedWorkout}/>
-          <Link to="/workouts/new"> Make New Workout </Link>
+          <Link to="workouts/newworkout"> Make a New Workout</Link>
         </div>
       </div>
     );

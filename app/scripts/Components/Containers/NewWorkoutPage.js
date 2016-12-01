@@ -1,6 +1,6 @@
 import React from 'react';
 import store from '../../store';
-import { browserHistory} from'react-router';
+import { browserHistory} from 'react-router';
 
 export default React.createClass({
   render() {
@@ -18,7 +18,7 @@ export default React.createClass({
     store.loggedWorkout.create({
     name : workoutName
     });
-    browserHistory.push("/workouts/new");
+    browserHistory.push("/workouts");
   }
 });
 

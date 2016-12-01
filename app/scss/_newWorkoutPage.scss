@@ -18,6 +18,9 @@ text-align: center;
 margin: 1rem;
 }
 
+.movement-info {
+  display: inline-block;
+}
 .movement-list {
   display: inline-block;
   border: 1px solid #940315;
@@ -36,5 +39,6 @@ margin: 1rem;
 
 input.workout-details {
   display: inline-block;
-  margin: 0.5rem
+  margin: 0.5rem;
+  padding: .1rem;
 }

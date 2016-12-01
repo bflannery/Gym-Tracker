@@ -6,9 +6,9 @@ import LoggedMovement from './LoggedMovement';
 
 export default React.createClass({
   render(){
-    console.log(this.props)
 
-    let workoutMovements = this.props.movements((movement, i, arr)=>{
+
+    let workoutMovements = this.props.movements.map((movement, i, arr)=>{
       return <LoggedMovement key={i} movement={movement}/>
 
     })

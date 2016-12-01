@@ -1,1 +1,38 @@
+.home-workout-container {
+  background-image: url('../assets/images/Workout.jpg');
+  background-size: cover;
+  display: inline-block;
+  padding: 7rem;
+  margin: 2rem;
+}
 
+.home-cycle-container {
+  background-image: url('../assets/images/Cycles.jpg');
+  background-size: cover;
+  display: inline-block;
+  padding: 7rem;
+  margin: 2rem;
+}
+
+.home-program-container {
+  background-image: url('../assets/images/Programs.jpg');
+  background-size: cover;
+  display: inline-block;
+  padding: 7rem;
+  margin: 2rem;
+}
+
+.home-container-nav {
+  background: #5C0009;
+  margin: .3rem;
+  border-radius: 10px;
+  padding: .5rem 1rem;
+        a {
+          text-decoration: none;
+          color: #9B96A3;
+        }
+}
+
+a:visited {
+  color: none;
+}

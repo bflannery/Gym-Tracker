@@ -8,5 +8,5 @@ export default Backbone.Collection.extend({
 
 parse(workouts) {
   return workouts.data
-},
+}
 });

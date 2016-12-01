@@ -45,7 +45,7 @@ export default Backbone.Model.extend({
           window.localStorage.setItem('user-token',response['user-token']);
           window.localStorage.setItem('email',response.email);
           window.localStorage.setItem('ownerId',response.ownerId);
-          browserHistory.push('/workouts');
+          browserHistory.push('/home');
       }
     })
   },

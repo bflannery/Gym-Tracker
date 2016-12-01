@@ -23,7 +23,6 @@ export default React.createClass ({
     });
   },
   render() {
-
   let filteredSearch=store.movements.search(this.state.searchTerm);
     return (
 
@@ -35,7 +34,7 @@ export default React.createClass ({
                 <input type="submit" value="Search"/>
               </form>
           </div>
-          <MovementList movements={filteredSearch} workoutId={this.props.workoutId}/>
+          <MovementList movements={filteredSearch} workoutId={this.props.workout.objectId}/>
       </div>
     )
   },
