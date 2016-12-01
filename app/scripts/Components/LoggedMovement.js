@@ -6,7 +6,7 @@ import store from '../store';
 export default React.createClass({
 
   render() {
-  
+
 
     return (
       <div>

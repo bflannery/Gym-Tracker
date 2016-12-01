@@ -2,6 +2,7 @@ import React from 'react'
 import store from '../../store';
 
 import LoggedWorkouts from '../LoggedWorkouts';
+import CycleWorkouts from '../CycleWorkouts';
 
 export default React.createClass({
 
@@ -47,6 +48,7 @@ export default React.createClass({
     return (
       <div className="main-container">
       <h2>{this.props.params.name}</h2>
+      <CycleWorkouts workouts={this.state.loggedWorkout} />
       <h4> Select Workouts </h4>
       <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
       </div>

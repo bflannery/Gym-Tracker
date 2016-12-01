@@ -13,13 +13,11 @@ export default React.createClass ({
       loggedMovements: store.loggedMovement.toJSON()
     }
   },
-  componentWillMount() {
-    store.loggedMovement.fetch();
-  },
 
   componentDidMount() {
-    store.loggedMovement.fetch();
+
     store.loggedMovement.on('update change' , this.updateMovementsState);
+    store.loggedMovement.fetch();
 
     store.loggedWorkout.find(this.props.params);
     store.loggedWorkout.on('change update', this.updateState);
@@ -32,17 +30,20 @@ export default React.createClass ({
   },
     componentWillUnmount() {
       store.loggedWorkout.off('update change' , this.updateState);
-      store.loggedMovement.off('update change' , this.updateMovementsState);
   },
 
   updateState() {
-        this.setState({workout: store.loggedWorkout.find(this.props.params).toJSON()});
+    if(store.loggedWorkout.find(this.props.params) !== undefined) {
+        this.setState({workout: store.loggedWorkout.find(this.props.params).toJSON()})
+      }
       },
+
   updateMovementsState() {
       this.setState({loggedMovements: store.loggedMovement.toJSON()});
   },
 
   render () {
+    console.log(this.state)
     return (
       <div className="main-container">
         <h2>{this.props.params.name}</h2>
