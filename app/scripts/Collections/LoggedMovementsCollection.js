@@ -6,6 +6,7 @@ export default Backbone.Collection.extend({
   url: 'https://api.backendless.com/v1/data/Movements',
 
 parse(data) {
+  console.log(data)
   return data.data
 }
 

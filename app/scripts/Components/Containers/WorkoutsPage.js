@@ -29,6 +29,7 @@ export default React.createClass ({
 },
 
   render() {
+
     return (
       <div className="main-container">
         <h2> Workouts </h2>

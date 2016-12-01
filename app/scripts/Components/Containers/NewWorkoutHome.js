@@ -1,8 +1,8 @@
 import React from 'react';
 import store from '../../store';
 
-import WorkoutTemplate from '../WorkoutTemplate';
 import MovementSearch from '../MovementSearch';
+// import LoggedMovements from '../LoggedMovements';
 
 
 export default React.createClass ({
@@ -35,13 +35,13 @@ export default React.createClass ({
     },
 
   render () {
+    console.log(this.props)
     return (
       <div className="main-container">
         <h2>{this.props.params.name}</h2>
+
         <MovementSearch workoutId={this.state.workout.objectId}/>
-
-
-        </div>
+      </div>
     );
   }
 });

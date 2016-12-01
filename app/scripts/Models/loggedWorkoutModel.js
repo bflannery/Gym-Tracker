@@ -9,11 +9,16 @@ rootUrl: 'https://api.backendless.com/v1/data/Workouts',
     name: ''
   },
 
-  addMovementToWorkout({name}) {
+  addMovementToWorkout({name, reps, sets, weight, time, notes}) {
     this.save({
         movements: this.get('movements').concat([{
           ___class: 'Movements',
-          name: name,
+          name   : name,
+          reps   : reps,
+          sets   : sets,
+          weight : weight,
+          time   : time,
+          notes  : notes,
         }])
 
   });

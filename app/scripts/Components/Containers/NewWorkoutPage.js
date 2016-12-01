@@ -18,7 +18,7 @@ export default React.createClass({
     store.loggedWorkout.create({
     name : workoutName
     });
-    browserHistory.push("/workouts");
+    browserHistory.push("/workouts/new");
   }
 });
 

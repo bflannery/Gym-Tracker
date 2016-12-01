@@ -1,8 +1,7 @@
 import React from 'react';
 
 import store from '../store';
-//
-// import NewWorkoutForm from '../NewWorkoutForm';
+
 import MovementList from './MovementList';
 
 
@@ -26,8 +25,6 @@ export default React.createClass ({
   render() {
 
   let filteredSearch=store.movements.search(this.state.searchTerm);
-
-  console.log(this.props)
     return (
 
       <div className="workout-form">
@@ -45,6 +42,7 @@ export default React.createClass ({
 
   handleSubmit(e){
     e.preventDefault();
+
     this.setState({searchTerm : this.refs.search.value });
   }
 
