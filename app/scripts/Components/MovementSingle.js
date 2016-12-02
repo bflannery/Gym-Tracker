@@ -7,29 +7,24 @@ export default React.createClass({
   render() {
     return (
       <li className="movement-preview">
-        <div className="movement-name" ref="movement"> {this.props.movement.get('name')}</div>
+        <form>
+        <h2 className="movement-name" ref="movement"> {this.props.movement.get('name')}</h2>
         <ul>
           <li className="movement-info">
           <label>Reps:
             <input type="text" placeholder="0" ref="reps" className="workout-details"/>
           </label>
-        </li>
+          </li>
 
-        <li className="movement-info">
-          <label> Sets:
-            <input type="text" placeholder="0" ref="sets" className="workout-details"/>
-          </label>
-        </li>
+          <li className="movement-info">
+            <label> Sets:
+              <input type="text" placeholder="0" ref="sets" className="workout-details"/>
+              </label>
+          </li>
 
         <li className="movement-info">
           <label> Weight:
             <input type="text" placeholder="0" ref="weight" className="workout-details"/>
-          </label>
-        </li>
-
-        <li className="movement-info">
-          <label> Time:
-            <input type="text" placeholder="Notes" ref="time" className="workout-details"/>
           </label>
         </li>
 
@@ -41,10 +36,11 @@ export default React.createClass({
 
         <input type="submit" value="Add To Workout" onClick={this.handleSubmit}/>
         </ul>
-
+        </form>
       </li>
     );
   },
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -52,7 +48,6 @@ export default React.createClass({
     let reps = this.refs.reps.value;
     let sets = this.refs.sets.value;
     let weight = this.refs.weight.value;
-    let time = this.refs.time.value;
     let notes = this.refs.notes.value;
 
     store.loggedWorkout.get(this.props.workoutId).addMovementToWorkout({
@@ -61,9 +56,14 @@ export default React.createClass({
       reps   : reps,
       sets   : sets,
       weight : weight,
-      time   : time,
       notes  : notes,
+      created : new Date()
 
     });
+
+    this.refs.reps.value = "";
+    this.refs.sets.value = "";
+    this.refs.weight.value = "";
+    this.refs.notes.value = "";
   }
 });

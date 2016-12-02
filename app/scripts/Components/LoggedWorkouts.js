@@ -3,7 +3,6 @@ import LoggedWorkout from './LoggedWorkout';
 
 export default React.createClass({
   render() {
-    console.log(this.props)
 
     let workouts;
 

@@ -3,7 +3,6 @@ import WorkoutSingle from './WorkoutSingle';
 
 export default React.createClass({
   render() {
-
     let workouts;
 
     if(this.props.workouts.length < 1) {

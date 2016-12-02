@@ -1,5 +1,6 @@
 import React from 'react'
 import store from '../../store';
+import {browserHistory} from 'react-router';
 
 import LoggedWorkouts from '../LoggedWorkouts';
 import CycleWorkouts from '../CycleWorkouts';
@@ -8,17 +9,17 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      loggedWorkout: store.loggedWorkout.toJSON(),
-      cycle: {}
+      cycle: {},
+      loggedCycle: store.loggedCycle.toJSON(),
+      loggedWorkout: store.loggedWorkout.toJSON()
     }
   },
-  componentWillMount(){
-    store.loggedWorkout.fetch();
-  },
+
   componentDidMount() {
     store.loggedWorkout.fetch();
     store.loggedWorkout.on('update change' , this.updateState);
 
+    store.loggedCycle.fetch();
     store.loggedCycle.find(this.props.params);
     store.loggedCycle.on('update change' , this.updateCycleState);
 
@@ -36,22 +37,31 @@ export default React.createClass({
   },
 
   updateState() {
-    this.setState({loggedWorkout: store.loggedWorkout.toJSON()});
+    this.setState({
+      loggedWorkout: store.loggedWorkout.toJSON(),
+      loggedCycle: store.loggedCycle.toJSON()
+    })
   },
 
   updateCycleState() {
-    this.setState({cycle: store.loggedCycle.find(this.props.params).toJSON()});
+    this.setState({
+      cycle: store.loggedCycle.find(this.props.params).toJSON()});
   },
 
   render() {
-    console.log(this.state)
+
     return (
       <div className="main-container">
       <h2>{this.props.params.name}</h2>
-      <CycleWorkouts workouts={this.state.loggedWorkout} />
+      <CycleWorkouts workouts={this.state.cycle} />
+      <input type="submit" onClick={this.SaveWorkout} value="Save Workout!"/>
       <h4> Select Workouts </h4>
       <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
       </div>
     )
+  },
+
+  SaveWorkout() {
+    console.log('saved')
   }
 })

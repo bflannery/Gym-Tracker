@@ -21,16 +21,16 @@ if(this.state.authenticated) {
   nav = (
     <ul className="loggedIn-navContainer">
       <li className="nav-list">
-        <Link to="home" className="home-nav">Home</Link>
+        <Link to="/home" className="home-nav">Home</Link>
       </li>
       <li className="nav-list">
-          <Link to="workouts"> Workouts</Link>
+          <Link to="/workouts"> Workouts</Link>
       </li>
       <li className="nav-list">
-          <Link to="cycles"> Cycles</Link>
+          <Link to="/cycles"> Cycles</Link>
       </li>
       <li className="nav-list">
-          <Link to="programs">Programs</Link>
+          <Link to="/programs">Programs</Link>
       </li>
       <li className="nav-list" id="logout">
         <input type="button" className="logout-button" onClick={this.handleLogout} value="Log Out"/>

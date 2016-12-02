@@ -9,11 +9,11 @@ export default Backbone.Model.extend({
       name: ''
     },
 
-    addWorkoutToCycle({name}) {
+    addWorkoutToCycle({id}) {
       this.save({
           workouts: this.get('workouts').concat([{
             ___class: 'Workouts',
-            name : name,
+            objectId : id,
           }])
 
     });
