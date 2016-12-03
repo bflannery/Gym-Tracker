@@ -16,7 +16,8 @@ export default React.createClass ({
   },
 
   componentDidMount() {
-    if(window.localStorage['auth-token'] === -1){
+
+    if(store.movements.length < 1){
     store.movements.getToken();
   }
 
@@ -44,14 +45,15 @@ export default React.createClass ({
   },
 
   render () {
-    console.log(this.state)
     return (
 
       <div className="main-container">
+        <div className="workout-page">
         <h2>{this.props.params.name}</h2>
         <LoggedMovements movements={this.state.loggedWorkout}/>
-        <input type="submit" onClick={this.SaveWorkout} value="Save Workout!"/>
+        <input type="submit" className="save-button" onClick={this.SaveWorkout} value="Save Workout!"/>
         <MovementSearch workout={this.state.loggedWorkout}/>
+      </div>
       </div>
     );
   },

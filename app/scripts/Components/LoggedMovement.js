@@ -15,9 +15,13 @@ export default React.createClass({
           <span> Reps: {this.props.movement.reps} </span>
           <span> Sets: {this.props.movement.sets} </span>
           <span> Weight: {this.props.movement.weight} </span>
-          <span> Notes: {this.props.movement.notes}</span>
+          <input type="button" value="remove" onClick={this.Remove}/>
         </li>
       </div>
     );
+},
+
+Remove() {
+  console.log('remove this from workout on backend')
 }
 })

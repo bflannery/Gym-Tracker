@@ -8,7 +8,7 @@ export default React.createClass({
 
 
   render(){
-  
+    console.log(this.props)
       let workoutMovements;
 
       if(this.props.movements.movements === undefined) {

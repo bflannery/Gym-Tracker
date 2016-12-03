@@ -19,7 +19,8 @@ export default React.createClass({
 
   render() {
     return (
-      <div className="landing-page">
+
+        <div className="main-container">
         <Login session={this.state.session} />
         </div>
     );

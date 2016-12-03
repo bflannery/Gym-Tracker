@@ -8,16 +8,34 @@ export default React.createClass({
   render(){
     return (
       <div className="main-container">
-      <li className="home-workout-container">
-        <Link to="/workouts" className="home-container-nav"> Workouts </Link>
-      </li>
-      <li className="home-cycle-container">
-        <Link to="/cycles" className="home-container-nav"> Cycles </Link>
-      </li>
-      <li className="home-program-container">
-        <Link to="/programs" className="home-container-nav"> Programs </Link>
-      </li>
+      <div className="home-workout" onClick={this.WorkoutLink}>
+        <h2 className="section-title"> Workouts </h2>
+        <div className="home-workout-container"></div>
       </div>
+      <div className="home-cycle" onClick={this.CycleLink}>
+        <h2 className="section-title"> Cycles </h2>
+        <div className="home-cycle-container"></div>
+      </div>
+      <div className="home-program" onClick={this.ProgramLink}>
+        <h2 className="section-title"> Programs </h2>
+        <div className="home-program-container"></div>
+      </div>
+      </div>
+
+
     )
+  },
+
+  WorkoutLink () {
+      browserHistory.push('/workouts')
+  },
+
+  CycleLink() {
+    browserHistory.push('/cycles')
+  },
+
+  Programs() {
+    browserHistory.push('/programs')
   }
+
 })

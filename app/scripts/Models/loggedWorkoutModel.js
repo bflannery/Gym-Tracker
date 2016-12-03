@@ -20,7 +20,6 @@ rootUrl: 'https://api.backendless.com/v1/data/Workouts',
           sets   : sets,
           weight : weight,
           created : created,
-          notes  : notes,
         }]),
 
   }, {
