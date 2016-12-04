@@ -8,7 +8,6 @@ export default React.createClass({
 
 
   render(){
-    console.log(this.props)
       let workoutMovements;
 
       if(this.props.movements.movements === undefined) {
@@ -22,9 +21,9 @@ export default React.createClass({
     }
 
     return (
-      <div>
-        <ul>{workoutMovements}</ul>
-      </div>
+  
+        <ul className="logged-workout-container">{workoutMovements}</ul>
+
     )
   }
 });

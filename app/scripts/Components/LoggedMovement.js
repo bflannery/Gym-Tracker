@@ -11,11 +11,9 @@ export default React.createClass({
     return (
       <div>
         <li>
-          <span> {this.props.movement.name} </span>
-          <span> Reps: {this.props.movement.reps} </span>
-          <span> Sets: {this.props.movement.sets} </span>
-          <span> Weight: {this.props.movement.weight} </span>
-          <input type="button" value="remove" onClick={this.Remove}/>
+          <span> {this.props.movement.name} : </span>
+          <span> {this.props.movement.sets} X {this.props.movement.reps} at {this.props.movement.weight} </span>
+          <input type="button" value="remove" className="remove-button "onClick={this.Remove}/>
         </li>
       </div>
     );

@@ -59,6 +59,5 @@ export default React.createClass({
     this.refs.reps.value = "";
     this.refs.sets.value = "";
     this.refs.weight.value = "";
-    this.refs.notes.value = "";
   }
 });

@@ -53,3 +53,51 @@ input.workout-details {
 .results {
   padding: 0 0 0 .5rem;
 }
+
+.save-button {
+  background: black;
+  border: 1px solid #940315;
+  border-radius: 10px;
+  color: #940315;
+  padding: .3rem;
+  margin-left: 1rem;
+}
+
+.remove-button {
+  display: block;
+  background: black;
+  border: 1px solid #940315;
+  border-radius: 10px;
+  color: #940315;
+  margin: .5rem;
+  padding: .3rem;
+}
+
+
+.search .search-button {
+  color: #940315;
+  display: inline-block;
+  margin: .5rem;
+    padding: .5rem 2rem;
+}
+
+.search .search-movements {
+  display: inline-block;
+  margin: 1rem 0 0 1rem;
+  padding: .5rem 2rem;
+}
+
+.logged-workout-container {
+  padding: 0 0 1rem 1rem;
+    ul {
+      padding: 0
+    }
+}
+.logged-workout-name {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+h2 {
+  margin-left: 1rem;
+}

@@ -26,13 +26,17 @@
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #940315;
-
 }
 
-.save-button {
-  background: black;
-  border: 1px solid #940315;
-  border-radius: 10px;
-  color: #940315;
-  padding: .3rem;
+.workout-list {
+  margin: 0;
+  padding-left: .5rem;
+}
+
+.create-workout {
+  margin-left: .5rem;
+}
+
+.workout-preview {
+  border-bottom: 1px solid #940315;
 }
