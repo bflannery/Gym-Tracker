@@ -9,7 +9,7 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      cycle: {},
+      cycle: {workouts: []},
       loggedWorkout: store.loggedWorkout.toJSON(),
       loggedCycle: store.loggedCycle.toJSON()
     }
@@ -41,23 +41,26 @@ export default React.createClass({
   updateState() {
     this.setState({
       loggedWorkout: store.loggedWorkout.toJSON(),
-      loggedCycle: store.loggedCycle.toJSON()
     })
   },
 
   updateCycleState() {
     this.setState({
-      cycle: store.loggedCycle.find(this.props.params).toJSON()});
+      cycle: store.loggedCycle.find(this.props.params).toJSON(),
+      loggedCycle: store.loggedCycle.toJSON()
+    });
   },
 
   render() {
+    console.log(this.state)
     return (
       <div className="main-container">
         <div className="cycle-page">
           <input type="button" className="back-button" value="Back" onClick={this.handleBack}/>
           <h2 className="logged-cycle-name">{this.props.params.name}</h2>
           <input type="submit" className="save-button" onClick={this.SaveCycle} value="Save Cycle!"/>
-          <CycleWorkouts workouts={this.state.cycle} />
+
+          <CycleWorkouts workouts={this.state.cycle.workouts} cycleId={this.state.cycle.objectId} />
           <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
         </div>
       </div>

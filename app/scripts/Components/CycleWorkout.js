@@ -7,19 +7,20 @@ export default React.createClass({
 
   render() {
 
-
+    console.log(this.props)
     return (
       <div>
         <li>
-          <Link to={this.props.workout.name}><span>{this.props.workout.name}</span>
+          <Link to={`/workouts/${this.props.workout.name}`}>
+            <h4>{this.props.workout.name}</h4>
           </Link>
-            <input type="button" value="remove" className="remove-button" onClick={this.removeWorkout}/>
+          <input type="button" value="remove" className="remove-button" onClick={this.removeWorkout}/>
         </li>
       </div>
     );
 },
 
 removeWorkout() {
-  store.loggedWorkout.get(this.props.workout.objectId).destroy()
+  store.loggedCycle.get(this.props.cycleId).removeWorkoutFromCycle(this.props.workout.objectId)
 }
 })

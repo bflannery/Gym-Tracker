@@ -1,5 +1,6 @@
 import Backbone from 'backbone';
 import config from '../config';
+import $ from 'jquery';
 
 export default Backbone.Model.extend({
   rootUrl: 'https://api.backendless.com/v1/data/Cycles',
@@ -17,5 +18,17 @@ export default Backbone.Model.extend({
           }])
 
     });
-    }
+  },
+
+  removeWorkoutFromCycle(objectId) {
+    let newCycleWorkouts = this.get('workouts').filter((workout, i , arr) => {
+
+      if(objectId !== workout.objectId) {
+        return true
+      }
+    })
+    this.save({
+      workouts: newCycleWorkouts
+    })
+  }
   });

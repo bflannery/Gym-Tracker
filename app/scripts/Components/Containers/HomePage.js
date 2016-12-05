@@ -8,14 +8,19 @@ export default React.createClass({
   render(){
     return (
       <div className="main-container">
-      <div className="home-workout" onClick={this.WorkoutLink}>
-        <h2 className="section-title"> Workouts </h2>
-        <div className="home-workout-container"></div>
-      </div>
-      <div className="home-cycle" onClick={this.CycleLink}>
-        <h2 className="section-title"> Cycles </h2>
-        <div className="home-cycle-container"></div>
-      </div>
+        <div className="current-container">
+          <h2> Todays Workout </h2>
+          <h2> Current Cycle </h2>
+        </div>  
+        <div className="home-workout" onClick={this.WorkoutLink}>
+          <h2 className="section-title"> Workouts </h2>
+          <div className="home-workout-container"></div>
+        </div>
+
+        <div className="home-cycle" onClick={this.CycleLink}>
+          <h2 className="section-title"> Cycles </h2>
+          <div className="home-cycle-container"></div>
+          </div>
       </div>
 
 

@@ -6,7 +6,7 @@ import moment from 'moment';
 
 export default React.createClass({
   render() {
-
+    console.log(this.props)
     return (
 
         <li className="workout-preview">
@@ -26,7 +26,6 @@ export default React.createClass({
 
     let id = this.props.workout.objectId
     store.loggedCycle.get(this.props.cycleId).addWorkoutToCycle({
-
       id : id
     });
   },

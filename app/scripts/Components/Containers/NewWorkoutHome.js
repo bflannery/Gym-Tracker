@@ -59,7 +59,6 @@ export default React.createClass ({
 
   render () {
     return (
-
       <div className="main-container">
         <div className="workout-page">
           <input type="button" className="back-button" value="Back" onClick={this.handleBack}/>
