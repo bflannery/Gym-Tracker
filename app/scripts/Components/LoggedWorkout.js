@@ -14,7 +14,7 @@ console.log(this.props)
           <h4 className="workout-name"> {this.props.workout.name} </h4>
           </Link>
           <span> {moment(this.props.workout.created).format('L')}</span>
-          <input type="submit" value="Add To Cycle" onClick={this.handleSubmit}/>
+          <input type="submit" className="add-button" value="Add To Cycle" onClick={this.handleSubmit}/>
         </li>
 
     );

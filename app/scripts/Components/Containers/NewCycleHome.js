@@ -56,6 +56,7 @@ export default React.createClass({
     return (
       <div className="main-container">
         <div className="cycle-page">
+          <input type="button" className="back-button" value="Back" onClick={this.handleBack}/>
           <h2 className="logged-cycle-name">{this.props.params.name}</h2>
           <input type="submit" className="save-button" onClick={this.SaveCycle} value="Save Cycle!"/>
           <CycleWorkouts workouts={this.state.cycle} />
@@ -65,8 +66,12 @@ export default React.createClass({
     );
   },
 
-  SaveWorkout() {
+  SaveCycle() {
     console.log('saved')
+    browserHistory.push('/cycles')
+  },
+
+  handleBack () {
     browserHistory.push('/cycles')
   }
 });

@@ -16,10 +16,6 @@ export default React.createClass({
         <h2 className="section-title"> Cycles </h2>
         <div className="home-cycle-container"></div>
       </div>
-      <div className="home-program" onClick={this.ProgramLink}>
-        <h2 className="section-title"> Programs </h2>
-        <div className="home-program-container"></div>
-      </div>
       </div>
 
 
@@ -32,10 +28,7 @@ export default React.createClass({
 
   CycleLink() {
     browserHistory.push('/cycles')
-  },
-
-  Programs() {
-    browserHistory.push('/programs')
   }
 
-})
+
+});
