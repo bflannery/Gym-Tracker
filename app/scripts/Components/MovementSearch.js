@@ -34,7 +34,7 @@ export default React.createClass ({
                 <input type="submit" value="Search" className="search-button"/>
               </form>
           </div>
-          <MovementList movements={filteredSearch} workoutId={this.props.workout.objectId}/>
+          <MovementList movements={filteredSearch} workoutId={this.props.workoutId}/>
       </div>
     )
   },

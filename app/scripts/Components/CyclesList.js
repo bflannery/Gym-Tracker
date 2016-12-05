@@ -3,7 +3,6 @@ import CycleSingle from './CycleSingle';
 
 export default React.createClass({
   render() {
-    console.log(this.props)
 
     let cycles;
 

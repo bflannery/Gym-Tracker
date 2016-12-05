@@ -1,5 +1,6 @@
 import Backbone from 'backbone';
 import config from '../config';
+import $ from 'jquery';
 
 export default Backbone.Model.extend({
 rootUrl: 'https://api.backendless.com/v1/data/Workouts',
@@ -24,9 +25,37 @@ rootUrl: 'https://api.backendless.com/v1/data/Workouts',
 
   }, {
     success: (workout, response) => {
-
+      this.trigger('change');
     }
   }
 );
+  },
+
+  removeMovementFromWorkout(objectId){
+
+      let newWorkoutMovements = this.get('movements').filter((movement, i ,arr) => {
+
+        if(objectId !== movement.objectId) {
+          return true
+        }
+      })
+      this.save ({
+        movements: newWorkoutMovements
+      },
+    {
+      success: () => {
+
+        $.ajax({
+          type: 'DELETE',
+          url: `https://api.backendless.com/v1/data/Movements/${objectId}`,
+          success: () => {
+            console.log('deleted')
+          },
+          error: () => {
+            console.log('nice try')
+            }
+        })
+      }
+    })
   }
 });

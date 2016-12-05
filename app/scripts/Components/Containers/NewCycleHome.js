@@ -4,15 +4,14 @@ import {browserHistory} from 'react-router';
 
 import LoggedWorkouts from '../LoggedWorkouts';
 import CycleWorkouts from '../CycleWorkouts';
-// import WorkoutList from '../WorkoutList';
 
 export default React.createClass({
 
   getInitialState() {
     return {
       cycle: {},
-      loggedCycle: store.loggedCycle.toJSON(),
-      loggedWorkout: store.loggedWorkout.toJSON()
+      loggedWorkout: store.loggedWorkout.toJSON(),
+      loggedCycle: store.loggedCycle.toJSON()
     }
   },
 
@@ -52,7 +51,6 @@ export default React.createClass({
   },
 
   render() {
-    console.log(this.state)
     return (
       <div className="main-container">
         <div className="cycle-page">

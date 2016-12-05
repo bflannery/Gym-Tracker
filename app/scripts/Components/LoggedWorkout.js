@@ -6,13 +6,14 @@ import moment from 'moment';
 
 export default React.createClass({
   render() {
-console.log(this.props)
+
     return (
 
         <li className="workout-preview">
           <Link to = {`/workouts/${this.props.workout.name}`} onClick={this.onClick}>
           <h4 className="workout-name"> {this.props.workout.name} </h4>
           </Link>
+
           <span> {moment(this.props.workout.created).format('L')}</span>
           <input type="submit" className="add-button" value="Add To Cycle" onClick={this.handleSubmit}/>
         </li>
@@ -28,5 +29,9 @@ console.log(this.props)
 
       id : id
     });
+  },
+
+  removeWorkout() {
+    store.loggedCycle.get(this.props.workout.objectId).remove()
   }
 });

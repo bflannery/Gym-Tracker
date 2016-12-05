@@ -4,7 +4,6 @@ import { browserHistory } from 'react-router';
 
 export default React.createClass({
   render() {
-  console.log(this.props)
     return (
       <div className="create-cycle">
         <input type="text" ref="createCycle" className="new-input" placeholder="Create New Cycle"/>

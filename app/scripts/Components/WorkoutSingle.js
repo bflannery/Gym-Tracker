@@ -14,7 +14,6 @@ export default React.createClass({
           <h4 className="workout-name"> {this.props.workout.name} </h4>
           </Link>
             <span> {moment(this.props.workout.created).format('L')} </span>
-            <LoggedMovements movements={this.props.workout}/>
         </li>
     );
   }

@@ -1,10 +1,11 @@
 import React from 'react';
 import moment from 'moment';
-// import Buttons from './buttons';
+
 import store from '../store';
 
 
 export default React.createClass({
+
   render() {
     return (
       <li className="movement-preview">

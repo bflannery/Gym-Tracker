@@ -13,8 +13,13 @@ export default React.createClass({
         <li>
           <Link to={this.props.workout.name}><span>{this.props.workout.name}</span>
           </Link>
+            <input type="button" value="remove" className="remove-button" onClick={this.removeWorkout}/>
         </li>
       </div>
     );
+},
+
+removeWorkout() {
+  store.loggedWorkout.get(this.props.workout.objectId).destroy()
 }
 })
