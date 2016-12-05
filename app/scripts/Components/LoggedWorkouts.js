@@ -1,13 +1,18 @@
 import React from 'react';
+
+import store from '../store';
+
 import LoggedWorkout from './LoggedWorkout';
 
 export default React.createClass({
-  render() {
 
+
+  render() {
     let workouts;
 
-    if(this.props.workouts.length < 1) {
-      workouts = <li> No Workouts </li>;
+    if(this.props.workouts === undefined) {
+
+      workouts = <li></li>;
 
     } else {
       workouts = this.props.workouts.map((workout,i,arr) =>{

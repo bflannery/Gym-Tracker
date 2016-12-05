@@ -5,6 +5,7 @@ import { browserHistory} from 'react-router';
 import store from '../../store';
 
 import CyclesList from '../CyclesList';
+import NewCycleForm from '../NewCycleForm';
 
 export default React.createClass({
 
@@ -32,10 +33,12 @@ export default React.createClass({
   render() {
     return (
       <div className="main-container">
-        <h2> Cycles </h2>
-        <div className="cycles">
-          <CyclesList cycles={this.state.loggedCycle}/>
-          <Link to="/cycles/newcycle"> Make a New Cycle</Link>
+        <div className="cycle-page">
+          <h2> Cycles </h2>
+          <div className="cycles">
+            <NewCycleForm/>
+            <CyclesList cycles={this.state.loggedCycle}/>
+          </div>
         </div>
       </div>
     );

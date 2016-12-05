@@ -4,6 +4,7 @@ import {browserHistory} from 'react-router';
 
 import LoggedWorkouts from '../LoggedWorkouts';
 import CycleWorkouts from '../CycleWorkouts';
+// import WorkoutList from '../WorkoutList';
 
 export default React.createClass({
 
@@ -25,10 +26,12 @@ export default React.createClass({
 
     if(store.loggedCycle.find(this.props.params) === undefined) {
       store.loggedCycle.fetch(this.props.params)
-    } else {
+
+    }
+    else {
         this.updateCycleState();
     }
-},
+  },
 
   componentWillUnmount() {
 
@@ -49,19 +52,21 @@ export default React.createClass({
   },
 
   render() {
-
+    console.log(this.state)
     return (
       <div className="main-container">
-      <h2>{this.props.params.name}</h2>
-      <CycleWorkouts workouts={this.state.cycle} />
-      <input type="submit" onClick={this.SaveWorkout} value="Save Workout!"/>
-      <h4> Select Workouts </h4>
-      <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
+        <div className="cycle-page">
+          <h2 className="logged-cycle-name">{this.props.params.name}</h2>
+          <input type="submit" className="save-button" onClick={this.SaveCycle} value="Save Cycle!"/>
+          <CycleWorkouts workouts={this.state.cycle} />
+          <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
+        </div>
       </div>
-    )
+    );
   },
 
   SaveWorkout() {
     console.log('saved')
+    browserHistory.push('/cycles')
   }
-})
+});

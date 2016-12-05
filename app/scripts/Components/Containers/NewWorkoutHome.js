@@ -49,11 +49,11 @@ export default React.createClass ({
 
       <div className="main-container">
         <div className="workout-page">
-        <h2 className="logged-workout-name">{this.props.params.name}</h2>
+          <h2 className="logged-workout-name">{this.props.params.name}</h2>
           <input type="submit" className="save-button" onClick={this.SaveWorkout} value="Save Workout!"/>
-        <LoggedMovements movements={this.state.loggedWorkout}/>
-        <MovementSearch workout={this.state.loggedWorkout}/>
-      </div>
+          <LoggedMovements movements={this.state.loggedWorkout}/>
+          <MovementSearch workout={this.state.loggedWorkout}/>
+        </div>
       </div>
     );
   },

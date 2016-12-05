@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { browserHistory} from 'react-router';
 
 import store from '../../store';
 
@@ -32,11 +33,11 @@ export default React.createClass ({
     return (
       <div className="main-container">
         <div className="workout-page">
-        <h2> Workouts </h2>
-        <div className="workouts">
-          <NewWorkoutForm/>
-          <WorkoutList workouts={this.state.loggedWorkout}/>
-        </div>
+          <h2> Workouts </h2>
+            <div className="workouts">
+              <NewWorkoutForm/>
+              <WorkoutList workouts={this.state.loggedWorkout}/>
+            </div>
         </div>
       </div>
     );

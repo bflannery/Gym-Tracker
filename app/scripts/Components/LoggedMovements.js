@@ -8,6 +8,7 @@ export default React.createClass({
 
 
   render(){
+
       let workoutMovements;
 
       if(this.props.movements.movements === undefined) {
@@ -21,8 +22,10 @@ export default React.createClass({
     }
 
     return (
-  
-        <ul className="logged-workout-container">{workoutMovements}</ul>
+
+        <ul className="logged-workout-container">
+          {workoutMovements}
+        </ul>
 
     )
   }
