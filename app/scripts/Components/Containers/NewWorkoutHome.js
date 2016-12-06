@@ -78,7 +78,6 @@ export default React.createClass ({
     );
   },
   handleSaveWorkout() {
-    console.log(this.state.startDate._d)
   let workoutDate = this.state.startDate._d
   store.loggedWorkout.get(this.state.workout.objectId).addDateToWorkout(workoutDate);
   browserHistory.push('/workouts')
@@ -90,7 +89,9 @@ export default React.createClass ({
 
   handleChange (date) {
     this.setState({
-      startDate: date
+      startDate: date,
+      workout: store.loggedWorkout.find(this.props.params).toJSON(),
+      loggedWorkout: store.loggedWorkout.toJSON()
     });
   }
 });
