@@ -20,11 +20,11 @@ export default React.createClass({
     }
 
     return (
-      <div>
-        <ul>
+
+        <ul className="cycle-workout-list">
           {cycleWorkouts}
         </ul>
-      </div>
+
     )
   }
 })

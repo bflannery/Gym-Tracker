@@ -9,7 +9,52 @@ background: transparent;
 border: 1px solid #940315;
 border-radius: 10px;
 padding: .3rem;
-color: #9B96A3;
+color: #127ebf;
 text-align: center;
 margin: 1rem;
+}
+
+.cycle-preview {
+  border-bottom: 1px solid #940315;
+      a {
+    text-decoration: none;
+    color: #127ebf;
+    h4 {
+      display:inline-block;
+    }
+    }
+  }
+
+a:visited {
+color: #127ebf;
+}
+
+.cycles-list {
+  margin: 0;
+  padding-left: .5rem;
+}
+
+.cycle-name {
+  display: inline-block;
+  margin-right: .2rem;
+}
+
+.logged-cycle-name {
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 2rem;
+}
+
+.cycle-workout-list {
+
+}
+
+.workout-remove-button {
+  display: inline-block;
+  background: black;
+  border: 1px solid #940315;
+  border-radius: 10px;
+  color: #127ebf;
+  margin: .5rem;
+  padding: .3rem;
 }

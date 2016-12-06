@@ -9,14 +9,14 @@ export default React.createClass({
 
     console.log(this.props)
     return (
-      <div>
-        <li>
+
+        <li className="cycle-workout">
           <Link to={`/workouts/${this.props.workout.name}`}>
-            <h4>{this.props.workout.name}</h4>
+            <h4 className="cycle-name">{this.props.workout.name}</h4>
           </Link>
-          <input type="button" value="remove" className="remove-button" onClick={this.removeWorkout}/>
+          <input type="button" value="remove" className="workout-remove-button" onClick={this.removeWorkout}/>
         </li>
-      </div>
+
     );
 },
 
