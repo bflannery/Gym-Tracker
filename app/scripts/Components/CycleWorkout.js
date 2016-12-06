@@ -1,29 +1,46 @@
 import React from 'react';
-import store from '../store';
 import { Link } from 'react-router';
+import store from '../store';
+import moment from 'moment';
+
 
 
 export default React.createClass({
 
   render() {
-    return (
+    let cycleWorkout;
+
+    if(this.props.workout.workoutDate === "") {
+      cycleWorkout = (
+
+          <li className="cycle-workout">
+            <Link to={`/workouts/${this.props.workout.name}`}>
+              <h4 className="cycle-name">{this.props.workout.name}</h4>
+            </Link>
+            <input type="button" value="remove" className="workout-remove-button" onClick={this.removeWorkout}/>
+          </li>
+
+      );
+    } else {
+      cycleWorkout = (
 
         <li className="cycle-workout">
           <Link to={`/workouts/${this.props.workout.name}`}>
             <h4 className="cycle-name">{this.props.workout.name}</h4>
           </Link>
-          <span className="date"> Workout Date:
-            <DatePicker className="date-picker" refs="startDate" selected={this.state.startDate} onChange={this.handleChange} />
-          </span>
+            <span> {moment(this.props.workout.workoutDate).format('L')} </span>
           <input type="button" value="remove" className="workout-remove-button" onClick={this.removeWorkout}/>
         </li>
-
-    );
+      );
+  }
+  return (
+    <div>
+      {cycleWorkout}
+    </div>
+  )
 },
 
 removeWorkout() {
   store.loggedCycle.get(this.props.cycleId).removeWorkoutFromCycle(this.props.workout.objectId)
-},
-
-
+}
 })

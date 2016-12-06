@@ -11,7 +11,7 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      cycle: {workouts: []},
+      cycle: {cycleWorkouts: []},
       loggedWorkout: store.loggedWorkout.toJSON(),
       loggedCycle: store.loggedCycle.toJSON(),
       startDate: moment()
@@ -55,6 +55,7 @@ export default React.createClass({
   },
 
   render() {
+    console.log(this.state)
     return (
       <div className="main-container">
         <div className="cycle-page">
@@ -88,16 +89,16 @@ export default React.createClass({
   handleChangeStart(startDate) {
     this.setState({
       startDate: startDate,
-      cycle: store.loggedCycle.find(this.props.params).toJSON(),
-      loggedCycle: store.loggedCycle.toJSON()
+      // cycle: store.loggedCycle.find(this.props.params).toJSON(),
+      // loggedCycle: store.loggedCycle.toJSON()
     })
   },
 
   handleChangeEnd(endDate) {
     this.setState({
       endDate: endDate,
-      cycle: store.loggedCycle.find(this.props.params).toJSON(),
-      loggedCycle: store.loggedCycle.toJSON()
+      // cycle: store.loggedCycle.find(this.props.params).toJSON(),
+      // loggedCycle: store.loggedCycle.toJSON()
     })
   }
 });

@@ -6,26 +6,50 @@ import moment from 'moment';
 
 export default React.createClass({
   render() {
-    return (
+    console.log(this.props)
+
+    let loggedWorkout;
+
+    if(this.props.workout.workoutDate === "") {
+      loggedWorkout = (
+
+          <li className="workout-preview">
+            <Link to = {`/workouts/${this.props.workout.name}`} onClick={this.onClick}>
+            <h4 className="workout-name"> {this.props.workout.name} </h4>
+            </Link>
+            <input type="submit" className="add-button" value="Add To Cycle" onClick={this.handleSubmit}/>
+          </li>
+
+      );
+    } else {
+      loggedWorkout = (
 
         <li className="workout-preview">
           <Link to = {`/workouts/${this.props.workout.name}`} onClick={this.onClick}>
           <h4 className="workout-name"> {this.props.workout.name} </h4>
           </Link>
 
-          <span> {moment(this.props.workout.created).format('L')}</span>
+          <span> {moment(this.props.workout.workoutDate).format('L')}</span>
           <input type="submit" className="add-button" value="Add To Cycle" onClick={this.handleSubmit}/>
         </li>
 
     );
-  },
+  }
+  return (
+    <div>
+      {loggedWorkout}
+    </div>
+  )
+},
 
   handleSubmit(e) {
     e.preventDefault();
-
+    console.log(this.props.workout.objectId)
     let id = this.props.workout.objectId
+    let name = this.props.workout.name
     store.loggedCycle.get(this.props.cycleId).addWorkoutToCycle({
-      id : id
+      id : id,
+      name : name
     });
   },
 

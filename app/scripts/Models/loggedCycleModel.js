@@ -9,14 +9,18 @@ export default Backbone.Model.extend({
     defaults: {
       name: '',
       startDate: '',
-      endDate: ''
+      endDate: '',
+      cycleWorkouts: []
     },
 
     addWorkoutToCycle({id}) {
       this.save({
-          workouts: this.get('workouts').concat([{
-            ___class: 'Workouts',
-            objectId : id,
+          cycleWorkouts: this.get('cycleWorkouts').concat([{
+            ___class: 'CycleWorkouts',
+            workout: {
+              ___class: 'Workouts',
+              objectId: id
+            }
           }])
 
     });
@@ -31,6 +35,11 @@ export default Backbone.Model.extend({
     })
     this.save({
       workouts: newCycleWorkouts
+    },
+    {
+      success: () => {
+        this.fetch();
+      }
     })
   },
 
