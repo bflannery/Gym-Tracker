@@ -12,6 +12,9 @@ export default React.createClass({
           <Link to={`/workouts/${this.props.workout.name}`}>
             <h4 className="cycle-name">{this.props.workout.name}</h4>
           </Link>
+          <span className="date"> Workout Date:
+            <DatePicker className="date-picker" refs="startDate" selected={this.state.startDate} onChange={this.handleChange} />
+          </span>
           <input type="button" value="remove" className="workout-remove-button" onClick={this.removeWorkout}/>
         </li>
 
@@ -20,5 +23,7 @@ export default React.createClass({
 
 removeWorkout() {
   store.loggedCycle.get(this.props.cycleId).removeWorkoutFromCycle(this.props.workout.objectId)
-}
+},
+
+
 })

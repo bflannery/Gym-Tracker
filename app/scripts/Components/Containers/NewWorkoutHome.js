@@ -3,11 +3,9 @@ import {browserHistory} from 'react-router';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import store from '../../store';
+
 import MovementSearch from '../MovementSearch';
 import LoggedMovements from '../LoggedMovements';
-
-
-
 
 export default React.createClass ({
 
@@ -78,7 +76,7 @@ export default React.createClass ({
     );
   },
   handleSaveWorkout() {
-  let workoutDate = this.state.startDate._d
+  let workoutDate = this.state.startDate._d;
   store.loggedWorkout.get(this.state.workout.objectId).addDateToWorkout(workoutDate);
   browserHistory.push('/workouts')
   },

@@ -7,7 +7,9 @@ export default Backbone.Model.extend({
 
     idAttribute: 'objectId',
     defaults: {
-      name: ''
+      name: '',
+      startDate: '',
+      endDate: ''
     },
 
     addWorkoutToCycle({id}) {
@@ -30,5 +32,12 @@ export default Backbone.Model.extend({
     this.save({
       workouts: newCycleWorkouts
     })
+  },
+
+  addDatesToCycle(startDate, endDate) {
+    this.save({
+      startDate: startDate,
+      endDate: endDate
+    });
   }
   });

@@ -6,13 +6,33 @@ import moment from 'moment';
 
 export default React.createClass({
   render() {
-    return (
+    console.log(this.props)
+    let cycle;
+
+    if(this.props.cycle.startDate === "" && this.props.cycle.endDate === "") {
+
+      cycle = (
+          <li className="cycle-preview">
+            <Link to = {`/cycles/${this.props.cycle.name}`} onClick={this.onClick}>
+              <h4> {this.props.cycle.name} </h4>
+            </Link>
+          </li>
+      )
+    } else {
+
+      cycle = (
         <li className="cycle-preview">
           <Link to = {`/cycles/${this.props.cycle.name}`} onClick={this.onClick}>
-          <h4> {this.props.cycle.name} </h4>
+            <h4> {this.props.cycle.name} </h4>
           </Link>
-          <span> {moment(this.props.cycle.created).format('L')} </span>
+          <span> {moment(this.props.cycle.startDate).format('L')} - {moment(this.props.cycle.endDate).format('L')}</span>
         </li>
-    );
+    )
   }
+  return (
+    <div>
+      {cycle}
+    </div>
+  )
+}
 });
