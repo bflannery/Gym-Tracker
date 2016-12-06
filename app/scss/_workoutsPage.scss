@@ -1,6 +1,5 @@
 .workout-page {
   text-align: left;
-
 }
 
 .workout-name {
@@ -42,10 +41,18 @@
       a {
     text-decoration: none;
     color: #127ebf;
-    
+
     }
   }
 
 a:visited {
 color: #127ebf;
+}
+
+.date-picker {
+  margin-left: .5rem;
+}
+
+.date {
+  padding-left: 1rem;
 }

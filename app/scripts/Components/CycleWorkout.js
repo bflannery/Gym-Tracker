@@ -6,8 +6,6 @@ import { Link } from 'react-router';
 export default React.createClass({
 
   render() {
-
-    console.log(this.props)
     return (
 
         <li className="cycle-workout">

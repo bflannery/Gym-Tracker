@@ -7,7 +7,8 @@ rootUrl: 'https://api.backendless.com/v1/data/Workouts',
 
   idAttribute: 'objectId',
   defaults: {
-    name: ''
+    name: '',
+    workoutDate: ''
   },
 
   addMovementToWorkout({name, reps, sets, weight, created, notes}) {
@@ -57,5 +58,12 @@ rootUrl: 'https://api.backendless.com/v1/data/Workouts',
         })
       }
     })
+  },
+
+  addDateToWorkout(date) {
+    this.save({
+        workoutDate: date
+      });
+
   }
 });

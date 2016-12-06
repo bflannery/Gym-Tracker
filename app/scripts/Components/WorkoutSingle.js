@@ -7,14 +7,32 @@ import moment from 'moment';
 
 export default React.createClass({
   render() {
+    console.log(this.props)
+    let workout;
 
-    return (
-        <li className="workout-preview">
-          <Link to = {`/workouts/${this.props.workout.name}`} onClick={this.onClick}>
-          <h4 className="workout-name"> {this.props.workout.name} </h4>
-          </Link>
-            <span> {moment(this.props.workout.created).format('L')} </span>
-        </li>
-    );
+    if(this.props.workout.workoutDate === "") {
+
+        workout = ( <li className="workout-preview">
+                      <Link to = {`/workouts/${this.props.workout.name}`} onClick={this.onClick}>
+                        <h4 className="workout-name"> {this.props.workout.name} </h4>
+                      </Link>
+                    </li>
+                )
+    } else {
+
+      workout = (
+                <li className="workout-preview">
+                  <Link to = {`/workouts/${this.props.workout.name}`} onClick={this.onClick}>
+                    <h4 className="workout-name"> {this.props.workout.name} </h4>
+                  </Link>
+                  <span> {moment(this.props.workout.workoutDate).format('L')} </span>
+                </li>
+              )
   }
+  return (
+    <div>
+      {workout}
+    </div>
+  )
+}
 });

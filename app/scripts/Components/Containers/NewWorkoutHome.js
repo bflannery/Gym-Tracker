@@ -1,9 +1,12 @@
 import React from 'react';
-import store from '../../store';
 import {browserHistory} from 'react-router';
-
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import store from '../../store';
 import MovementSearch from '../MovementSearch';
 import LoggedMovements from '../LoggedMovements';
+
+
 
 
 export default React.createClass ({
@@ -12,8 +15,9 @@ export default React.createClass ({
     return {
       workout: {movements: []},
       // loggedMovement: store.loggedMovement.toJSON(),
-      loggedWorkout: store.loggedWorkout.toJSON()
-    }
+      loggedWorkout: store.loggedWorkout.toJSON(),
+      startDate: moment()
+    };
   },
 
   componentDidMount() {
@@ -63,20 +67,30 @@ export default React.createClass ({
         <div className="workout-page">
           <input type="button" className="back-button" value="Back" onClick={this.handleBack}/>
           <h2 className="logged-workout-name">{this.props.params.name}</h2>
-          <input type="submit" className="save-button" onClick={this.SaveWorkout} value="Save Workout!"/>
-
+          <span className="date"> Workout Date:
+            <DatePicker className="date-picker" refs="startDate" selected={this.state.startDate} onChange={this.handleChange} />
+          </span>
           <LoggedMovements movements={this.state.workout.movements} workoutId={this.state.workout.objectId}/>
+          <input type="submit" className="save-button" onClick={this.handleSaveWorkout} value="Save Workout!"/>
           <MovementSearch workout={this.state.loggedWorkout} workoutId={this.state.workout.objectId}/>
         </div>
       </div>
     );
   },
-  SaveWorkout() {
-    console.log('saved')
-    browserHistory.push('/workouts')
+  handleSaveWorkout() {
+    console.log(this.state.startDate._d)
+  let workoutDate = this.state.startDate._d
+  store.loggedWorkout.get(this.state.workout.objectId).addDateToWorkout(workoutDate);
+  browserHistory.push('/workouts')
   },
 
   handleBack () {
     browserHistory.push('/workouts')
+  },
+
+  handleChange (date) {
+    this.setState({
+      startDate: date
+    });
   }
 });

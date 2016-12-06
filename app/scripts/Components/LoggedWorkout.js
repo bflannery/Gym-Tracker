@@ -6,7 +6,6 @@ import moment from 'moment';
 
 export default React.createClass({
   render() {
-    console.log(this.props)
     return (
 
         <li className="workout-preview">
