@@ -75,6 +75,7 @@ export default React.createClass ({
       </div>
     );
   },
+  
   handleSaveWorkout() {
   let workoutDate = this.state.startDate._d;
   store.loggedWorkout.get(this.state.workout.objectId).addDateToWorkout(workoutDate);

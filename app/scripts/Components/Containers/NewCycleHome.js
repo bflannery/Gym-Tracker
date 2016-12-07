@@ -14,7 +14,7 @@ export default React.createClass({
       cycle: {cycleWorkouts: []},
       loggedWorkout: store.loggedWorkout.toJSON(),
       loggedCycle: store.loggedCycle.toJSON(),
-      startDate: moment()
+
     };
   },
 
@@ -55,30 +55,62 @@ export default React.createClass({
   },
 
   render() {
-    return (
-      <div className="main-container">
+    console.log(this.state)
+
+    let cycleLength;
+
+    if(this.state.cycle.cycleStartDate === null & this.state.cycle.cycleEndDate === null) {
+      cycleLength = (
         <div className="cycle-page">
           <input type="button" className="back-button" value="Back" onClick={this.handleBack}/>
           <h2 className="logged-cycle-name">{this.props.params.name}</h2>
-          <span className="cycle-start"> Cycle Start:
-          <DatePicker selected={this.state.startDate} selectsStart startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeStart} />
-          </span>
-          <span className="cycle-end"> Cycle End:
-          <DatePicker selected={this.state.endDate} selectsEnd startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeEnd} />
+          <form>
+            <span className="cycle-start"> Cycle Start:
+              <DatePicker selected={this.state.startDate} selectsStart startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeStart} />
+            </span>
+            <span className="cycle-end"> Cycle End:
+              <DatePicker selected={this.state.endDate} selectsEnd startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeEnd} />
           </span>
           <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycleId={this.state.cycle.objectId} />
           <input type="submit" className="save-button" onClick={this.handleSaveCycle} value="Save Cycle!"/>
+          </form>
           <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
         </div>
+      )
+    } else {
+      cycleLength = (
+          <div className="cycle-page">
+        <input type="button" className="back-button" value="Back" onClick={this.handleBack}/>
+        <h2 className="logged-cycle-name">{this.props.params.name}</h2>
+        <form>
+          <span className="cycle-start"> Cycle Start:
+            <DatePicker selected={moment(this.state.cycle.cycleStartDate)} selectsStart startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeStart} />
+          </span>
+          <span className="cycle-end"> Cycle End:
+            <DatePicker selected={moment(this.state.cycle.cycleEndDate)} selectsEnd startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeEnd} />
+        </span>
+        <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycleId={this.state.cycle.objectId} />
+        <input type="submit" className="save-button" onClick={this.handleSaveCycle} value="Save Cycle!"/>
+        </form>
+        <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
+      </div>
+    );
+    }
+    return (
+      <div className="main-container">
+        {cycleLength}
       </div>
     );
   },
 
-  handleSaveCycle() {
-    let cycleStart = this.state.startDate._d;
+  handleSaveCycle(e) {
+    e.preventDefault();
+
     let cycleEnd = this.state.endDate._d;
-    store.loggedCycle.get(this.state.cycle.objectId).addDatesToCycle(cycleStart, cycleEnd);
-    browserHistory.push('/cycles')
+    console.log(cycleStart)
+    console.log(cycleEnd)
+
+
   },
 
   handleBack () {
@@ -86,18 +118,14 @@ export default React.createClass({
   },
 
   handleChangeStart(startDate) {
-    this.setState({
-      startDate: startDate,
-      // cycle: store.loggedCycle.find(this.props.params).toJSON(),
-      // loggedCycle: store.loggedCycle.toJSON()
-    })
+    let cycleStart = startDate;
+    let end = this.state.cycle.cycleEndDate
+    store.loggedCycle.get(this.state.cycle.objectId).addDatesToCycle(cycleStart, end);
   },
 
   handleChangeEnd(endDate) {
-    this.setState({
-      endDate: endDate,
-      // cycle: store.loggedCycle.find(this.props.params).toJSON(),
-      // loggedCycle: store.loggedCycle.toJSON()
-    })
+    let cycleEnd = endDate;
+    let start = this.state.cycle.cycleStartDate
+    store.loggedCycle.get(this.state.cycle.objectId).addDatesToCycle(start, cycleEnd);
   }
 });

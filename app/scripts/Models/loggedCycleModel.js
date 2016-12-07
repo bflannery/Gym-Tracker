@@ -8,21 +8,32 @@ export default Backbone.Model.extend({
     idAttribute: 'objectId',
     defaults: {
       name: '',
-      startDate: '',
-      endDate: '',
-      cycleWorkouts: [{
-        workoutDate: ''
-      }],
     },
 
-    addWorkoutToCycle({id, date}) {
+    addDateToWorkout(workoutDate) {
+      console.log(workoutDate)
+      this.save({
+        cycleWorkouts: this.get('cycleWorkouts').concat([{
+          ___class: 'CycleWorkouts',
+          workoutDate: workoutDate,
+          workout: {
+            ___class: 'Workouts',
+            objectId: id,
+            date: date
+          }
+        }])
+      });
+    },
+
+    addWorkoutToCycle({id, name}) {
       this.save({
           cycleWorkouts: this.get('cycleWorkouts').concat([{
             ___class: 'CycleWorkouts',
-            workoutDate : date,
+            workout: name,
             workout: {
               ___class: 'Workouts',
               objectId: id,
+
             }
           }])
 
@@ -47,9 +58,11 @@ export default Backbone.Model.extend({
   },
 
   addDatesToCycle(startDate, endDate) {
+    console.log(startDate)
+    console.log(endDate)
     this.save({
-      startDate: startDate,
-      endDate: endDate
-    });
+        cycleStartDate: startDate,
+        cycleEndDate: endDate
+    })
   }
   });
