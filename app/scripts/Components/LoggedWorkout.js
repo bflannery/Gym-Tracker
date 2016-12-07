@@ -6,7 +6,6 @@ import moment from 'moment';
 
 export default React.createClass({
   render() {
-    console.log(this.props)
 
     let loggedWorkout;
 
@@ -44,13 +43,9 @@ export default React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props.workout.objectId)
     let id = this.props.workout.objectId
-    let name = this.props.workout.name
-    store.loggedCycle.get(this.props.cycleId).addWorkoutToCycle({
-      id : id,
-      name : name
-    });
+    let date = this.props.workout.workoutDate
+    store.loggedCycle.get(this.props.cycleId).addWorkoutToCycle({id: id, date: date})
   },
 
   removeWorkout() {

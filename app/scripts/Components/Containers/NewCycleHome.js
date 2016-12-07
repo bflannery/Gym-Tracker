@@ -55,7 +55,6 @@ export default React.createClass({
   },
 
   render() {
-    console.log(this.state)
     return (
       <div className="main-container">
         <div className="cycle-page">
@@ -67,7 +66,7 @@ export default React.createClass({
           <span className="cycle-end"> Cycle End:
           <DatePicker selected={this.state.endDate} selectsEnd startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeEnd} />
           </span>
-          <CycleWorkouts workouts={this.state.cycle.workouts} cycleId={this.state.cycle.objectId} />
+          <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycleId={this.state.cycle.objectId} />
           <input type="submit" className="save-button" onClick={this.handleSaveCycle} value="Save Cycle!"/>
           <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
         </div>

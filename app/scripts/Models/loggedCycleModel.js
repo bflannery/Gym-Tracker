@@ -10,16 +10,19 @@ export default Backbone.Model.extend({
       name: '',
       startDate: '',
       endDate: '',
-      cycleWorkouts: []
+      cycleWorkouts: [{
+        workoutDate: ''
+      }],
     },
 
-    addWorkoutToCycle({id}) {
+    addWorkoutToCycle({id, date}) {
       this.save({
           cycleWorkouts: this.get('cycleWorkouts').concat([{
             ___class: 'CycleWorkouts',
+            workoutDate : date,
             workout: {
               ___class: 'Workouts',
-              objectId: id
+              objectId: id,
             }
           }])
 

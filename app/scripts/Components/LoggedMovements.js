@@ -8,10 +8,10 @@ export default React.createClass({
 
 
   render(){
-  
+
       let workoutMovements;
 
-      if(this.props.movements === undefined) {
+      if(this.props.movements === null) {
         workoutMovements = <div />
       } else {
         workoutMovements = this.props.movements.map((movement, i, arr)=>{

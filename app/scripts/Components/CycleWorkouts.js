@@ -8,13 +8,13 @@ export default React.createClass({
 
     let cycleWorkouts;
 
-    if(this.props.workouts=== undefined) {
+    if(this.props.cycleWorkouts=== undefined) {
       cycleWorkouts = <div />
     } else {
 
-      cycleWorkouts = this.props.workouts.map((workout, i, arr)=>{
+      cycleWorkouts = this.props.cycleWorkouts.map((cycleWorkout, i, arr)=>{
       return (
-      <CycleWorkout key={i} workout={workout} cycleId={this.props.cycleId}/>
+      <CycleWorkout key={i} cycleWorkout={cycleWorkout} cycleId={this.props.cycleId}/>
     )
     })
     }
