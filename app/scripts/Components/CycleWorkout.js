@@ -8,20 +8,13 @@ import moment from 'moment';
 
 export default React.createClass({
 
-  getInitialState: function() {
-    return {
-      startDate: moment()
-    };
-  },
-
-  handleChange: function(date) {
-    this.setState({ startDate: date });
-  },
 
   render() {
+    console.log(this.props)
     let cycleWorkout;
 
-    if(this.props.cycleWorkout.workoutDate === "") {
+    if(this.props.cycleWorkout.workoutDate === null) {
+
       cycleWorkout = (
 
           <li className="cycle-workout">
@@ -29,12 +22,13 @@ export default React.createClass({
               <h4 className="cycle-name">{this.props.cycleWorkout.workout.name}</h4>
             </Link>
             <span className="date"> Workout Date:
-              <DatePicker className="date-picker" ref="startDate" selected={this.state.startDate} onChange={this.handleChange} onSubmit={this.setWorkoutDate}/>
+              <DatePicker className="date-picker" selected={moment(this.props.cycleStartDate)} onChange={this.handleChange}/>
             </span>
             <input type="button" value="Remove From Cycle" className="workout-remove-button" onClick={this.removeWorkout}/>
           </li>
 
       );
+
     } else {
       cycleWorkout = (
 
@@ -43,7 +37,7 @@ export default React.createClass({
             <h4 className="cycle-name">{this.props.cycleWorkout.workout.name}</h4>
           </Link>
           <span className="date"> Workout Date:
-            <DatePicker className="date-picker" ref="startDate" selected={this.state.startDate} onChange={this.handleChange} onSubmit={this.setWorkoutDate}/>
+            <DatePicker className="date-picker"  selected={moment(this.props.cycleWorkout.workoutDate)} onChange={this.handleChange} />
           </span>
           <input type="button" value="Remove From Cycle" className="workout-remove-button" onClick={this.removeWorkout}/>
         </li>
@@ -59,6 +53,12 @@ export default React.createClass({
 removeWorkout() {
   let id = this.props.cycleWorkout.objectId
   store.loggedCycle.get(this.props.cycleId).removeWorkoutFromCycle(id)
+},
+
+handleChange(date) {
+  let workoutDate = date.format('L')
+  let cycleWorkoutId = this.props.cycleWorkout.objectId
+  store.loggedCycle.get(this.props.cycleId).addDateToWorkout(workoutDate, cycleWorkoutId)
 },
 
 })

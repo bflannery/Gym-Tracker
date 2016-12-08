@@ -71,7 +71,7 @@ export default React.createClass({
             <span className="cycle-end"> Cycle End:
               <DatePicker selected={this.state.endDate} selectsEnd startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeEnd} />
           </span>
-          <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycleId={this.state.cycle.objectId} />
+          <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycle={this.state.cycle} />
           <input type="submit" className="save-button" onClick={this.handleSaveCycle} value="Save Cycle!"/>
           </form>
           <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
@@ -89,7 +89,7 @@ export default React.createClass({
           <span className="cycle-end"> Cycle End:
             <DatePicker selected={moment(this.state.cycle.cycleEndDate)} selectsEnd startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeEnd} />
         </span>
-        <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycleId={this.state.cycle.objectId} />
+        <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycle={this.state.cycle} />
         <input type="submit" className="save-button" onClick={this.handleSaveCycle} value="Save Cycle!"/>
         </form>
         <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
@@ -105,12 +105,6 @@ export default React.createClass({
 
   handleSaveCycle(e) {
     e.preventDefault();
-
-    let cycleEnd = this.state.endDate._d;
-    console.log(cycleStart)
-    console.log(cycleEnd)
-
-
   },
 
   handleBack () {

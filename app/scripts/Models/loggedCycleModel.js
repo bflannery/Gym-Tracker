@@ -10,19 +10,18 @@ export default Backbone.Model.extend({
       name: '',
     },
 
-    addDateToWorkout(workoutDate) {
-      console.log(workoutDate)
-      this.save({
-        cycleWorkouts: this.get('cycleWorkouts').concat([{
-          ___class: 'CycleWorkouts',
-          workoutDate: workoutDate,
-          workout: {
-            ___class: 'Workouts',
-            objectId: id,
-            date: date
-          }
-        }])
-      });
+    addDateToWorkout(workoutDate, cycleWorkoutId) {
+        $.ajax({
+            type: 'PUT',
+            url: `https://api.backendless.com/v1/data/CycleWorkouts/${cycleWorkoutId}`,
+            contentType: 'application/json',
+            data: JSON.stringify({
+              workoutDate: workoutDate
+            }),
+            success: () => {
+                this.fetch();
+            }
+          })
     },
 
     addWorkoutToCycle({id, name}) {
@@ -41,19 +40,14 @@ export default Backbone.Model.extend({
   },
 
   removeWorkoutFromCycle(objectId) {
-    let newCycleWorkouts = this.get('workouts').filter((workout, i , arr) => {
 
-      if(objectId !== workout.objectId) {
+    let newCycleWorkouts = this.get('cycleWorkouts').filter((cycleWorkout, i , arr) => {
+      if(objectId !== cycleWorkout.objectId) {
         return true
       }
     })
     this.save({
-      workouts: newCycleWorkouts
-    },
-    {
-      success: () => {
-        this.fetch();
-      }
+      cycleWorkouts: newCycleWorkouts
     })
   },
 

@@ -5,19 +5,19 @@ import store from '../store';
 
 export default React.createClass({
   render(){
-
+    console.log(this.props)
     let cycleWorkouts;
 
     if(this.props.cycleWorkouts=== undefined) {
-      cycleWorkouts = <div />
-    } else {
 
+      cycleWorkouts = <div />
+        } else {
       cycleWorkouts = this.props.cycleWorkouts.map((cycleWorkout, i, arr)=>{
-      return (
-      <CycleWorkout key={i} cycleWorkout={cycleWorkout} cycleId={this.props.cycleId}/>
-    )
-    })
-    }
+        return (
+          <CycleWorkout key={i} cycleWorkout={cycleWorkout} cycleId={this.props.cycle.objectId} cycleStartDate={this.props.cycle.cycleStartDate}/>
+            )
+          })
+        }
 
     return (
 
@@ -28,6 +28,5 @@ export default React.createClass({
     )
   }
 })
-
 
 //
