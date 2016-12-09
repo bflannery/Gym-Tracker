@@ -10,8 +10,7 @@ export default React.createClass({
       <div className="main-container">
         <div className="current-container">
           <h2> Todays Workout </h2>
-          <h2> Current Cycle </h2>
-        </div>  
+        </div>
         <div className="home-workout" onClick={this.WorkoutLink}>
           <h2 className="section-title"> Workouts </h2>
           <div className="home-workout-container"></div>

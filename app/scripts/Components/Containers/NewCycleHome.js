@@ -11,7 +11,9 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      cycle: {cycleWorkouts: []},
+      cycle: {
+        cycleWorkouts: []
+      },
       loggedWorkout: store.loggedWorkout.toJSON(),
       loggedCycle: store.loggedCycle.toJSON(),
 
@@ -55,14 +57,14 @@ export default React.createClass({
   },
 
   render() {
-    console.log(this.state)
+    console.log(this.props)
 
     let cycleLength;
 
-    if(this.state.cycle.cycleStartDate === null & this.state.cycle.cycleEndDate === null) {
+    if(this.state.cycle.cycleStartDate === null || this.state.cycle.cycleEndDate === null) {
       cycleLength = (
         <div className="cycle-page">
-          <input type="button" className="back-button" value="Back" onClick={this.handleBack}/>
+          <button className="back-button" onClick={this.handleBack}>Back</button>
           <h2 className="logged-cycle-name">{this.props.params.name}</h2>
           <form>
             <span className="cycle-start"> Cycle Start:
@@ -77,10 +79,11 @@ export default React.createClass({
           <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
         </div>
       )
-    } else {
+    }
+    else {
       cycleLength = (
           <div className="cycle-page">
-        <input type="button" className="back-button" value="Back" onClick={this.handleBack}/>
+          <button className="back-button" onClick={this.handleBack}>Back</button>
         <h2 className="logged-cycle-name">{this.props.params.name}</h2>
         <form>
           <span className="cycle-start"> Cycle Start:
@@ -104,11 +107,11 @@ export default React.createClass({
   },
 
   handleSaveCycle(e) {
-    e.preventDefault();
+    browserHistory.push('/cycles')
   },
 
   handleBack () {
-    browserHistory.push('/cycles')
+    browserHistory.goBack()
   },
 
   handleChangeStart(startDate) {

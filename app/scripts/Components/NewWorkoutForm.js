@@ -6,13 +6,15 @@ export default React.createClass({
     return (
       <div className="create-workout">
         <input type="text" ref="create" className="new-input" placeholder="Create New Workout"/>
-        <input type="submit" value="Create" className="create-button" onClick={this.handleClick}/>
+        <input type="text" ref="workoutDescription" className="workout-info" placeholder="Description"/>
+        <input type="submit" value="Create" className="create-button" onClick={this.createWorkout}/>
       </div>
     );
   },
 
-  handleClick(){
+  createWorkout(){
     let workoutName = this.refs.create.value;
-    store.loggedWorkout.create({ name : workoutName });
+    let workoutDescription = this.refs.workoutDescription.value;
+    store.loggedWorkout.create({ name : workoutName , description : workoutDescription });
   }
 });

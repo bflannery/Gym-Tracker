@@ -10,7 +10,7 @@ export default React.createClass({
 
 
   render() {
-    console.log(this.props)
+      console.log(this.props)
     let cycleWorkout;
 
     if(this.props.cycleWorkout.workoutDate === null) {
@@ -18,7 +18,7 @@ export default React.createClass({
       cycleWorkout = (
 
           <li className="cycle-workout">
-            <Link to={`/workouts/${this.props.cycleWorkout.workoutname}`}>
+            <Link to={`/workouts/${this.props.cycleWorkout.workout.name}`}>
               <h4 className="cycle-name">{this.props.cycleWorkout.workout.name}</h4>
             </Link>
             <span className="date"> Workout Date:
@@ -30,6 +30,7 @@ export default React.createClass({
       );
 
     } else {
+
       cycleWorkout = (
 
         <li className="cycle-workout">
