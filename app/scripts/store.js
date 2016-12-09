@@ -11,7 +11,7 @@ export default {
   session        : new Session(),
   movements      : new Movements(),
   workout        : new Workout(),
-  athletes        : new Athletes(),
+  athletes       : new Athletes(),
   loggedMovement : new LoggedMovement(),
   loggedWorkout  : new LoggedWorkout(),
   loggedCycle    : new LoggedCycle()
