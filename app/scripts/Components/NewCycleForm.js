@@ -13,12 +13,15 @@ export default React.createClass({
   );
 },
 
-createCycle(objectId){
+createCycle(e){
+  e.preventDefault();
   let cycleName = this.refs.createCycle.value;
   let cycleDescription = this.refs.cycleDescription.value;
   store.loggedCycle.create({
      name : cycleName ,
      description : cycleDescription
    });
+   this.refs.createCycle.value = "";
+   this.refs.cycleDescription.value="";
   }
 });

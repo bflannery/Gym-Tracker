@@ -6,18 +6,17 @@ import moment from 'moment';
 
 export default React.createClass({
   render() {
-    console.log(this.props)
     let cycle;
 
-    if(this.props.cycle.cycleStartDate === null && this.props.cycle.cycleEndDate === null) {
+    if(!this.props.cycle.cycleStartDate) {
 
       cycle = (
           <li className="cycle-preview">
             <Link to = {`/cycles/${this.props.cycle.name}`} onClick={this.onClick}>
               <h4> {this.props.cycle.name} </h4>
             </Link>
-              <span> {this.props.cycle.description} </span>
-                <input type="button" value="Delete Cycle" className="cycle-remove-button" onClick={this.removeCycle}/>
+            <span> {this.props.cycle.description} </span>
+            <input type="button" value="Delete Cycle" className="cycle-remove-button" onClick={this.removeCycle}/>
           </li>
       )
     } else {

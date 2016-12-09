@@ -8,11 +8,16 @@ import moment from 'moment';
 
 export default React.createClass({
 
+  getInitialState() {
+    return {
+      startDate: moment()
+    }
+  },
 
   render() {
     let cycleWorkout;
 
-    if(this.props.cycleWorkout.workoutDate === null) {
+    if(!this.props.cycleWorkout.workoutDate) {
 
       cycleWorkout = (
 
@@ -21,7 +26,7 @@ export default React.createClass({
               <h4 className="cycle-name">{this.props.cycleWorkout.workout.name}</h4>
             </Link>
             <span className="date"> Workout Date:
-              <DatePicker className="date-picker" selected={moment(this.props.cycleStartDate)} onChange={this.handleChange}/>
+              <DatePicker className="date-picker" selected={this.props.startDate} onChange={this.handleChange}/>
             </span>
             <input type="button" value="Remove From Cycle" className="workout-remove-button" onClick={this.removeWorkout}/>
           </li>
@@ -56,7 +61,7 @@ removeWorkout() {
 },
 
 handleChange(date) {
-  let workoutDate = date.format('L')
+  let workoutDate = date.format()
   let cycleWorkoutId = this.props.cycleWorkout.objectId
   store.loggedCycle.get(this.props.cycleId).addDateToWorkout(workoutDate, cycleWorkoutId)
 },

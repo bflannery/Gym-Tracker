@@ -1,14 +1,26 @@
 import React from 'react';
+import store from '../store';
+import { Link } from 'react-router';
+
 
 export default React.createClass({
   render() {
+    console.log(this.props)
     return (
       <li className="athlete-preview">
-        <span className="athlete-info"> Name: Brian </span>
-        <span className="athlete-info"> Age: 29 </span>
-        <span className="athlete-info"> Weight: 185 lbs  </span>
-        <span className="athlete-info"> Goal: Endurance </span>
+        <Link to= {`/athletes/${this.props.athlete.name}`} onClick={this.onClick}>
+          <h4> {this.props.athlete.name} </h4>
+        </Link>
+        <span> {this.props.athlete.age} </span>
+        <span> {this.props.athlete.weight} </span>
+        <span> {this.props.athlete.goal} </span>
+        <input type="button" value="Delete Athlete" className="athlete-remove-button" onClick={this.removeAthlete}/>
       </li>
     );
-  }
+  },
+  removeAthlete() {
+    let id = this.props.athlete.objectId
+    console.log(this.props.athleteId)
+    store.athletes.get(this.props.athleteId).deleteAthlete(id)
+   }
 });

@@ -14,6 +14,9 @@ import NewWorkoutHome from './Components/Containers/NewWorkoutHome';
 import CyclesPage from './Components/Containers/CyclesPage';
 import NewCycleHome from './Components/Containers/NewCycleHome';
 
+import AthletesPage from './Components/Containers/AthletesPage';
+import AthleteProfileHome from './Components/Containers/AthleteProfileHome';
+
 import store from './store';
 
 let getAuth = function(nextState, replace, callback){
@@ -34,6 +37,9 @@ const router = (
 
         <Route path='/cycles' component={CyclesPage}/>
           <Route path='/cycles/:name' component={NewCycleHome}/>
+
+        <Route path='/athletes' component={AthletesPage}/>
+          <Route path='/athletes/:name' component={AthleteProfileHome}/>
 
       </Route>
     </Router>

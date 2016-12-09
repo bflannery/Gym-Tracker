@@ -29,6 +29,9 @@ if(this.state.authenticated) {
       <li className="nav-list">
           <Link to="/cycles"> Cycles</Link>
       </li>
+      <li className="nav-list">
+          <Link to="/athletes"> Athletes</Link>
+      </li>
       <li className="nav-list" id="logout">
         <input type="button" className="logout-button" onClick={this.handleLogout} value="Log Out"/>
       </li>

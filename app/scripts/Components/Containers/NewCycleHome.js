@@ -64,9 +64,10 @@ export default React.createClass({
   },
 
   render() {
+    console.log(this.props)
     let cycleLength;
 
-    if(this.state.cycle.cycleStartDate === null || this.state.cycle.cycleEndDate === null) {
+    if(this.state.cycle.cycleStartDate === null && this.state.cycle.cycleEndDate === null) {
       cycleLength = (
         <div className="cycle-page">
           <button className="back-button" onClick={this.handleBack}>Back</button>

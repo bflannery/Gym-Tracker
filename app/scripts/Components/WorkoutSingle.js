@@ -8,7 +8,6 @@ import LoggedMovements from './LoggedMovements';
 
 export default React.createClass({
   render() {
-    console.log(this.props)
     let workoutInfo;
 
     if(this.props.workout.description === null) {
@@ -22,7 +21,7 @@ export default React.createClass({
 
         )
     } else {
-
+      
       workoutInfo = (
         <div>
           <Link to = {`/workouts/${this.props.workout.name}`} onClick={this.onClick}>
