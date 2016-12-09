@@ -8,13 +8,13 @@ export default React.createClass({
   render() {
 
     return (
-      <div>
+
         <li>
           <span> {this.props.movement.name} : </span>
           <span> {this.props.movement.sets} X {this.props.movement.reps} at {this.props.movement.weight} </span>
-          <input type="button" value="remove" className="remove-button" onClick={this.removeMovement}/>
+          <button value="remove" className="remove-button" onClick={this.removeMovement}>Remove</button>
         </li>
-      </div>
+
     );
 },
 

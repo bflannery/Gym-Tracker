@@ -50,15 +50,20 @@ export default React.createClass({
   },
 
   updateCycleState() {
+    if(store.loggedCycle.find(this.props.params) === undefined){
+      this.setState({
+      cycle: { cycleWorkouts: [] },
+      loggedCycle: store.loggedCycle.toJSON()
+    })
+  } else {
     this.setState({
       cycle: store.loggedCycle.find(this.props.params).toJSON(),
       loggedCycle: store.loggedCycle.toJSON()
     });
+  }
   },
 
   render() {
-    console.log(this.props)
-
     let cycleLength;
 
     if(this.state.cycle.cycleStartDate === null || this.state.cycle.cycleEndDate === null) {
@@ -72,9 +77,9 @@ export default React.createClass({
             </span>
             <span className="cycle-end"> Cycle End:
               <DatePicker selected={this.state.endDate} selectsEnd startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeEnd} />
-          </span>
-          <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycle={this.state.cycle} />
-          <input type="submit" className="save-button" onClick={this.handleSaveCycle} value="Save Cycle!"/>
+            </span>
+            <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycle={this.state.cycle} />
+            <input type="submit" className="save-button" onClick={this.handleSaveCycle} value="Save Cycle!"/>
           </form>
           <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
         </div>
@@ -82,21 +87,21 @@ export default React.createClass({
     }
     else {
       cycleLength = (
-          <div className="cycle-page">
+        <div className="cycle-page">
           <button className="back-button" onClick={this.handleBack}>Back</button>
-        <h2 className="logged-cycle-name">{this.props.params.name}</h2>
-        <form>
-          <span className="cycle-start"> Cycle Start:
-            <DatePicker selected={moment(this.state.cycle.cycleStartDate)} selectsStart startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeStart} />
-          </span>
-          <span className="cycle-end"> Cycle End:
-            <DatePicker selected={moment(this.state.cycle.cycleEndDate)} selectsEnd startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeEnd} />
-        </span>
-        <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycle={this.state.cycle} />
-        <input type="submit" className="save-button" onClick={this.handleSaveCycle} value="Save Cycle!"/>
-        </form>
-        <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
-      </div>
+          <h2 className="logged-cycle-name">{this.props.params.name}</h2>
+          <form>
+            <span className="cycle-start"> Cycle Start:
+              <DatePicker selected={moment(this.state.cycle.cycleStartDate)} selectsStart startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeStart} />
+            </span>
+            <span className="cycle-end"> Cycle End:
+              <DatePicker selected={moment(this.state.cycle.cycleEndDate)} selectsEnd startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeEnd} />
+            </span>
+            <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycle={this.state.cycle} />
+            <input type="submit" className="save-button" onClick={this.handleSaveCycle} value="Save Cycle!"/>
+          </form>
+          <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
+        </div>
     );
     }
     return (

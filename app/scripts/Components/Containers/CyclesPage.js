@@ -11,6 +11,7 @@ export default React.createClass({
 
   getInitialState() {
     return {
+      cycleList: {},
       loggedCycle: store.loggedCycle.toJSON()
     }
   },
@@ -26,7 +27,17 @@ export default React.createClass({
     store.loggedCycle.off('update change', this.updateStatus);
   },
   updateStatus(){
-    this.setState({loggedCycle: store.loggedCycle.toJSON()})
+    if(store.loggedCycle.find(this.props.params) === undefined){
+    this.setState({
+      cycleList: {},
+      loggedCycle: store.loggedCycle.toJSON()
+    })
+  }else {
+    this.setState({
+      cycleList: store.loggedCycle.find(this.props.params).toJSON(),
+      loggedCycle: store.loggedCycle.toJSON()
+    })
+  }
 },
 
 
@@ -37,7 +48,7 @@ export default React.createClass({
           <h2> Cycles </h2>
           <div className="cycles">
             <NewCycleForm/>
-            <CyclesList cycles={this.state.loggedCycle}/>
+            <CyclesList cycles={this.state.loggedCycle} cycleId={this.state.cycleList.objectId}/>
           </div>
         </div>
       </div>

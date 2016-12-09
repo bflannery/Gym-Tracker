@@ -58,5 +58,9 @@ export default Backbone.Model.extend({
         cycleStartDate: startDate,
         cycleEndDate: endDate
     })
+  },
+  deleteCycle(objectId){
+    this.destroy({url: `https://api.backendless.com/v1/data/Cycles/${objectId}`})
   }
+
   });

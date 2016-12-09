@@ -7,21 +7,17 @@ export default React.createClass({
     let workouts;
 
     if(this.props.workouts === undefined) {
-
       workouts = <li> No Workouts </li>;
-
-    } else {
-      workouts = this.props.workouts.map((workout,i,arr) =>{
-        return <WorkoutSingle key={i} workout={workout}/>;
-
-      });
-    }
+      } else {
+          workouts = this.props.workouts.map((workout,i,arr) =>{
+            return <WorkoutSingle key={i} workout={workout} workoutId={this.props.workoutId}/>;
+          });
+        }
 
     return (
-
         <ul className="workout-list">
           {workouts}
         </ul>
-    );
-  }
+      );
+    }
 });

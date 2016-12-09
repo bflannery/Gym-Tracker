@@ -10,7 +10,6 @@ export default React.createClass({
 
 
   render() {
-      console.log(this.props)
     let cycleWorkout;
 
     if(this.props.cycleWorkout.workoutDate === null) {

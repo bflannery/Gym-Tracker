@@ -15,9 +15,9 @@ export default React.createClass({
           <li className="cycle-preview">
             <Link to = {`/cycles/${this.props.cycle.name}`} onClick={this.onClick}>
               <h4> {this.props.cycle.name} </h4>
-
             </Link>
               <span> {this.props.cycle.description} </span>
+                <input type="button" value="Delete Cycle" className="cycle-remove-button" onClick={this.removeCycle}/>
           </li>
       )
     } else {
@@ -29,6 +29,7 @@ export default React.createClass({
           </Link>
           <span> {moment(this.props.cycle.cycleStartDate).format('L')} - {moment(this.props.cycle.cycleEndDate).format('L')}</span>
           <span> {this.props.cycle.description} </span>
+          <input type="button" value="Delete Cycle" className="cycle-remove-button" onClick={this.removeCycle}/>
         </li>
     )
   }
@@ -37,5 +38,10 @@ export default React.createClass({
       {cycle}
     </div>
   )
-}
+},
+removeCycle() {
+  let id = this.props.cycle.objectId
+  console.log(this.props.cycleId)
+  store.loggedCycle.get(this.props.cycleId).deleteCycle(id)
+ }
 });

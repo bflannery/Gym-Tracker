@@ -11,9 +11,10 @@ export default React.createClass ({
 
   getInitialState() {
     return {
-      workout: {movements: []},
+      workout: {
+        movements: []
+      },
       loggedWorkout: store.loggedWorkout.toJSON(),
-      startDate: moment()
     };
   },
 
@@ -40,12 +41,18 @@ export default React.createClass ({
   },
 
   updateWorkoutState() {
+    if(store.loggedWorkout.find(this.props.params) === undefined) {
+      this.setState({
+        loggedWorkout: store.loggedWorkout.toJSON(),
+        workout: { movements: []}
+      })
+    } else {
     this.setState({
       workout: store.loggedWorkout.find(this.props.params).toJSON(),
       loggedWorkout: store.loggedWorkout.toJSON()
     });
-  },
-
+  }
+},
 
   render () {
     return (
@@ -55,7 +62,7 @@ export default React.createClass ({
           <h2 className="logged-workout-name">{this.props.params.name}</h2>
           <LoggedMovements movements={this.state.workout.movements} workoutId={this.state.workout.objectId}/>
           <input type="submit" className="save-button" onClick={this.handleSaveWorkout} value="Save Workout!"/>
-          <MovementSearch workout={this.state.loggedWorkout} workoutId={this.state.workout.objectId}/>
+          <MovementSearch workouts={this.state.loggedWorkout} workoutId={this.state.workout.objectId}/>
         </div>
       </div>
     );
@@ -66,6 +73,6 @@ export default React.createClass ({
   },
 
   handleBack() {
-    browserHistory.goBack()
+  browserHistory.goBack()
   }
 });

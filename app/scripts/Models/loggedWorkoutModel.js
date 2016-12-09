@@ -65,31 +65,8 @@ rootUrl: 'https://api.backendless.com/v1/data/Workouts',
         workoutDate: date
       });
   },
+  deleteWorkout(objectId){
+    this.destroy({url: `https://api.backendless.com/v1/data/Workouts/${objectId}`})
+  }
 
-//   deleteWorkout(objectId) {
-//     let newWorkoutList = this.get('workouts').filter((workout, i , arr) => {
-//       if(objectId !== workouts.objectId) {
-//         return true
-//       }
-//     })
-//     this.save({
-//       Workouts: newWorkoutList,
-//
-//     },{
-//       success: () => {
-//
-//         $.ajax({
-//           type: 'DELETE',
-//           url: `https://api.backendless.com/v1/data/Workouts/${objectId}`,
-//           success: (response) => {
-//             console.log('deleted')
-//               this.fetch(response)
-//           },
-//           error: () => {
-//             console.log('nice try')
-//             }
-//         })
-//       }
-//     })
-// }
 });

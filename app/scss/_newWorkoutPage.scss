@@ -8,7 +8,7 @@
 }
 
 .workout-form input {
-  display: block;
+  display: inline-block;
   background: transparent;
 border: 1px solid #940315;
 border-radius: 10px;
@@ -16,6 +16,10 @@ padding: .5rem 3rem;
 color: #127ebf;
 text-align: center;
 margin: 1rem;
+  input[type="button"] {
+    display: inline-block;
+    float: right;
+}
 }
 
 .movement-info {
@@ -23,8 +27,9 @@ margin: 1rem;
 }
 
 .movement-list-info {
-
-  text-align: center;
+  display: inline-block;
+  margin: 0;
+  text-align: left;
 }
 
 .movement-list {
@@ -35,8 +40,7 @@ margin: 1rem;
 }
 
 .movement-name {
-  display: inline-block;
-  margin-left: 1rem;
+  margin-left: 1rem 0 0 1rem;
   color: #127ebf;
 }
 

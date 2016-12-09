@@ -11,6 +11,7 @@ export default React.createClass ({
 
   getInitialState() {
     return {
+      workoutList: {},
       loggedWorkout: store.loggedWorkout.toJSON()
     }
   },
@@ -26,18 +27,28 @@ export default React.createClass ({
     store.loggedWorkout.off('update change', this.updateStatus);
   },
   updateStatus(){
-    this.setState({loggedWorkout: store.loggedWorkout.toJSON()})
-},
+    if(store.loggedWorkout.find(this.props.params)=== undefined) {
+      this.setState({
+        workoutList: {},
+        loggedWorkout: store.loggedWorkout.toJSON()
+      })
+    } else {
+        this.setState({
+          workoutList: store.loggedWorkout.find(this.props.params).toJSON(),
+          loggedWorkout: store.loggedWorkout.toJSON()
+        })
+      }
+    },
 
   render() {
-    console.log(this.state)
+
     return (
       <div className="main-container">
         <div className="workout-page">
           <h2> Workouts </h2>
             <div className="workouts">
               <NewWorkoutForm/>
-              <WorkoutList workouts={this.state.loggedWorkout}/>
+              <WorkoutList workouts={this.state.loggedWorkout} workoutId={this.state.workoutList.objectId}/>
             </div>
         </div>
       </div>

@@ -9,19 +9,16 @@ export default React.createClass ({
 
   getInitialState() {
     return {
-      session: store.session.toJSON(),
-      movements: store.movements.toJSON()
+      movements: store.movements.toJSON(),
     }
   },
 
   componentDidMount() {
-    store.session.on('change update', () => {
-    });
-
     store.movements.on('change update', () => {
       this.setState({movements: store.movements.toJSON()})
     });
   },
+
   render() {
   let filteredSearch=store.movements.search(this.state.searchTerm);
     return (

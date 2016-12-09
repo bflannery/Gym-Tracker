@@ -11,7 +11,7 @@ export default React.createClass({
 
     } else {
       cycles = this.props.cycles.map((cycle,i,arr) =>{
-        return <CycleSingle key={i} cycle={cycle}/>;
+        return <CycleSingle key={i} cycle={cycle} cycleId={this.props.cycleId}/>;
 
       });
     }
