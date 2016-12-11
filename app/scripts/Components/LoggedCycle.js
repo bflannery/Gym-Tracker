@@ -13,7 +13,7 @@ export default React.createClass({
               <Link to = {`/workouts/${this.props.cycle.name}`} onClick={this.onClick}>
               <h4 className="workout-name"> {this.props.cycle.name} </h4>
               </Link>
-              <input type="submit" className="add-button" value="Add To Cycle" onClick={this.handleSubmit}/>
+              <input type="submit" className="add-button" value="Add Cycle" onClick={this.handleSubmit}/>
             </li>
     </div>
   )

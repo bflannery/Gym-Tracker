@@ -1,5 +1,6 @@
 import React from 'react'
 import {browserHistory} from 'react-router';
+import {Link} from 'react-router';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import store from '../../store';
@@ -82,6 +83,9 @@ export default React.createClass({
             <CycleWorkouts cycleWorkouts={this.state.cycle.cycleWorkouts} cycle={this.state.cycle} />
             <input type="submit" className="save-button" onClick={this.handleSaveCycle} value="Save Cycle!"/>
           </form>
+          <span> Choose from Exsisting Cycles Below or
+            <Link to = "workouts"> Create A New Workout </Link>
+          </span>
           <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
         </div>
       )

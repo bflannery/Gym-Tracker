@@ -1,6 +1,6 @@
 import React from 'react'
 import { browserHistory} from 'react-router';
-
+import { Link } from 'react-router';
 import store from '../../store';
 
 import CyclesList from '../CyclesList';
@@ -44,6 +44,7 @@ export default React.createClass({
     return (
       <div className="main-container">
         <div className="cycle-page">
+          <button className="back-button" onClick={this.handleBack}>Back</button>
           <h2> Cycles </h2>
           <div className="cycles">
             <NewCycleForm/>
@@ -52,5 +53,9 @@ export default React.createClass({
         </div>
       </div>
     );
+  },
+
+  handleBack() {
+  browserHistory.goBack()
   }
 });

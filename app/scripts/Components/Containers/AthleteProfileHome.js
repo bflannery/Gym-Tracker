@@ -1,5 +1,6 @@
 import React from 'react';
 import {browserHistory} from 'react-router';
+import { Link } from 'react-router';
 
 import store from '../../store';
 
@@ -14,8 +15,9 @@ export default React.createClass ({
           athleteCycles: []
         },
         loggedCycle: store.loggedCycle.toJSON(),
-        athletes: store.athletes.toJSON()
-
+        athletes: store.athletes.toJSON(),
+        committed: true,
+        editing: false,
       };
     },
     componentDidMount() {
@@ -60,13 +62,28 @@ export default React.createClass ({
   },
 
   render() {
+
+    console.log(this.state)
     console.log(this.props)
     return (
       <div className="main-container">
-      <h2> Athletes Profile</h2>
+      <button className="back-button" onClick={this.handleBack}>Back</button>
+        <h2> Athletes Profile</h2>
+        <h3> {this.state.athlete.name}</h3>
+        <div className="athlete-info-container">
+          <span> Age: {this.state.athlete.age} </span>
+          <span> Weight: {this.state.athlete.weight} </span>
+          <span> Goal: {this.state.athlete.goal} </span>
+        </div>
         <AthleteCycles athleteCycles={this.state.athlete.athleteCycles} athlete={this.state.athlete}/>
+        <span> Choose An Exsisting Cycles Below or
+          <Link to="cycles"> Create A New Cycle </Link>
+        </span>
         <LoggedCycles cycles={this.state.loggedCycle} athleteId={this.state.athlete.objectId}/>
       </div>
     );
+  },
+  handleBack() {
+  browserHistory.goBack()
   }
 });

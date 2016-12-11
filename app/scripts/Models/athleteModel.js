@@ -28,5 +28,9 @@ export default Backbone.Model.extend({
 
     deleteAthlete(objectId) {
       this.destroy ({ url: `https://api.backendless.com/v1/data/Athletes/${objectId}`})
-    }
+    },
+
+    addPhoto(fileUrl){
+   this.save({pic: fileUrl}, {type: 'PUT'});
+ }
 })

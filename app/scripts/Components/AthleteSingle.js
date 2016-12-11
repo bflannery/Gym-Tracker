@@ -9,7 +9,7 @@ export default React.createClass({
     return (
       <li className="athlete-preview">
         <Link to= {`/athletes/${this.props.athlete.name}`} onClick={this.onClick}>
-          <h4> {this.props.athlete.name} </h4>
+          <h4 className="athlete-name"> {this.props.athlete.name} </h4>
         </Link>
         <span> {this.props.athlete.age} </span>
         <span> {this.props.athlete.weight} </span>

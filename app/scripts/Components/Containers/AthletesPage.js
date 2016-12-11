@@ -1,4 +1,5 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 import store from '../../store';
 
@@ -44,10 +45,14 @@ export default React.createClass ({
   render() {
     return (
       <div className="main-container">
+        <button className="back-button" onClick={this.handleBack}>Back</button>
         <h2> Athletes </h2>
         <NewAthleteForm/>
         <AthleteList athletes={this.state.athletes} athleteId={this.state.athleteList.objectId}/>
      </div>
     );
+  },
+  handleBack() {
+  browserHistory.goBack()
   }
 });
