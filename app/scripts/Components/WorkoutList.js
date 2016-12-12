@@ -13,7 +13,6 @@ export default React.createClass({
             return <WorkoutSingle key={i} workout={workout} workoutId={this.props.workoutId}/>;
           });
         }
-
     return (
         <ul className="workout-list">
           {workouts}

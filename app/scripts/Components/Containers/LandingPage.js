@@ -21,7 +21,7 @@ export default React.createClass({
     return (
 
         <div className="main-container">
-        <Login session={this.state.session} />
+          <Login session={this.state.session} />
         </div>
     );
   },

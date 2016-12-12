@@ -62,13 +62,10 @@ export default React.createClass ({
   },
 
   render() {
-
-    console.log(this.state)
-    console.log(this.props)
     return (
       <div className="main-container">
-      <button className="back-button" onClick={this.handleBack}>Back</button>
-        <h2> Athletes Profile</h2>
+        <button className="back-button" onClick={this.handleBack}>Back</button>
+        <h2> Athlete Profile</h2>
         <h3> {this.state.athlete.name}</h3>
         <div className="athlete-info-container">
           <span> Age: {this.state.athlete.age} </span>

@@ -29,7 +29,6 @@ export default Backbone.Model.extend({
       }
     });
   },
-
   login(email, password){
     $.ajax({
       type: 'POST',
@@ -38,18 +37,14 @@ export default Backbone.Model.extend({
       data: JSON.stringify({login: email, password}),
       success: (response) => {
         console.log('logged in!')
-        this.set({
-
-          authenticated: true,
-        });
+        this.set({ authenticated: true});
           window.localStorage.setItem('user-token',response['user-token']);
           window.localStorage.setItem('email',response.email);
           window.localStorage.setItem('ownerId',response.ownerId);
           browserHistory.push('/home');
-      }
-    })
-  },
-
+        }
+      })
+    },
   logout(){
     $.ajax({
       contentType: 'application/json',

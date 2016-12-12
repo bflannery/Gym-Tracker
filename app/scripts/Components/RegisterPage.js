@@ -4,7 +4,6 @@ import store from '../store';
 
 export default React.createClass({
   render() {
-
     return (
       <div className="register-page">
         <div className="form-container">
@@ -20,7 +19,6 @@ export default React.createClass({
       </div>
     );
   },
-
   handleSubmit(e) {
     e.preventDefault();
       const name = this.refs.name.value;
@@ -30,5 +28,4 @@ export default React.createClass({
       store.session.register(name, email, password);
       store.movement.getToken();
   }
-
 });

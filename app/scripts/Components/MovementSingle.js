@@ -1,11 +1,7 @@
 import React from 'react';
-import moment from 'moment';
-
 import store from '../store';
 
-
 export default React.createClass({
-
   render() {
     return (
       <li className="movement-preview">
@@ -33,8 +29,6 @@ export default React.createClass({
       </li>
     );
   },
-
-
   handleSubmit(e) {
 
     e.preventDefault();
@@ -45,15 +39,12 @@ export default React.createClass({
     let created = new Date();
 
     store.loggedWorkout.get(this.props.workoutId).addMovementToWorkout({
-
       name   : name,
       reps   : reps,
       sets   : sets,
       weight : weight,
       created : created
-
     });
-
     this.refs.reps.value = "";
     this.refs.sets.value = "";
     this.refs.weight.value = "";

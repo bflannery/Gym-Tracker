@@ -14,34 +14,26 @@ export default React.createClass ({
       athletes: store.athletes.toJSON()
     }
   },
-  componentWillMount () {
-    store.athletes.fetch();
-  },
-
   componentDidMount(){
     store.athletes.fetch();
     store.athletes.on('update change', this.updateStatus);
   },
-
   componentWillUnmount() {
     store.athletes.off('update change', this.updateStatus);
   },
-
   updateStatus() {
     if(store.athletes.find(this.props.params) === undefined){
       this.setState({
         athleteList: {},
         athletes: store.athletes.toJSON()
-      })
+      });
     } else {
       this.setState({
         athleteList: store.athletes.find(this.props.params).toJSON(),
         athletes: store.athletes.toJSON()
-      })
+      });
     }
   },
-
-
   render() {
     return (
       <div className="main-container">
@@ -53,6 +45,6 @@ export default React.createClass ({
     );
   },
   handleBack() {
-  browserHistory.goBack()
+    browserHistory.goBack()
   }
 });

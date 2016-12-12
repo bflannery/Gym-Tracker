@@ -4,25 +4,20 @@ import store from '../store';
 
 import MovementList from './MovementList';
 
-
 export default React.createClass ({
-
   getInitialState() {
     return {
       movements: store.movements.toJSON(),
     }
   },
-
   componentDidMount() {
     store.movements.on('change update', () => {
       this.setState({movements: store.movements.toJSON()})
     });
   },
-
   render() {
   let filteredSearch=store.movements.search(this.state.searchTerm);
     return (
-
       <div className="workout-form">
         <h2> Search Movements </h2>
           <div className="search-movement-container">
@@ -35,11 +30,8 @@ export default React.createClass ({
       </div>
     )
   },
-
   handleSubmit(e){
     e.preventDefault();
-
     this.setState({searchTerm : this.refs.search.value });
   }
-
 });

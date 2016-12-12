@@ -4,8 +4,6 @@ import { Link } from 'react-router';
 import store from '../store';
 import moment from 'moment';
 
-
-
 export default React.createClass({
 
   getInitialState() {
@@ -20,7 +18,6 @@ export default React.createClass({
     if(!this.props.cycleWorkout.workoutDate) {
 
       cycleWorkout = (
-
           <li className="cycle-workout">
             <Link to={`/workouts/${this.props.cycleWorkout.workout.name}`}>
               <h4 className="cycle-name">{this.props.cycleWorkout.workout.name}</h4>
@@ -30,13 +27,9 @@ export default React.createClass({
             </span>
             <input type="button" value="Remove From Cycle" className="workout-remove-button" onClick={this.removeWorkout}/>
           </li>
-
-      );
-
-    } else {
-
+        );
+      } else {
       cycleWorkout = (
-
         <li className="cycle-workout">
           <Link to={`/workouts/${this.props.cycleWorkout.workout.name}`}>
             <h4 className="cycle-name">{this.props.cycleWorkout.workout.name}</h4>
@@ -47,7 +40,7 @@ export default React.createClass({
           <input type="button" value="Remove From Cycle" className="workout-remove-button" onClick={this.removeWorkout}/>
         </li>
       );
-  }
+    }
   return (
     <div>
       {cycleWorkout}
@@ -66,4 +59,4 @@ handleChange(date) {
   store.loggedCycle.get(this.props.cycleId).addDateToWorkout(workoutDate, cycleWorkoutId)
 },
 
-})
+});

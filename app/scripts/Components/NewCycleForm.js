@@ -12,7 +12,6 @@ export default React.createClass({
       </form>
   );
 },
-
 createCycle(e){
   e.preventDefault();
   let cycleName = this.refs.createCycle.value;

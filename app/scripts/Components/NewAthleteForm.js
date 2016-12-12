@@ -14,7 +14,6 @@ export default React.createClass({
       </form>
   );
 },
-
 createAthlete(e){
   e.preventDefault();
   let athleteName = this.refs.name.value;

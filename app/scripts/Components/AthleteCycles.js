@@ -5,23 +5,20 @@ import store from '../store';
 
 export default React.createClass({
   render(){
-    console.log(this.props)
     let athleteCycles;
 
     if(this.props.athleteCycles === undefined) {
-
       athleteCycles = <div />
-        } else {
+      } else {
       athleteCycles = this.props.athleteCycles.map((athleteCycle, i, arr)=>{
-        return  <AthleteCycle key={i} athleteCycle={athleteCycle} athleteId={this.props.athlete.objectId}/>
+      return  <AthleteCycle key={i} athleteCycle={athleteCycle} athleteId={this.props.athlete.objectId}/>
         });
       }
 
     return (
-
         <ul className="athlete-cycle-list">
           {athleteCycles}
         </ul>
-    )
-  }
-})
+      )
+    }
+});

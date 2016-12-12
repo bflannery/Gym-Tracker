@@ -15,10 +15,6 @@ export default React.createClass ({
       loggedWorkout: store.loggedWorkout.toJSON()
     }
   },
-  componentWillMount() {
-    store.loggedWorkout.fetch();
-  },
-
   componentDidMount() {
     store.loggedWorkout.fetch();
     store.loggedWorkout.on('update change', this.updateStatus);
@@ -31,17 +27,15 @@ export default React.createClass ({
       this.setState({
         workoutList: {},
         loggedWorkout: store.loggedWorkout.toJSON()
-      })
-    } else {
-        this.setState({
-          workoutList: store.loggedWorkout.find(this.props.params).toJSON(),
-          loggedWorkout: store.loggedWorkout.toJSON()
-        })
-      }
-    },
-
+    });
+  } else {
+      this.setState({
+        workoutList: store.loggedWorkout.find(this.props.params).toJSON(),
+        loggedWorkout: store.loggedWorkout.toJSON()
+      });
+    }
+  },
   render() {
-
     return (
       <div className="main-container">
         <div className="workout-page">

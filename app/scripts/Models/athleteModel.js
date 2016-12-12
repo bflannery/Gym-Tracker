@@ -4,7 +4,6 @@ import $ from 'jquery';
 
 export default Backbone.Model.extend({
   rootUrl: 'https://api.backendless.com/v1/data/Athletes',
-
     idAttribute: 'objectId',
     defaults: {
       name: '',
@@ -22,15 +21,9 @@ export default Backbone.Model.extend({
             objectId: id
           }
         }])
-
       });
     },
-
     deleteAthlete(objectId) {
       this.destroy ({ url: `https://api.backendless.com/v1/data/Athletes/${objectId}`})
-    },
-
-    addPhoto(fileUrl){
-   this.save({pic: fileUrl}, {type: 'PUT'});
- }
-})
+    }
+});

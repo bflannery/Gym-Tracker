@@ -10,7 +10,6 @@ let mainContainer = document.getElementById('main-container');
 $(document).ajaxSend((evt, xhr, opts) => {
   if(opts.url.indexOf('backendless') > -1 ){
 
-    console.log('interception son');
     console.log(opts.type);
 
     xhr.setRequestHeader('application-id', config.appId);

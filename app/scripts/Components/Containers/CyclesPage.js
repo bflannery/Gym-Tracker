@@ -14,10 +14,6 @@ export default React.createClass({
       loggedCycle: store.loggedCycle.toJSON()
     }
   },
-  componentWillMount() {
-    store.loggedCycle.fetch();
-  },
-
   componentDidMount() {
     store.loggedCycle.fetch();
     store.loggedCycle.on('update change', this.updateStatus);

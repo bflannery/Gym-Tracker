@@ -4,13 +4,11 @@ import $ from 'jquery';
 
 export default Backbone.Model.extend({
   rootUrl: 'https://api.backendless.com/v1/data/Cycles',
-
     idAttribute: 'objectId',
     defaults: {
       name: '',
     },
-
-    addDateToWorkout(workoutDate, cycleWorkoutId) {
+  addDateToWorkout(workoutDate, cycleWorkoutId) {
         $.ajax({
             type: 'PUT',
             url: `https://api.backendless.com/v1/data/CycleWorkouts/${cycleWorkoutId}`,
@@ -21,10 +19,9 @@ export default Backbone.Model.extend({
             success: () => {
                 this.fetch();
             }
-          })
-    },
-
-    addWorkoutToCycle({id, name}) {
+        })
+      },
+  addWorkoutToCycle({id, name}) {
       this.save({
           cycleWorkouts: this.get('cycleWorkouts').concat([{
             ___class: 'CycleWorkouts',
@@ -32,35 +29,27 @@ export default Backbone.Model.extend({
             workout: {
               ___class: 'Workouts',
               objectId: id,
-
             }
           }])
-
-    });
-  },
-
+        });
+      },
   removeWorkoutFromCycle(objectId) {
-
     let newCycleWorkouts = this.get('cycleWorkouts').filter((cycleWorkout, i , arr) => {
       if(objectId !== cycleWorkout.objectId) {
         return true
-      }
-    })
+        }
+      })
     this.save({
-      cycleWorkouts: newCycleWorkouts
-    })
-  },
-
+        cycleWorkouts: newCycleWorkouts
+      })
+    },
   addDatesToCycle(startDate, endDate) {
-    console.log(startDate)
-    console.log(endDate)
     this.save({
         cycleStartDate: startDate,
         cycleEndDate: endDate
-    })
-  },
+      })
+    },
   deleteCycle(objectId){
     this.destroy({url: `https://api.backendless.com/v1/data/Cycles/${objectId}`})
-  }
-
+    }
   });

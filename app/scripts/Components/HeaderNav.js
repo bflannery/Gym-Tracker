@@ -5,7 +5,7 @@ import store from '../store';
 
 export default React.createClass({
   getInitialState(){
-    return { authenticated: store.session.get('authenticated')}
+    return {authenticated: store.session.get('authenticated')}
   },
 
   componentWillMount() {
@@ -15,35 +15,32 @@ export default React.createClass({
   },
   render() {
 
-  let nav= <ul className="logged-out-nav-container"></ul>;
+  let nav = <ul className="logged-out-nav-container"></ul>;
 
-if(this.state.authenticated) {
-  nav = (
-    <ul className="loggedIn-navContainer">
-      <li className="nav-list">
-        <Link to="/home" className="home-nav">Home</Link>
-      </li>
-      <li className="nav-list">
-          <Link to="/workouts"> Workouts</Link>
-      </li>
-      <li className="nav-list">
-          <Link to="/cycles"> Cycles</Link>
-      </li>
-      <li className="nav-list">
-          <Link to="/athletes"> Athletes</Link>
-      </li>
-      <li className="nav-list" id="logout">
-        <input type="button" className="logout-button" onClick={this.handleLogout} value="Log Out"/>
-      </li>
-    </ul>
-  )
-}
-
-
-
-    return (
+  if(this.state.authenticated) {
+    nav = (
+      <ul className="loggedIn-navContainer">
+        <li className="nav-list">
+          <Link to="/home" className="home-nav">Home</Link>
+        </li>
+        <li className="nav-list">
+            <Link to="/workouts"> Workouts</Link>
+        </li>
+        <li className="nav-list">
+            <Link to="/cycles"> Cycles</Link>
+        </li>
+        <li className="nav-list">
+            <Link to="/athletes"> Athletes</Link>
+        </li>
+        <li className="nav-list" id="logout">
+          <input type="button" className="logout-button" onClick={this.handleLogout} value="Log Out"/>
+        </li>
+      </ul>
+    )
+  }
+  return (
       <nav className="nav-container">
-      {nav}
+        {nav}
       </nav>
     );
   },

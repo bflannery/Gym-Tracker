@@ -5,7 +5,6 @@ import { Link } from 'react-router';
 
 export default React.createClass({
   render() {
-    console.log(this.props)
     return (
       <li className="athlete-preview">
         <Link to= {`/athletes/${this.props.athlete.name}`} onClick={this.onClick}>
@@ -20,7 +19,6 @@ export default React.createClass({
   },
   removeAthlete() {
     let id = this.props.athlete.objectId
-    console.log(this.props.athleteId)
     store.athletes.get(this.props.athleteId).deleteAthlete(id)
    }
 });

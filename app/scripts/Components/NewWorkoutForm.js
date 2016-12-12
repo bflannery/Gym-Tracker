@@ -21,10 +21,7 @@ export default React.createClass({
       name : workoutName,
       description : workoutDescription
     });
-
     this.refs.create.value = ""
     this.refs.workoutDescription.value = ""
-  },
-
-
+  }
 });

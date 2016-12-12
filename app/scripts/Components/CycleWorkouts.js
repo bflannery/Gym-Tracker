@@ -8,22 +8,16 @@ export default React.createClass({
     let cycleWorkouts;
 
     if(this.props.cycleWorkouts === undefined) {
-
       cycleWorkouts = <div />
         } else {
       cycleWorkouts = this.props.cycleWorkouts.map((cycleWorkout, i, arr)=>{
         return  <CycleWorkout key={i} cycleWorkout={cycleWorkout} cycleId={this.props.cycle.objectId} cycleStartDate={this.props.cycle.cycleStartDate}/>
         });
       }
-
     return (
-
-        <ul className="cycle-workout-list">
-          {cycleWorkouts}
-        </ul>
-
+      <ul className="cycle-workout-list">
+        {cycleWorkouts}
+      </ul>
     )
   }
-})
-
-//
+});
