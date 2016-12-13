@@ -1,6 +1,7 @@
 import React from 'react';
 import store from '../store';
 import { Link } from 'react-router';
+import {browserHistory} from 'react-router';
 import moment from 'moment';
 
 
@@ -8,13 +9,15 @@ export default React.createClass({
 
   render() {
     return (
-      <li className="workout-preview" onClick={this.onClick}>
-        <div>
+      <li>
+        <div className="workout-preview" onClick={this.onClick}>
           <h4 className="workout-name"> {this.props.workout.name} </h4>
           <span> {this.props.workout.description} </span>
+        </div>
+        <div>
           <input type="submit" className="add-workout-button" value="Add To Cycle" onClick={this.handleSubmit}/>
-          </div>
-        </li>
+        </div>
+      </li>
   )
 },
   handleSubmit(e) {

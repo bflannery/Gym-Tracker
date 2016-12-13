@@ -1,7 +1,21 @@
-.workout-form {
+.workout-search-container {
   h2 {
     font-size: 3rem;
     color: #393845;
+  }
+}
+
+.workout-form {
+  margin: 0rem auto;
+  width: 90%;
+  padding: .5rem;
+  border: 3px solid darkgrey;
+  -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
+ -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
+ box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
+  span {
+  font-size: 1.5rem;
+  vertical-align: middle;
   }
 }
 
@@ -70,21 +84,9 @@ color: white;
   margin: 0em 0rem 2rem 0rem;
   width: 90%;
 }
-
-.logged-movement {
-  padding: .5rem;
-  margin: 1rem 0rem;
-  border: 3px solid darkgrey;
-  margin-bottom: 1rem;
-  -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
- -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
- box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
-  span {
-    font-size: 1.5rem;
-    vertical-align: middle
-  }
+.loggedMovements span {
+  font-size: 1.5rem;
 }
-
 .logged-movement-name {
   vertical-align: middle;
   display: inline-block;

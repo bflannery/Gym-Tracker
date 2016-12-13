@@ -18,7 +18,7 @@ export default React.createClass ({
   render() {
   let filteredSearch=store.movements.search(this.state.searchTerm);
     return (
-      <div className="workout-form">
+      <div className="workout-search-container">
         <h2> Search Movements </h2>
           <div className="search-movement-container">
               <form className="search" onSubmit={this.handleSubmit}>

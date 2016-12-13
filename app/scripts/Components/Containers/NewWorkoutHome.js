@@ -50,15 +50,34 @@ export default React.createClass ({
   }
 },
   render () {
-    return (
-      <div className="main-container">
-        <div className="workout-hero"></div>
+    let workoutContainer;
+    console.log(this.state)
+    console.log(this.props)
+
+    if(this.state.workout.movements < 1) {
+
+      workoutContainer = (
+        <div className="workout-page">
+          <h2 className="section-title">{this.props.params.name}</h2>
+          <MovementSearch workouts={this.state.loggedWorkout} workoutId={this.state.workout.objectId}/>
+        </div>
+      );
+    } else {
+      workoutContainer = (
           <div className="workout-page">
             <h2 className="section-title">{this.props.params.name}</h2>
+            <form className="workout-form">
             <LoggedMovements movements={this.state.workout.movements} workoutId={this.state.workout.objectId}/>
             <input type="submit" className="save-button" onClick={this.handleSaveWorkout} value="Save Workout!"/>
+            </form>
             <MovementSearch workouts={this.state.loggedWorkout} workoutId={this.state.workout.objectId}/>
           </div>
+      );
+    }
+    return (
+      <div className="main-container">
+      <div className="workout-hero"></div>
+      {workoutContainer}
       </div>
     );
   },

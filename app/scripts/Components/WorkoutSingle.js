@@ -14,7 +14,6 @@ export default React.createClass({
         workoutInfo = (
           <div>
             <h4 className="workout-name"> {this.props.workout.name}</h4>
-            <input type="button" value="Delete Workout" className="workout-remove-button" onClick={this.removeWorkout}/>
           </div>
         )
     } else {
@@ -22,13 +21,17 @@ export default React.createClass({
         <div>
           <h4 className="workout-name"> {this.props.workout.name} </h4>
           <span> {this.props.workout.description} </span>
-          <input type="button" value="Delete Workout" className="workout-remove-button" onClick={this.removeWorkout}/>
         </div>
       )
     }
   return (
-    <li className="workout-preview" onClick={this.onClick}>
-      {workoutInfo}
+    <li>
+      <div className="workout-preview" onClick={this.onClick}>
+        {workoutInfo}
+      </div>
+      <div>
+        <input type="button" value="Delete Workout" className="workout-remove-button" onClick={this.removeWorkout}/>
+      </div>
     </li>
     )
   },

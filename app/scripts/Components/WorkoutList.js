@@ -14,9 +14,9 @@ export default React.createClass({
           });
         }
     return (
-        <ul className="workout-list">
+        <div className="workout-list">
           {workouts}
-        </ul>
+        </div>
       );
     }
 });

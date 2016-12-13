@@ -11,7 +11,8 @@ export default React.createClass({
         </li>
       );
     },
-removeMovement() {
+removeMovement(e) {
+  e.preventDefault();
   store.loggedWorkout.get(this.props.workoutId).removeMovementFromWorkout(this.props.movement.objectId);
   }
 });
