@@ -1,0 +1,95 @@
+.workout-form {
+  h2 {
+    font-size: 3rem;
+    color: #393845;
+  }
+}
+
+.search-movements {
+  width: 20rem;
+  background: white;
+  border: 1px solid darkgray;
+  border-radius: 10px;
+  color: darkgray;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.movement-name {
+  margin: 2rem .2rem 1.2rem 0rem;
+  color: #127ebf;
+  font-size: 3rem;
+}
+
+.movement-info {
+  display: inline-block;
+  font-size: 2.5rem;
+}
+
+.movement-preview {
+  padding: .5rem;
+  margin: 1rem 0rem;
+  border: 3px solid darkgrey;
+  margin-bottom: 1rem;
+  -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
+ -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
+ box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
+}
+
+.results {
+  width: 90%;
+  margin-bottom: 3rem;
+}
+
+.workout-details {
+  font-size: 2rem;
+width: 3rem;
+border-radius: 50px;
+padding: 1rem;
+text-align: center;
+margin: 1rem;
+background-color: #127ebf;
+color: white;
+}
+
+.workout-details::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+}
+
+.add-button{
+  background: transparent;
+  border: 3px solid darkgray;
+  border-radius: 10px;
+  color: #127ebf;
+  padding: 1rem;
+  margin: 1rem 0rem;
+  font-size: 1.5rem;
+}
+
+.logged-workout-container {
+  margin: 0em 0rem 2rem 0rem;
+  width: 90%;
+}
+
+.logged-movement {
+  padding: .5rem;
+  margin: 1rem 0rem;
+  border: 3px solid darkgrey;
+  margin-bottom: 1rem;
+  -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
+ -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
+ box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
+  span {
+    font-size: 1.5rem;
+    vertical-align: middle
+  }
+}
+
+.logged-movement-name {
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: .2rem;
+  margin: 1.2rem;
+  color: #127ebf;
+  font-size: 2rem;
+}

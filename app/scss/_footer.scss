@@ -2,13 +2,16 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 .footer {
     font-family: 'Lato', sans-serif;
-    color: white;
+    background-color: white;
     -webkit-font-smoothing: antialiased;
     text-align: right;
     right: 0;
     bottom: 0;
     left: 0;
+    height: 4rem;
+    margin-top: 12rem;
     padding: .5rem;
+    border-top: 3px solid darkgray;
 
   a {
     text-decoration: none;

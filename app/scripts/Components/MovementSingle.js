@@ -24,7 +24,7 @@ export default React.createClass({
                   </label>
               </li>
             </ul>
-            <input type="submit" value="Add To Workout" className="add-workout" onClick={this.handleSubmit}/>
+            <input type="submit" value="Add To Workout" className="add-button" onClick={this.handleSubmit}/>
         </form>
       </li>
     );

@@ -68,7 +68,7 @@ export default React.createClass ({
           <span> Goal: {this.state.athlete.goal} </span>
         </div>
         <AthleteCycles athleteCycles={this.state.athlete.athleteCycles} athlete={this.state.athlete}/>
-        <span> Choose An Exsisting Cycles Below or
+        <span className="choose"> Choose An Exsisting Cycles Below or
           <Link to="cycles"> Create A New Cycle </Link>
         </span>
         <LoggedCycles cycles={this.state.loggedCycle} athleteId={this.state.athlete.objectId}/>

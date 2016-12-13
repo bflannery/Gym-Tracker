@@ -5,32 +5,16 @@ import moment from 'moment';
 
 
 export default React.createClass({
-  render() {
-    let loggedWorkout;
 
-    if(this.props.workout.workoutDate === "") {
-      loggedWorkout = (
-          <li className="workout-preview">
-            <Link to = {`/workouts/${this.props.workout.name}`} onClick={this.onClick}>
-            <h4 className="workout-name"> {this.props.workout.name} </h4>
-            </Link>
-            <input type="submit" className="add-button" value="Add To Cycle" onClick={this.handleSubmit}/>
-          </li>
-      );
-    } else {
-      loggedWorkout = (
-        <li className="workout-preview">
-          <Link to = {`/workouts/${this.props.workout.name}`} onClick={this.onClick}>
+  render() {
+    return (
+      <li className="workout-preview" onClick={this.onClick}>
+        <div>
           <h4 className="workout-name"> {this.props.workout.name} </h4>
-          </Link>
-          <input type="submit" className="add-button" value="Add To Cycle" onClick={this.handleSubmit}/>
+          <span> {this.props.workout.description} </span>
+          <input type="submit" className="add-workout-button" value="Add To Cycle" onClick={this.handleSubmit}/>
+          </div>
         </li>
-      );
-    }
-  return (
-    <div>
-      {loggedWorkout}
-    </div>
   )
 },
   handleSubmit(e) {
@@ -41,5 +25,9 @@ export default React.createClass({
   },
   removeWorkout() {
     store.loggedCycle.get(this.props.workout.objectId).remove()
+  },
+
+  onClick() {
+    browserHistory.push(`/workouts/${this.props.workout.name}`)
   }
 });

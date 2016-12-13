@@ -6,16 +6,16 @@
 
 .workout-page {
   text-align: center;
-  width: 85%;
+  width: 90%;
   margin: 3rem auto;
   background-color: white;
   background-size: cover;
   background-position-y: -7rem;
   border: 3px solid darkgrey;
   margin-bottom: 1rem;
-  -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
- -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
- box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 1px 0px  rgba(0,0,0,0.75);
+ -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+ box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
 }
 
 .workout-name {
@@ -23,6 +23,7 @@
   margin-right: .2rem;
   margin: 1.2rem;
   color: #127ebf;
+  font-size: 2rem;
 }
 
 .new-input {
@@ -42,9 +43,7 @@
   padding: 1rem
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #127ebf;;
-}
+
 
 .workouts {
   width: 85%;
