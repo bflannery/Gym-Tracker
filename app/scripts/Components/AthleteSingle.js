@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 
 export default React.createClass({
   render() {
+    console.log(this.props)
     let athlete;
     if(!this.props.athlete.pic){
       athlete = (
@@ -22,7 +23,7 @@ export default React.createClass({
       athlete = (
         <li className="athlete-preview">
           <Link to= {`/athletes/${this.props.athleteId}`} onClick={this.onClick}>
-            <img src={this.props.athlete.pic} height="200" width="200"/>
+            <img src={this.props.athlete.pic} height="50" width="50"/>
             <h4 className="athlete-name"> {this.props.athlete.name} </h4>
           </Link>
           <span> {this.props.athlete.age} </span>

@@ -1,6 +1,14 @@
-.cycle-page {
-  text-align: left;
+.cycle-hero {
+  background-image: url('../assets/images/Cycles.jpg');
+  background-size: cover;
+  height: 33vh;
+}
 
+
+.cycle-page {
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .add-button {
@@ -48,17 +56,6 @@ color: #127ebf;
 
 .cycle-workout-list {
 
-}
-
-.workout-remove-button {
-  display: inline-block;
-  background: black;
-  border: 1px solid #940315;
-  border-radius: 10px;
-  color: #127ebf;
-  margin: .5rem;
-  padding: .3rem;
-  float: right;
 }
 
 .cycle-start {

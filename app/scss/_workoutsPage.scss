@@ -1,7 +1,19 @@
-.workout-page {
-  text-align: left;
+.workout-hero {
+  background-image: url('../assets/images/Workout.jpg');
+  background-size: cover;
+  height: 33vh;
 }
 
+.workout-page {
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.workout-title {
+  font-size: 3rem;
+
+}
 .workout-name {
   display: inline-block;
   margin-right: .2rem;
@@ -27,6 +39,22 @@
   color: #940315;
 }
 
+.workouts {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.workout-remove-button {
+  display: inline-block;
+  background: black;
+  border: 1px solid #940315;
+  border-radius: 10px;
+  color: #127ebf;
+  margin: .5rem;
+  padding: .3rem;
+}
+
+
 .workout-list {
   margin: 0;
   padding-left: .5rem;
@@ -37,7 +65,6 @@
 }
 
 .workout-preview {
-  border-bottom: 1px solid #940315;
       a {
     text-decoration: none;
     color: #127ebf;

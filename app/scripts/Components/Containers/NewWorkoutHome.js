@@ -52,12 +52,13 @@ export default React.createClass ({
   render () {
     return (
       <div className="main-container">
-        <div className="workout-page">
-          <h2 className="logged-workout-name">{this.props.params.name}</h2>
-          <LoggedMovements movements={this.state.workout.movements} workoutId={this.state.workout.objectId}/>
-          <input type="submit" className="save-button" onClick={this.handleSaveWorkout} value="Save Workout!"/>
-          <MovementSearch workouts={this.state.loggedWorkout} workoutId={this.state.workout.objectId}/>
-        </div>
+        <div className="workout-hero"></div>
+          <div className="workout-page">
+            <h2 className="logged-workout-name">{this.props.params.name}</h2>
+            <LoggedMovements movements={this.state.workout.movements} workoutId={this.state.workout.objectId}/>
+            <input type="submit" className="save-button" onClick={this.handleSaveWorkout} value="Save Workout!"/>
+            <MovementSearch workouts={this.state.loggedWorkout} workoutId={this.state.workout.objectId}/>
+          </div>
       </div>
     );
   },
