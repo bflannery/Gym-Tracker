@@ -8,7 +8,6 @@
   text-align: center;
   width: 85%;
   margin: 3rem auto;
-  color: #393845;
   background-color: white;
   background-size: cover;
   background-position-y: -7rem;
@@ -22,13 +21,16 @@
 .cycle-name {
   display: inline-block;
   margin-right: .2rem;
+  margin: 1.2rem;
+  color: #127ebf;
 }
 .new-input {
   background: transparent;
   border: 1px solid darkgray;
   border-radius: 10px;
   color: #127ebf;
-  padding: 1rem
+  padding: 1rem;
+  font-size: 1.2rem;
 }
 
 .create-button {
@@ -46,6 +48,7 @@
 .cycles {
   width: 85%;
   margin: 0 auto;
+  font-size: 2rem;
 }
 
 .cycle-remove-button {
@@ -56,6 +59,10 @@
   color: #127ebf;
   margin: .5rem;
   padding: .3rem;
+  font-size: 1.1rem;
+  -webkit-box-shadow: 2px 2px 1px 0px  rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
 }
 
 
@@ -67,10 +74,12 @@
 .create-cycle {
   margin-left: .5rem;
   margin-bottom: 4rem;
+  font-size: 1.2rem;
 }
 
 .cycle-preview {
   border: 3px solid darkgrey;
+  padding: .5rem 0rem;
   margin-bottom: 1rem;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -88,5 +97,6 @@
   border-radius: 10px;
   color: darkgray;
   padding: 1rem;
+  font-size: 1.2rem;
 
 }

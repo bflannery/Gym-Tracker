@@ -9,27 +9,25 @@ export default React.createClass({
     let athlete;
     if(!this.props.athlete.pic){
       athlete = (
-          <div>
+          <div className="athlete-info">
             <h4 className="athlete-name"> {this.props.athlete.name} </h4>
-              <div className="athlete-info">
-                <span> {this.props.athlete.age} </span>
-                <span> {this.props.athlete.weight} </span>
-                <span> {this.props.athlete.goal} </span>
-              </div>
+                <span> Age: {this.props.athlete.age} </span>
+                <span> Weight: {this.props.athlete.weight} </span>
+                <span> Goal: {this.props.athlete.goal} </span>
           <input type="button" value="Delete Athlete" className="athlete-remove-button" onClick={this.removeAthlete}/>
           </div>
       );
     } else {
       athlete = (
           <div>
-            <img src={this.props.athlete.pic} height="50" width="50"/>
+            <img src={this.props.athlete.pic} height="100" width="100" className="athlete-pic"/>
+              <div className="athlete-info">
             <h4 className="athlete-name"> {this.props.athlete.name} </h4>
-            <div className="athlete-info">
-              <span> {this.props.athlete.age} </span>
-              <span> {this.props.athlete.weight} </span>
-              <span> {this.props.athlete.goal} </span>
-            </div>
-          <input type="button" value="Delete Athlete" className="athlete-remove-button" onClick={this.removeAthlete}/>
+              <span> Age: {this.props.athlete.age} </span>
+              <span> Weight: {this.props.athlete.weight} </span>
+              <span> Goal: {this.props.athlete.goal} </span>
+        </div>
+        <input type="button" value="Delete Athlete" className="athlete-remove-button" onClick={this.removeAthlete}/>
         </div>
       )
     }
