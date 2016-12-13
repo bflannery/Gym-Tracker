@@ -24,7 +24,7 @@ export default React.createClass({
         <div className="home-athlete-container" onClick={this.AthleteLink}>
           <h2 className="section-title"> Athletes </h2>
         </div>
-      </div>  
+      </div>
       </div>
     )
   },

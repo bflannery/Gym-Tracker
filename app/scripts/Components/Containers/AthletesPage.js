@@ -38,11 +38,13 @@ export default React.createClass ({
     return (
       <div className="main-container">
         <div className="athletes-hero"></div>
-        <h2 className= "section-title"> Athletes </h2>
-          <div className="athletes-page">
-        <NewAthleteForm/>
-        <AthleteList athletes={this.state.athletes} athleteId={this.state.athleteList.objectId}/>
-     </div>
+        <div className="athletes-page">
+          <h2 className= "section-title"> Athletes </h2>
+        <div className="athletes">
+          <NewAthleteForm/>
+          <AthleteList athletes={this.state.athletes} athleteId={this.state.athleteList.objectId}/>
+        </div>
+      </div>  
      </div>
     );
   }

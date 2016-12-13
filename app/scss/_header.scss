@@ -1,6 +1,6 @@
 .header {
-  background: #010000;
-  color: #940315
+  background: white;
+  color: #393845;
 }
 
 .loggedIn-navContainer {
@@ -11,13 +11,13 @@
 .app-title {
   display: inline-block;
   margin-left: 1rem;
-    color: #940315
+    color: #393845;
 }
 
 .nav-container {
   display: inline-block;
   float: right;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-right: 1rem;
 }
 
@@ -26,20 +26,20 @@
   background: transparent;
   margin: .3rem;
   padding: .5rem 1rem;
-  color: #940315;
-  }
+}
+
 a {
-    text-decoration: none;
-    color: #940315;
-  }
+  color: #393845;
+  text-decoration: none;
+}
 
 a:visited {
-  color: #940315
+  color: #393845;
 }
 
 .logout-button {
   background: transparent;
-  color: #940315;
+  color: #393845;
   border: 0;
   font-family: Times;
   font-size: .9rem;

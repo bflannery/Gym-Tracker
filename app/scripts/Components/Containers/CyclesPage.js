@@ -47,7 +47,7 @@ export default React.createClass({
               <CyclesList cycles={this.state.loggedCycle} cycleId={this.state.cycleList.objectId}/>
             </div>
           </div>
-      </div>
+        </div>
     );
   }
 });
