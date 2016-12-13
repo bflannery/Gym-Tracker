@@ -16,6 +16,7 @@ import NewCycleHome from './Components/Containers/NewCycleHome';
 
 import AthletesPage from './Components/Containers/AthletesPage';
 import AthleteProfileHome from './Components/Containers/AthleteProfileHome';
+import ImageUpload from './Components/ImageUpload';
 
 import store from './store';
 
@@ -39,8 +40,8 @@ const router = (
           <Route path='/cycles/:name' component={NewCycleHome}/>
 
         <Route path='/athletes' component={AthletesPage}/>
-          <Route path='/athletes/:name' component={AthleteProfileHome}/>
-
+          <Route path='/athletes/:id' component={AthleteProfileHome}/>
+          <Route path='/athletes/images/:id' component = {ImageUpload}/>
       </Route>
     </Router>
 );

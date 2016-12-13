@@ -39,7 +39,6 @@ export default React.createClass ({
     return (
       <div className="main-container">
         <div className="workout-page">
-          <button className="back-button" onClick={this.handleBack}>Back</button>
           <h2> Workouts </h2>
             <div className="workouts">
               <NewWorkoutForm/>
@@ -48,9 +47,5 @@ export default React.createClass ({
         </div>
       </div>
     );
-  },
-
-  handleBack() {
-  browserHistory.goBack()
   }
 });

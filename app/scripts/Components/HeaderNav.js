@@ -21,9 +21,6 @@ export default React.createClass({
     nav = (
       <ul className="loggedIn-navContainer">
         <li className="nav-list">
-          <Link to="/home" className="home-nav">Home</Link>
-        </li>
-        <li className="nav-list">
             <Link to="/workouts"> Workouts</Link>
         </li>
         <li className="nav-list">

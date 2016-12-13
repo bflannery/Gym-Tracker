@@ -3,7 +3,7 @@ import config from '../config';
 import $ from 'jquery';
 
 export default Backbone.Model.extend({
-  rootUrl: 'https://api.backendless.com/v1/data/Athletes',
+    urlRoot: 'https://api.backendless.com/v1/data/Athletes',
     idAttribute: 'objectId',
     defaults: {
       name: '',
@@ -23,7 +23,22 @@ export default Backbone.Model.extend({
         }])
       });
     },
+    removeCycleFromAthlete(objectId) {
+      let newAthleteCycles = this.get('athleteCycles').filter((athleteCycle, i , arr) => {
+        if(objectId !== athleteCycle.objectId) {
+          return true
+          }
+        })
+      this.save({
+          athleteCycles: newAthleteCycles
+        })
+    },
+
     deleteAthlete(objectId) {
       this.destroy ({ url: `https://api.backendless.com/v1/data/Athletes/${objectId}`})
+    },
+
+    addPhoto(fileUrl) {
+      this.save({pic: fileUrl}, {type: 'PUT'});
     }
 });

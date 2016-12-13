@@ -53,7 +53,6 @@ export default React.createClass ({
     return (
       <div className="main-container">
         <div className="workout-page">
-          <button className="back-button" onClick={this.handleBack}>Back</button>
           <h2 className="logged-workout-name">{this.props.params.name}</h2>
           <LoggedMovements movements={this.state.workout.movements} workoutId={this.state.workout.objectId}/>
           <input type="submit" className="save-button" onClick={this.handleSaveWorkout} value="Save Workout!"/>
@@ -65,9 +64,5 @@ export default React.createClass ({
 
   handleSaveWorkout() {
   browserHistory.push('/workouts')
-  },
-
-  handleBack() {
-  browserHistory.goBack()
   }
 });

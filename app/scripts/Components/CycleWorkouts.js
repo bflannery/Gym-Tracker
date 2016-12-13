@@ -7,7 +7,7 @@ export default React.createClass({
   render(){
     let cycleWorkouts;
 
-    if(this.props.cycleWorkouts === undefined) {
+    if(!this.props.cycleWorkouts) {
       cycleWorkouts = <div />
         } else {
       cycleWorkouts = this.props.cycleWorkouts.map((cycleWorkout, i, arr)=>{

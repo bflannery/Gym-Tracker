@@ -1,25 +1,38 @@
+.home-hero {
+  background-image: url('../assets/images/home-hero.jpg');
+  background-size: cover;
+  height: 33vh;
+}
+
 .home-workout-container {
   background-image: url('../assets/images/Workout.jpg');
   background-size: cover;
   display: inline-block;
-  padding: 7rem;
-  margin: .2rem;
+  height: 20rem;
+  width: 18rem;
+  margin: 2rem 1rem 0rem 1rem;
 }
 
+.routes-container {
+  text-align: center;
+
+}
 .home-cycle-container {
   background-image: url('../assets/images/Cycles.jpg');
   background-size: cover;
   display: inline-block;
-  padding: 7rem;
-  margin: .2rem;
+  height: 20rem;
+  width: 18rem;
+  margin: 2rem 1rem 0rem 1rem;
 }
 
-.home-program-container {
-  background-image: url('../assets/images/Programs.jpg');
+.home-athlete-container {
+  background-image: url('../assets/images/Athletes.jpg');
   background-size: cover;
   display: inline-block;
-  padding: 7rem;
-  margin: .2rem;
+  height: 20rem;
+  width: 18rem;
+  margin: 2rem 1rem 0rem 1rem;
 }
 
 .home-container-nav {
@@ -47,5 +60,8 @@ color: #127ebf;
 }
 
 .home-cycle {
+  display: inline-block;
+}
+.home-athletes {
   display: inline-block;
 }

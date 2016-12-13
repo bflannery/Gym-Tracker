@@ -8,7 +8,6 @@ import store from '../store';
 export default React.createClass({
 
   render() {
-    console.log(this.props)
     return (
       <div>
       <li className="athlete-cycle">
@@ -19,19 +18,9 @@ export default React.createClass({
         </li>
       </div>
     )
+  },
+  removeWorkout() {
+    let id = this.props.athleteCycle.objectId
+    store.athletes.get(this.props.athleteId).removeCycleFromAthlete(id)
   }
 })
-
-//
-// removeWorkout() {
-//   let id = this.props.cycleWorkout.objectId
-//   store.loggedCycle.get(this.props.cycleId).removeWorkoutFromCycle(id)
-// },
-//
-// handleChange(date) {
-//   let workoutDate = date.format()
-//   let cycleWorkoutId = this.props.cycleWorkout.objectId
-//   store.loggedCycle.get(this.props.cycleId).addDateToWorkout(workoutDate, cycleWorkoutId)
-// },
-//
-// })

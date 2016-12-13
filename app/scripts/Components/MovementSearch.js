@@ -32,6 +32,8 @@ export default React.createClass ({
   },
   handleSubmit(e){
     e.preventDefault();
-    this.setState({searchTerm : this.refs.search.value });
+    let search = this.refs.search.value
+    let lowerSearch = search.toLowerCase()
+    this.setState({searchTerm : lowerSearch});
   }
 });

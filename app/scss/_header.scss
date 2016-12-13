@@ -1,9 +1,6 @@
 .header {
   background: #010000;
-  color: #940315;
-  border-radius: 10px;
-  padding: 1rem;
-  border: 1px solid #940315;
+  color: #940315
 }
 
 .loggedIn-navContainer {
@@ -11,36 +8,41 @@
   padding: 0;
 }
 
+.app-title {
+  display: inline-block;
+  margin-left: 1rem;
+    color: #940315
+}
+
+.nav-container {
+  display: inline-block;
+  float: right;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
 .nav-list {
   display: inline-block;
-  background: #5C0009;
+  background: transparent;
   margin: .3rem;
-  border-radius: 10px;
   padding: .5rem 1rem;
-  box-shadow: 1px 2px 2px white;
-    a {
-      text-decoration: none;
-      color: #127ebf;
-    }
+  color: #940315;
+  }
+a {
+    text-decoration: none;
+    color: #940315;
   }
 
 a:visited {
-color: #127ebf;
+  color: #940315
 }
 
 .logout-button {
   background: transparent;
-  color: #127ebf;
+  color: #940315;
   border: 0;
   font-family: Times;
   font-size: .9rem;
   padding: .04rem;
   font-weight: bold;
-}
-
-.back-button {
-  display: block;
-  float: right;
-  margin-top: 2rem;
-  margin-right: 2rem;
 }

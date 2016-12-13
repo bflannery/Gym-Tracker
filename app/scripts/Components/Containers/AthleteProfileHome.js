@@ -3,6 +3,7 @@ import {browserHistory} from 'react-router';
 import { Link } from 'react-router';
 
 import store from '../../store';
+import Athlete from '../../Models/athleteModel'
 
 import AthleteCycles from '../AthleteCycles';
 import LoggedCycles from '../LoggedCycles';
@@ -11,61 +12,55 @@ import LoggedCycles from '../LoggedCycles';
 export default React.createClass ({
     getInitialState() {
       return {
-        athlete: {
-          athleteCycles: []
-        },
         loggedCycle: store.loggedCycle.toJSON(),
-        athletes: store.athletes.toJSON(),
-        committed: true,
-        editing: false,
+          athlete: {
+            athleteCycles: []
+        }
       };
     },
+
     componentDidMount() {
-      store.loggedCycle.fetch();
-      store.loggedCycle.on('update change' , this.updateState);
 
-      store.athletes.fetch();
-      store.athletes.find(this.props.params);
-      store.athletes.on('update change' , this.updateAthleteState);
+      let athlete = store.athletes.get(this.props.params.id)
+        if(!athlete) {
+          athlete = new Athlete({objectId: this.props.params.id});
+          store.athletes.add(athlete);
+        }
+        athlete.fetch();
+        athlete.on('update change' , this.updateState);
 
-      if(store.athletes.find(this.props.params) === undefined) {
-        store.athletes.fetch(this.props.params)
-      }
-      else{
-        this.updateAthleteState();
-      }
+        store.loggedCycle.fetch();
+        store.loggedCycle.on('update change' , this.updateState);
+
     },
 
     componentWillUnmount() {
       store.loggedCycle.off('update change' , this.updateState);
-      store.athletes.off('update change', this.updateAthleteState);
-
+      store.athletes.get(this.props.params.id).off('update change', this.updatState);
     },
-
     updateState() {
+      if(store.athletes.get(this.props.params.id) !== undefined) {
       this.setState({
-        loggedCycle: store.loggedCycle.toJSON(),
-      })
-    },
-
-    updateAthleteState() {
-      if(store.athletes.find(this.props.params)=== undefined){
-        this.setState({
-          athlete: { athleteCycles: []}
-        })
-      } else {
-        this.setState({
-          athlete: store.athletes.find(this.props.params).toJSON()
-
-        });
-      }
+        athlete: store.athletes.get(this.props.params.id).toJSON()
+      });
+    }
+    this.setState({
+      loggedCycle: store.loggedCycle.toJSON()
+    })
   },
 
   render() {
+    let photo;
+    if(this.state.athlete.pic) {
+      photo = this.state.athlete.pic
+    } else {
+      photo = '../../assets/images/no-image.png';
+    }
     return (
       <div className="main-container">
-        <button className="back-button" onClick={this.handleBack}>Back</button>
         <h2> Athlete Profile</h2>
+        <img src={photo} height="100" width="100"/>
+        <input onClick={this.handlePhoto} type="button" value="Edit Photo"/>
         <h3> {this.state.athlete.name}</h3>
         <div className="athlete-info-container">
           <span> Age: {this.state.athlete.age} </span>
@@ -80,7 +75,7 @@ export default React.createClass ({
       </div>
     );
   },
-  handleBack() {
-  browserHistory.goBack()
-  }
+handlePhoto(e) {
+  browserHistory.push('/athletes/images/'+this.props.params.id)
+}
 });
