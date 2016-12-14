@@ -15,7 +15,8 @@ export default React.createClass ({
         loggedCycle: store.loggedCycle.toJSON(),
           athlete: {
             athleteCycles: []
-        }
+          },
+          session: store.session.toJSON()
       };
     },
 
@@ -32,11 +33,15 @@ export default React.createClass ({
         store.loggedCycle.fetch();
         store.loggedCycle.on('update change' , this.updateState);
 
+        store.session.fetch();
+        store.session.on('update change', this.updateState);
+
     },
 
     componentWillUnmount() {
       store.loggedCycle.off('update change' , this.updateState);
       store.athletes.get(this.props.params.id).off('update change', this.updatState);
+      store.session.off('update change' , this.updateState);
     },
     updateState() {
       if(store.athletes.get(this.props.params.id) !== undefined) {
@@ -45,7 +50,8 @@ export default React.createClass ({
       });
     }
     this.setState({
-      loggedCycle: store.loggedCycle.toJSON()
+      loggedCycle: store.loggedCycle.toJSON(),
+      session: store.session.toJSON()
     })
   },
 

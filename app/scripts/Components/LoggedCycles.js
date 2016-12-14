@@ -12,6 +12,7 @@ export default React.createClass({
       cycles = <li></li>;
     } else {
       cycles = this.props.cycles.map((cycle,i,arr) =>{
+        if(window.localStorage.getItem('ownerId') === this.props.cycles[i].ownerId)
         return <LoggedCycle key={i} cycle={cycle} athleteId={this.props.athleteId}/>;
       });
     }

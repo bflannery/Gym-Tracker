@@ -3,6 +3,7 @@ import AthleteSingle from './AthleteSingle';
 
 export default React.createClass({
   render() {
+    console.log(this.props)
     let athletes;
 
     if(this.props.athletes.length < 1) {
@@ -10,7 +11,9 @@ export default React.createClass({
 
     } else {
       athletes = this.props.athletes.map((athlete, i ,arr) => {
-        return <AthleteSingle key={i} athlete={athlete} athleteId={this.props.athleteId}/>
+        if(window.localStorage.getItem('ownerId') === this.props.athletes[i].ownerId) {
+          return <AthleteSingle key={i} athlete={athlete} athleteId={this.props.athleteId}/>
+        }
       });
     }
     return (

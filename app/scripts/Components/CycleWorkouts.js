@@ -11,7 +11,9 @@ export default React.createClass({
       cycleWorkouts = <div />
         } else {
       cycleWorkouts = this.props.cycleWorkouts.map((cycleWorkout, i, arr)=>{
+        if(window.localStorage.getItem('ownerId') === this.props.cycleWorkouts[i].ownerId) {
         return  <CycleWorkout key={i} cycleWorkout={cycleWorkout} cycleId={this.props.cycle.objectId} cycleStartDate={this.props.cycle.cycleStartDate}/>
+      }
         });
       }
     return (

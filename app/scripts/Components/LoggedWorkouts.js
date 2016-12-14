@@ -13,6 +13,7 @@ export default React.createClass({
       workouts = <li></li>;
     } else {
       workouts = this.props.workouts.map((workout,i,arr) =>{
+        if(window.localStorage.getItem('ownerId') === this.props.workouts[i].ownerId)
         return <LoggedWorkout key={i} workout={workout} cycleId={this.props.cycleId}/>;
       });
     }

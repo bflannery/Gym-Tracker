@@ -14,6 +14,7 @@ export default React.createClass ({
         movements: []
         },
       loggedWorkout: store.loggedWorkout.toJSON(),
+      session: store.session.toJSON()
     };
   },
 
@@ -22,6 +23,10 @@ export default React.createClass ({
     if(store.movements.length < 1){
     store.movements.getToken();
   }
+
+    store.session.fetch();
+    store.session.on('change update', this.updateWorkoutState);
+
     store.loggedWorkout.fetch();
     store.loggedWorkout.find(this.props.params);
     store.loggedWorkout.on('change update', this.updateWorkoutState);
@@ -32,20 +37,24 @@ export default React.createClass ({
     else {
         this.updateWorkoutState();
       }
+
   },
   componentWillUnmount() {
     store.loggedWorkout.off('change update', this.updateWorkoutState);
+    store.session.off('change update', this.updateWorkoutState);
   },
   updateWorkoutState() {
     if(store.loggedWorkout.find(this.props.params) === undefined) {
       this.setState({
         loggedWorkout: store.loggedWorkout.toJSON(),
-        workout: { movements: []}
+        workout: { movements: []},
+        session: store.session.toJSON()
       });
     } else {
     this.setState({
       workout: store.loggedWorkout.find(this.props.params).toJSON(),
-      loggedWorkout: store.loggedWorkout.toJSON()
+      loggedWorkout: store.loggedWorkout.toJSON(),
+      session: store.session.toJSON()
     });
   }
 },

@@ -11,31 +11,37 @@ export default React.createClass ({
   getInitialState() {
     return {
       athleteList: {},
-      athletes: store.athletes.toJSON()
+      athletes: store.athletes.toJSON(),
+      session: store.session.toJSON()
     }
   },
   componentDidMount(){
     store.athletes.fetch();
     store.athletes.on('update change', this.updateStatus);
+
+    store.session.fetch();
+    store.session.on('update change', this.updateStatus);
   },
   componentWillUnmount() {
     store.athletes.off('update change', this.updateStatus);
+    store.session.off('update change', this.updateStatus);
   },
   updateStatus() {
     if(store.athletes.find(this.props.params) === undefined){
       this.setState({
         athleteList: {},
-        athletes: store.athletes.toJSON()
+        athletes: store.athletes.toJSON(),
+        session: store.session.toJSON()
       });
     } else {
       this.setState({
         athleteList: store.athletes.find(this.props.params).toJSON(),
-        athletes: store.athletes.toJSON()
+        athletes: store.athletes.toJSON(),
+        session: store.session.toJSON()
       });
     }
   },
   render() {
-    console.log(this.state)
     return (
       <div className="main-container">
         <div className="athletes-hero"></div>

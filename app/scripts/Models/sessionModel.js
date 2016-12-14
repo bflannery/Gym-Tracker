@@ -10,10 +10,10 @@ export default Backbone.Model.extend({
              this.set({authenticated: true, 'user-token': window.localStorage.getItem('user-token')});
          }
   },
+
+  url: 'https://api.backendless.com/v1/data/Users',
   idAttribute: 'objectId',
-  defaults: {
-    email:'',
-    'user-token' : '',
+  defaults: { 
     authenticated: false
   },
 

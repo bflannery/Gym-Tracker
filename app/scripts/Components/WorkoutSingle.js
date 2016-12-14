@@ -7,21 +7,22 @@ import store from '../store';
 import LoggedMovements from './LoggedMovements';
 
 export default React.createClass({
-  render() {
-    let workoutInfo;
 
-    if(this.props.workout.description === null) {
-        workoutInfo = (
-          <div>
-            <h4 className="workout-name"> {this.props.workout.name}</h4>
-          </div>
-        )
-    } else {
-      workoutInfo = (
-        <div>
-          <h4 className="workout-name"> {this.props.workout.name} </h4>
-          <span className="workout-description"> {this.props.workout.description} </span>
-        </div>
+  render() {
+      console.log(this.props)
+      let workoutInfo;
+        if(this.props.workout.description === null) {
+          workoutInfo = (
+            <div>
+              <h4 className="workout-name"> {this.props.workout.name}</h4>
+            </div>
+            )
+        } else {
+          workoutInfo = (
+            <div>
+              <h4 className="workout-name"> {this.props.workout.name} </h4>
+              <span className="workout-description"> {this.props.workout.description} </span>
+              </div>
       )
     }
   return (

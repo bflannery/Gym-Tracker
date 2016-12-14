@@ -10,11 +10,10 @@ export default React.createClass({
     if(!this.props.athlete.pic){
       athlete = (
         <div className="athlete-info">
-          <h4 className="athlete-name"> {this.props.athlete.name} </h4>
+          <h4 className="athlete-name" onClick={this.onClick}> {this.props.athlete.name} </h4>
             <span> Age: {this.props.athlete.age} </span>
             <span> Weight: {this.props.athlete.weight} </span>
             <span> Goal: {this.props.athlete.goal} </span>
-          <input type="button" value="Delete Athlete" className="athlete-remove-button" onClick={this.removeAthlete}/>
         </div>
       );
     } else {
@@ -27,13 +26,17 @@ export default React.createClass({
               <span> Weight: {this.props.athlete.weight} </span>
               <span> Goal: {this.props.athlete.goal} </span>
           </div>
-          <input type="button" value="Delete Athlete" className="athlete-remove-button" onClick={this.removeAthlete}/>
         </div>
       )
     }
     return (
-      <li className="athlete-preview" onClick={this.onClick}>
+      <li>
+        <div className="athlete-preview" onClick={this.onClick}>
         {athlete}
+        </div>
+        <div className="remove-container">
+          <input type="button" value="Delete Athlete" className="athlete-remove-button" onClick={this.removeAthlete}/>
+        </div>
       </li>
     );
   },
@@ -43,6 +46,6 @@ export default React.createClass({
   },
 
    onClick() {
-     browserHistory.push(`/athletes/${this.props.athleteId}`)
+     browserHistory.push(`/athletes/${this.props.athlete.objectId}`)
    }
 });

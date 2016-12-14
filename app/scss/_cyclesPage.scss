@@ -1,7 +1,7 @@
 .cycle-hero {
   background-image: url('../assets/images/Cycles.jpg');
   background-size: cover;
-  height: 33vh;
+  height: 50vh;
 }
 
 .cycle-page {
@@ -102,13 +102,4 @@
 .cycle-description {
   display: block;
   font-size: 1.5rem;
-}
-
-@media(min-width:750px) {
-  .cycle-hero {
-    background-image: url('../assets/images/Cycles.jpg');
-    background-size: cover;
-    height: 65vh;
-  }
-
 }

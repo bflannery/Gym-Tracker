@@ -1,7 +1,7 @@
 .workout-hero {
   background-image: url('../assets/images/Workout.jpg');
   background-size: cover;
-  height: 33vh;
+  height: 50vh;
 }
 
 .workout-page {
@@ -101,13 +101,4 @@ span {
 
 .workout-description {
   display: block;
-}
-
-@media(min-width:750px){
-.workout-hero {
-  background-image: url('../assets/images/Workout.jpg');
-  background-size: cover;
-  background-position-y: -7rem;
-  height: 65vh;
-}
 }

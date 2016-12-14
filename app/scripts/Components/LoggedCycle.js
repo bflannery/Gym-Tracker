@@ -6,11 +6,13 @@ import moment from 'moment';
 
 export default React.createClass({
   render() {
+    console.log(this.props)
     return (
       <div className="cycle-preview-container">
         <li className="workout-preview">
-          <Link to = {`/workouts/${this.props.cycle.name}`} onClick={this.onClick}>
+          <Link to = {`/cycles/${this.props.cycle.name}`} onClick={this.onClick}>
             <h4 className="workout-name"> {this.props.cycle.name} </h4>
+              <span> {moment(this.props.cycle.cycleStartDate).format('L')} - {moment(this.props.cycle.cycleEndDate).format('L')}</span>
           </Link>
           <input type="submit" className="add-button" value="Add Cycle" onClick={this.handleSubmit}/>
         </li>
