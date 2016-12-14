@@ -19,7 +19,9 @@
 margin: 4rem 2rem 2rem 2rem;
 
 }
+
 .home-workout-container {
+   height: 16vh;
  // background-image: url('../assets/images/Workout.jpg');
  background: white;
  color: #393845;
@@ -27,6 +29,7 @@ margin: 4rem 2rem 2rem 2rem;
  background-position-y: -7rem;
  border: 3px solid darkgrey;
  margin-bottom: 1rem;
+
  -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
  -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
  box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
@@ -35,14 +38,14 @@ margin: 4rem 2rem 2rem 2rem;
 
 .home-cycle-container {
   // background-image: url('../assets/images/Cycles.jpg');
+  height: 16vh;
   background: white;
   color: #393845;
-  height: 18vh;
   background-size: cover;
   background-position-y: -7rem;
   border: 3px solid darkgrey;
   margin-bottom: 1rem;
- height: 16vh;
+
  -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
  -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
  box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
@@ -50,15 +53,14 @@ margin: 4rem 2rem 2rem 2rem;
 }
 
 .home-athlete-container {
-  // background-image: url('../assets/images/Athletes.jpg');
+    height: 16vh;
   background: white;
   color: #393845;
-  height: 18vh;
   background-size: cover;
   background-position-y: -7rem;
   border: 3px solid darkgrey;
   margin-bottom: 1rem;
-  height: 16vh;
+
   -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
   -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
   box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
@@ -69,6 +71,23 @@ margin: 4rem 2rem 2rem 2rem;
   text-align: center;
   font-size: 7rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 4rem;
   color: #393845;
+}
+
+@media(min-width:600px) {
+.home-hero {
+  background-image: url('../assets/images/home-hero.jpg');
+  background-size: cover;
+  height: 65vh;
+  }
+
+.section-title {
+  text-align: center;
+  font-size: 7rem;
+  margin: 0 auto;
+  padding: 0rem;
+  color: #393845;
+  }
+
 }

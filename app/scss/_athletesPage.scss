@@ -103,3 +103,12 @@
   -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
 }
+
+@media(min-width:732px) {
+  .athletes-hero {
+    background-image: url('../assets/images/Athletes.jpg');
+    background-size: cover;
+    background-position-y: -5rem;
+    height: 65vh;
+  }
+}

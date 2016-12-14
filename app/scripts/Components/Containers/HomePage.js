@@ -13,6 +13,7 @@ export default React.createClass({
         <div className="home-hero"></div>
 
         <div className="routes-container">
+        
         <div className="home-workout-container" onClick={this.WorkoutLink}>
           <h2 className="section-title"> Workouts </h2>
         </div>
