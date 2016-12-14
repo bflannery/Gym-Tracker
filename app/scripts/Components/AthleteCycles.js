@@ -5,7 +5,6 @@ import store from '../store';
 
 export default React.createClass({
   render(){
-    console.log(this.props)
     let athleteCycles;
 
     if(!this.props.athleteCycles) {
@@ -14,7 +13,7 @@ export default React.createClass({
       athleteCycles = this.props.athleteCycles.map((athleteCycle, i, arr)=>{
 
       return  <AthleteCycle key={i} athleteCycle={athleteCycle} athleteId={this.props.athlete.objectId}/>
-    
+
         });
       }
 

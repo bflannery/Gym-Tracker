@@ -103,6 +103,13 @@ span {
 }
 
 @media(min-width: 600px) {
+  .workout-hero {
+    background-image: url('../assets/images/Workout.jpg');
+    background-size: cover;
+      background-position-y: -7rem;
+    height: 50vh;
+  }
+
   .new-input {
     display: block;
     margin: 0 auto;
@@ -138,6 +145,13 @@ span {
 
 }
 @media(min-width: 850px) {
+  .workout-hero {
+    background-image: url('../assets/images/Workout.jpg');
+    background-size: cover;
+      background-position-y: -7rem;
+    height: 50vh;
+  }
+
   .new-input {
     width: 21rem;
     text-align: center;
