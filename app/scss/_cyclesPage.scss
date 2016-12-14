@@ -13,9 +13,9 @@
   background-position-y: -7rem;
   border: 3px solid darkgrey;
 
-  -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
-  -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
-  box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 1px 0px  rgba(0,0,0,0.75);
+ -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+ box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
 }
 
 .cycle-name {
@@ -25,22 +25,7 @@
   color: #127ebf;
   font-size: 2rem;
 }
-.new-input {
-  background: transparent;
-  border: 1px solid darkgray;
-  border-radius: 10px;
-  color: #127ebf;
-  padding: 1rem;
-  font-size: 1.2rem;
-}
 
-.create-button {
-  background: transparent;
-  border: 1px solid darkgray;
-  border-radius: 10px;
-  color: #127ebf;
-  padding: 1rem
-}
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #127ebf;;
@@ -82,9 +67,9 @@
   border: 3px solid darkgrey;
   padding: .5rem 0rem;
   margin-bottom: 1rem;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 1px 0px  rgba(0,0,0,0.75);
+ -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+ box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
       a {
     text-decoration: none;
     color: #127ebf;
@@ -112,4 +97,8 @@
   display: inline-block;
       margin: 2rem 1rem 0rem 1rem;
       font-size: 2rem;
+}
+.cycle-description {
+  display: block;
+  font-size: 1.5rem;
 }

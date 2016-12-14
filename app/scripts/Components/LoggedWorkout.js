@@ -9,10 +9,10 @@ export default React.createClass({
 
   render() {
     return (
-      <li>
+      <li className="workout-preview-container">
         <div className="workout-preview" onClick={this.onClick}>
           <h4 className="workout-name"> {this.props.workout.name} </h4>
-          <span> {this.props.workout.description} </span>
+          <span className="workout-description"> {this.props.workout.description} </span>
         </div>
         <div>
           <input type="submit" className="add-workout-button" value="Add To Cycle" onClick={this.handleSubmit}/>

@@ -21,7 +21,9 @@ export default React.createClass({
     return (
 
         <div className="main-container">
+          <div className="landing-page-container">
           <Login session={this.state.session} />
+          </div>
         </div>
     );
   },

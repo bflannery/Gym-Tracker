@@ -35,16 +35,17 @@ export default React.createClass ({
     }
   },
   render() {
+    console.log(this.state)
     return (
       <div className="main-container">
         <div className="athletes-hero"></div>
         <div className="athletes-page">
           <h2 className= "section-title"> Athletes </h2>
         <div className="athletes">
-          <NewAthleteForm/>
+          <NewAthleteForm athletes={this.state.athletes}/>
           <AthleteList athletes={this.state.athletes} athleteId={this.state.athleteList.objectId}/>
         </div>
-      </div>  
+      </div>
      </div>
     );
   }

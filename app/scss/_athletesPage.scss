@@ -30,7 +30,9 @@
   border: 1px solid darkgray;
   border-radius: 10px;
   color: #127ebf;
-  padding: 1rem
+  padding: 1rem;
+  margin-bottom: 4rem;
+  font-size: 1.2rem;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -58,9 +60,10 @@
  box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
 }
 
-.athletes-list {
-  margin: 4rem 0rem;
-  padding-left: .5rem;
+.athlete-list {
+     margin: 0 auto;
+    padding: 0;
+    width: 95%;
 }
 .athlete-pic {
   vertical-align: middle;
@@ -71,9 +74,9 @@
   border: 3px solid darkgrey;
   padding: .5rem 0rem;
   margin: 3rem 0rem;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
       a {
     text-decoration: none;
     color: #127ebf;
@@ -81,27 +84,23 @@
 }
 
 .athlete-info {
-  display:inline-block;
+  display: inline-block;
   vertical-align: middle;
-  margin: .5rem 1rem;;
+  margin: 0 auto;
     span {
       font-size: 1.5rem;
     }
 }
 
-
-.athlete-form input {
-  display: inline-block;
-  background: transparent;
-border: 1px solid #940315;
-border-radius: 10px;
-padding: .5rem 3rem;
-color: #127ebf;
-text-align: center;
-margin: 1rem;
-  input[type="button"] {
-    display: inline-block;
-    float: right;
-}
-
+.athlete-input {
+  margin: 1rem auto;
+  display: block;
+  font-size: 1.5rem;
+  padding: .5rem;
+  border: 3px solid darkgray;
+  text-align: center;
+  width: 58%;
+  -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
 }

@@ -1,18 +1,13 @@
-.register-page {
-  display: inline-block;
-  width: 75%;
+.register-input {
+  display: block;
+  margin: 1rem auto;
+  background: lightgray;
+  text-align: center;
+  font-size: 2rem;
+  width: 85%;
+  border-color: darkgray;
 }
 
-
-
-.register-form input {
-  display: block;
-  background: transparent;
-border: 1px solid #940315;
-border-radius: 10px;
-padding: .5rem 3rem;
-color: #9B96A3;
-text-align: center;
-margin: 1rem;
-
+.register-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #393845;
 }

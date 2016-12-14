@@ -21,7 +21,7 @@ export default React.createClass({
           <div>
             <h4 className="cycle-name"> {this.props.cycle.name} </h4>
             <span> {moment(this.props.cycle.cycleStartDate).format('L')} - {moment(this.props.cycle.cycleEndDate).format('L')}</span>
-            <span> {this.props.cycle.description} </span>
+            <span className="cycle-description"> {this.props.cycle.description} </span>
             <input type="button" value="Delete Cycle" className="cycle-remove-button" onClick={this.removeCycle}/>
           </div>
         );

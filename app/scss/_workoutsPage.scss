@@ -34,19 +34,8 @@
   padding: 1rem;
   font-size: 1.2rem;
 }
-
-.create-button {
-  background: transparent;
-  border: 1px solid darkgray;
-  border-radius: 10px;
-  color: #127ebf;
-  padding: 1rem
-}
-
-
-
 .workouts {
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
   font-size: 2rem;
 }
@@ -70,21 +59,22 @@
 .workout-list {
   margin: 4rem 0rem;
   padding-left: .5rem;
+  color: #393845;
 }
 
-.create-button {
-  margin-left: .5rem;
-  margin-bottom: 4rem;
-  font-size: 1.2rem;
+.workout-preview-container {
+  border: 3px solid darkgrey;
+  -webkit-box-shadow: 2px 2px 1px 0px  rgba(0,0,0,0.75);
+ -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+ box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+ margin: 1rem;
 }
 
 .workout-preview {
-  border: 3px solid darkgrey;
+  width: 80%;
+  display: inline-block;
   padding: .5rem 0rem;
-  margin-bottom: 1rem;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  margin: 0;
       a {
     text-decoration: none;
     color: #127ebf;
@@ -96,11 +86,19 @@ width: 20rem;
 background: white;
 border: 1px solid darkgray;
 border-radius: 10px;
-color: darkgray;
+  color: #127ebf;
 padding: 1rem;
 font-size: 1.2rem;
 }
 
 span {
     color: #393845;
+}
+
+.remove-container {
+  display: inline-block;
+}
+
+.workout-description {
+  display: block;
 }

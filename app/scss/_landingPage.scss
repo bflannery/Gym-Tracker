@@ -1,31 +1,36 @@
-.landing-page {
-  display: inline-block;
-  width: 75%;
-}
-
 .form-container {
   display: inline-block;
-background: black;
-padding: 8rem 1rem;
-border: 1px solid #940315;
-border-radius: 10px;
-text-align: center;
+  padding: 12.5rem 3rem;
+  background: white;
+  border: 3px solid darkgray;
+  margin-top: 10rem;
 }
 
-.login-form input {
+.login-input {
   display: block;
-  background: transparent;
-border: 1px solid #940315;
-border-radius: 10px;
-padding: .5rem 3rem;
-color: #9B96A3;
-text-align: center;
-margin: 1rem;
-
-#login-button {
-  padding: .5rem 5.9rem;
+  margin: 1rem auto;
+  background: lightgray;
+  text-align: center;
+  font-size: 2rem;
+  width: 85%;
+  border-color: darkgray;
 }
-  a:visited {
-    color: #940315;
-  }
+
+.login-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #393845;
+}
+
+.login-button {
+  display: block;
+  margin: 1rem auto;
+  background: lightgray;
+  text-align: center;
+  font-size: 2rem;
+  width: 65%;
+  color:#393845;
+  border-color: darkgray;
+}
+
+.landing-page-container {
+  text-align: center;
 }

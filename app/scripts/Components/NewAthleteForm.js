@@ -4,12 +4,14 @@ import {browserHistory} from 'react-router'
 
 export default React.createClass({
   render() {
+
+    console.log(this.props)
     return (
       <form className="athlete-form">
-        <input type="text" ref="name" className="athlete-info" placeholder="Name"/>
-        <input type="text" ref="age" className="athlete-info" placeholder="Age"/>
-        <input type="text" ref="weight" className="athlete-info" placeholder="Weight"/>
-        <input type="text" ref="goal" className="athlete-info" placeholder="Goal"/>
+        <input type="text" ref="name" className="athlete-input" placeholder="Name"/>
+        <input type="text" ref="age" className="athlete-input" placeholder="Age"/>
+        <input type="text" ref="weight" className="athlete-input" placeholder="Weight"/>
+        <input type="text" ref="goal" className="athlete-input" cols="30" rows="5" placeholder="Goal"/>
         <input type="submit" value="Create New Athlete" className="create-button" onClick={this.createAthlete}/>
       </form>
   );

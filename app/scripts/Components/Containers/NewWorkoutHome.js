@@ -51,8 +51,6 @@ export default React.createClass ({
 },
   render () {
     let workoutContainer;
-    console.log(this.state)
-    console.log(this.props)
 
     if(this.state.workout.movements < 1) {
 

@@ -20,16 +20,16 @@ export default React.createClass({
       workoutInfo = (
         <div>
           <h4 className="workout-name"> {this.props.workout.name} </h4>
-          <span> {this.props.workout.description} </span>
+          <span className="workout-description"> {this.props.workout.description} </span>
         </div>
       )
     }
   return (
-    <li>
+    <li className="workout-preview-container">
       <div className="workout-preview" onClick={this.onClick}>
         {workoutInfo}
       </div>
-      <div>
+      <div className="remove-container">
         <input type="button" value="Delete Workout" className="workout-remove-button" onClick={this.removeWorkout}/>
       </div>
     </li>
