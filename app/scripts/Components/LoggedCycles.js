@@ -17,9 +17,11 @@ export default React.createClass({
       });
     }
     return (
+      <div className="cycles">
       <ul className="cycles-list">
         {cycles}
       </ul>
+      </div>
     );
   }
 });

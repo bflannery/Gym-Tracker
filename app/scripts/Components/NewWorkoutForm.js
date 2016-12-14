@@ -7,7 +7,7 @@ export default React.createClass({
     return (
       <form className="create-workout">
         <input type="text" ref="create" className="new-input" placeholder="Create New Workout"/>
-        <input type="text" ref="workoutDescription" className="workout-info" placeholder="Description"/>
+        <textarea type="text" ref="workoutDescription" className="workout-info" placeholder="Description"/>
         <input type="submit" value="Create" className="create-button" onClick={this.createWorkout}/>
       </form>
     );

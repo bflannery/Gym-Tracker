@@ -146,6 +146,8 @@ export default React.createClass({
       );
     } else {
       return (
+        <div className="main-container">
+        <div className="cycle-hero"></div>
         <div className="cycle-page">
           <h2 className="section-title">{this.props.params.name}</h2>
           <form className="cycle-form">
@@ -162,6 +164,7 @@ export default React.createClass({
             <Link to = "workouts"> Create A New Workout </Link>
           </span>
           <LoggedWorkouts workouts={this.state.loggedWorkout} cycleId={this.state.cycle.objectId}/>
+        </div>
         </div>
       )
     }

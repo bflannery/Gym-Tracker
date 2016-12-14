@@ -11,7 +11,7 @@ export default React.createClass({
         <input type="text" ref="name" className="athlete-input" placeholder="Name"/>
         <input type="text" ref="age" className="athlete-input" placeholder="Age"/>
         <input type="text" ref="weight" className="athlete-input" placeholder="Weight"/>
-        <input type="text" ref="goal" className="athlete-input" cols="30" rows="5" placeholder="Goal"/>
+        <textarea type="text" ref="goal" className="athlete-input" cols="30" rows="5" placeholder="Goal"/>
         <input type="submit" value="Create New Athlete" className="create-button" onClick={this.createAthlete}/>
       </form>
   );

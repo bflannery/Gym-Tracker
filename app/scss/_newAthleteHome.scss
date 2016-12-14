@@ -1,8 +1,8 @@
 .profile-page {
   background: white;
   border: 3px solid darkgray;
-  width: 75%;
-  padding: 6rem 0rem;
+  width: 90%;
+  padding: 3rem 0rem;
   text-align: center;
   margin: 0 auto;
 }
@@ -43,14 +43,19 @@
       color: #127ebf;
 }
 
-.cycle-preview-container {
-  border: 3px solid darkgrey;
-  -webkit-box-shadow: 2px 2px 1px 0px  rgba(0,0,0,0.75);
- -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
- box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
- margin: 1rem;
- background: white;
-    text-align: center;
-    width: 85%;
-    margin: 0 auto;
+.athlete-cycle-name {
+  display: inline-block;
+  margin: 1.2rem .2rem .1rem 0;
+  color: #127ebf;
+  font-size: 1rem;
+}
+
+.athlete-cycle-list {
+  padding: 0;
+}
+
+@media(min-width: 600px) {
+  .cycle-preview span {
+    display: block;
+  }
 }

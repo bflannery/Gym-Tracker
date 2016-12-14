@@ -19,7 +19,7 @@
 }
 
 .athlete-name {
-  display: inline-block;
+  display: block;
   margin: 1.2rem .2rem;
   color: #127ebf;
   font-size: 2rem;
@@ -69,25 +69,37 @@
   padding-top: 2rem;
 }
 
-.athlete-preview {
+.athlete-preview-container {
   border: 3px solid darkgrey;
+  -webkit-box-shadow: 2px 2px 1px 0px  rgba(0,0,0,0.75);
+ -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+ box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+ margin: 1rem auto;
+ background: white;
+    text-align: center;
+    padding: 1rem 0rem;
+}
+
+.athlete-preview {
+  width: 80%;
+  display: inline-block;
   padding: .5rem 0rem;
-  margin: 3rem 0rem;
-  -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
-  box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+  margin: 0;
       a {
     text-decoration: none;
     color: #127ebf;
     }
-}
+    span {
+      font-size: 1rem;
+    }
+  }
 
 .athlete-info {
   display: inline-block;
   vertical-align: middle;
   margin: 0 auto;
     span {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
 }
 
@@ -102,4 +114,16 @@
   -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+}
+
+@media(min-width: 600px){
+  .profile-page {
+    width: 75%;
+  }
+}
+
+@media(min-width: 850px){
+  .profile-page {
+    width: 60%;
+  }
 }

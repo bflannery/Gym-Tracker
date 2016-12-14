@@ -6,7 +6,7 @@ export default React.createClass({
     return (
       <li className="movement-preview">
       <h4 className="movement-name" ref="movement"> {this.props.movement.get('name')}</h4>
-        <form>
+        <form className="workout-form-input">
             <ul className= "movement-list-info">
               <li className="movement-info">
                 <label>Reps:

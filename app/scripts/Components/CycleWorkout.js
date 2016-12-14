@@ -20,7 +20,7 @@ export default React.createClass({
 
       cycleWorkout = (
           <div className="cycle-name-date">
-            <h4 className="cycle-name" onClick={this.onClick}>{this.props.cycleWorkout.workout.name}</h4>
+            <h4 className="cycle-workout-name" onClick={this.onClick}>{this.props.cycleWorkout.workout.name}</h4>
             <span className="date"> Workout Date:
               <DatePicker className="date-picker" selected={this.props.startDate} onChange={this.handleChange}/>
             </span>
@@ -29,7 +29,7 @@ export default React.createClass({
       } else {
       cycleWorkout = (
         <div className="cycle-name-date">
-          <h4 className="cycle-name" onClick={this.onClick}>{this.props.cycleWorkout.workout.name}</h4>
+          <h4 className="cycle-workout-name" onClick={this.onClick}>{this.props.cycleWorkout.workout.name}</h4>
           <span className="date"> Workout Date:
             <DatePicker className="date-picker"  selected={moment(this.props.cycleWorkout.workoutDate)} onChange={this.handleChange} />
           </span>

@@ -2,6 +2,7 @@
   background: white;
   color: #393845;
   border-bottom: 3px solid darkgray;
+  padding: .2rem;
 
 }
 
@@ -12,23 +13,23 @@
 
 .app-title {
   display: inline-block;
-  margin-left: 3rem;
-    color: #393845;
+  font-size: 1rem;
+  color: #393845;
+  margin-left: .3rem;
 }
 
 .nav-container {
   display: inline-block;
   float: right;
-  margin-top: 1.1rem;
+  margin-top: .5rem;
   margin-right: 1rem;
+  font-size: .7rem;
 }
 
 .nav-list {
   display: inline-block;
   background: transparent;
   margin: .3rem;
-  padding: .5rem 1rem;
-  font-size: 1.5rem;
 }
 
 a {
@@ -45,7 +46,58 @@ a:visited {
   color: #393845;
   border: 0;
   font-family: Times;
-  font-size: 1.4rem;
-  padding: .04rem;
+}
 
+@media(min-width: 600px) {
+  .app-title {
+    display: inline-block;
+    font-size: 2rem;
+    color: #393845;
+    margin-left: 1rem;
+  }
+
+  .nav-container {
+    display: inline-block;
+    float: right;
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: .7rem;
+  }
+  .nav-list {
+    display: inline-block;
+    background: transparent;
+    margin: .3rem;
+    font-size: 1rem;
+  }
+  .logout-button {
+    background: transparent;
+    color: #393845;
+    border: 0;
+    font-family: Times;
+    font-size: 1rem;
+  }
+
+}
+
+@media(min-width: 850px) {
+  .nav-container {
+    display: inline-block;
+    float: right;
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: .7rem;
+  }
+  .nav-list {
+    display: inline-block;
+    background: transparent;
+    margin: .3rem;
+    font-size: 1.5rem;
+  }
+  .logout-button {
+    background: transparent;
+    color: #393845;
+    border: 0;
+    font-family: Times;
+    font-size: 1.5rem;
+  }
 }

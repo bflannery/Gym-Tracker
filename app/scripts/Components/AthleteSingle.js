@@ -30,7 +30,7 @@ export default React.createClass({
       )
     }
     return (
-      <li>
+      <li className="athlete-preview-container">
         <div className="athlete-preview" onClick={this.onClick}>
         {athlete}
         </div>

@@ -25,7 +25,7 @@ export default React.createClass({
         );
       }
       return (
-        <li>
+        <li className="cycle-preview-container">
           <div className="cycle-preview" onClick={this.onClick}>
             {cycle}
           </div>

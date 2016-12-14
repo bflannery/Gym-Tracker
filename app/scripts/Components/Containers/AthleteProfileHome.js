@@ -67,7 +67,7 @@ export default React.createClass ({
         <div className="athletes-hero"></div>
         <h2 className="section-title"> Athlete Profile</h2>
         <div className="profile-page">
-          <img src={photo} height="400" width="400"/>
+          <img src={photo} height="250" width="250"/>
           <input className="edit-button" onClick={this.handlePhoto} type="button" value="Edit Photo"/>
           <h3 className="athlete-profile-name"> {this.state.athlete.name}</h3>
           <div className="athlete-info-container">

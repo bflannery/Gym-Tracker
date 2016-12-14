@@ -5,17 +5,36 @@ import moment from 'moment';
 
 
 export default React.createClass({
+
   render() {
-    console.log(this.props)
-    return (
-      <div className="cycle-preview-container">
-        <li className="workout-preview">
+  let loggedCycle;
+  if(!this.props.cycle.cycleStartDate) {
+    loggedCycle = (
+
+        <li className="cycle-preview">
           <Link to = {`/cycles/${this.props.cycle.name}`} onClick={this.onClick}>
             <h4 className="workout-name"> {this.props.cycle.name} </h4>
-              <span> {moment(this.props.cycle.cycleStartDate).format('L')} - {moment(this.props.cycle.cycleEndDate).format('L')}</span>
           </Link>
           <input type="submit" className="add-button" value="Add Cycle" onClick={this.handleSubmit}/>
         </li>
+
+      )
+    } else {
+      loggedCycle = (
+
+          <li className="cycle-preview">
+            <Link to = {`/cycles/${this.props.cycle.name}`} onClick={this.onClick}>
+              <h4 className="workout-name"> {this.props.cycle.name} </h4>
+                <span> {moment(this.props.cycle.cycleStartDate).format('L')} - {moment(this.props.cycle.cycleEndDate).format('L')}</span>
+            </Link>
+            <input type="submit" className="add-button" value="Add Cycle" onClick={this.handleSubmit}/>
+          </li>
+
+      )
+    }
+    return (
+      <div className="cycle-preview-container">
+      {loggedCycle}
       </div>
     )
   },
