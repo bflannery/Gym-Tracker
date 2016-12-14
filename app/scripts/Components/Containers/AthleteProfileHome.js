@@ -58,20 +58,23 @@ export default React.createClass ({
     }
     return (
       <div className="main-container">
-        <h2> Athlete Profile</h2>
-        <img src={photo} height="100" width="100"/>
-        <input onClick={this.handlePhoto} type="button" value="Edit Photo"/>
-        <h3> {this.state.athlete.name}</h3>
-        <div className="athlete-info-container">
-          <span> Age: {this.state.athlete.age} </span>
-          <span> Weight: {this.state.athlete.weight} </span>
-          <span> Goal: {this.state.athlete.goal} </span>
+        <div className="athletes-hero"></div>
+        <h2 className="section-title"> Athlete Profile</h2>
+        <div className="profile-page">
+          <img src={photo} height="400" width="400"/>
+          <input className="edit-button" onClick={this.handlePhoto} type="button" value="Edit Photo"/>
+          <h3 className="athlete-profile-name"> {this.state.athlete.name}</h3>
+          <div className="athlete-info-container">
+            <span> Age: {this.state.athlete.age} </span>
+            <span> Weight: {this.state.athlete.weight} </span>
+            <span> Goal: {this.state.athlete.goal} </span>
+          </div>
+          <AthleteCycles athleteCycles={this.state.athlete.athleteCycles} athlete={this.state.athlete}/>
         </div>
-        <AthleteCycles athleteCycles={this.state.athlete.athleteCycles} athlete={this.state.athlete}/>
-        <span className="choose"> Choose An Exsisting Cycles Below or
-          <Link to="cycles"> Create A New Cycle </Link>
-        </span>
-        <LoggedCycles cycles={this.state.loggedCycle} athleteId={this.state.athlete.objectId}/>
+          <span className="cycle-choose"> Choose An Exsisting Cycles Below or
+            <Link to="cycles"> Create A New Cycle </Link>
+          </span>
+          <LoggedCycles cycles={this.state.loggedCycle} athleteId={this.state.athlete.objectId}/>
       </div>
     );
   },

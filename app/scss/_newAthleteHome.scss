@@ -1,0 +1,56 @@
+.profile-page {
+  background: white;
+  border: 3px solid darkgray;
+  width: 75%;
+  padding: 6rem 0rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.athlete-profile-name {
+  font-size: 4rem;
+  margin: 0 auto;
+}
+
+.edit-button {
+  border: 3px solid darkgray;
+  padding: .5rem;
+  display: block;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+}
+
+.athlete-info-container {
+  display: block;
+    span {
+      font-size: 2rem;
+    }
+}
+
+.cycle-choose {
+  display: block;
+  margin: 2rem auto;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+  .cycle-choose a{
+    color: #127ebf;
+  }
+
+  .cycle-choose a:visited {
+      color: #127ebf;
+}
+
+.cycle-preview-container {
+  border: 3px solid darkgrey;
+  -webkit-box-shadow: 2px 2px 1px 0px  rgba(0,0,0,0.75);
+ -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+ box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+ margin: 1rem;
+ background: white;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+}
