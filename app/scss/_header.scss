@@ -13,16 +13,15 @@
 
 .app-title {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #393845;
-  margin-left: .3rem;
+  margin-left: 1rem;
 }
 
 .nav-container {
   display: inline-block;
   float: right;
-  margin-top: .5rem;
-  margin-right: 1rem;
+  margin-top: 1.1rem;
   font-size: .7rem;
 }
 
@@ -41,11 +40,21 @@ a:visited {
   color: #393845;
 }
 
+a:hover {
+  color: #127ebf;
+}
+
 .logout-button {
   background: transparent;
   color: #393845;
   border: 0;
   font-family: Times;
+}
+
+.gym-logo {
+  position: relative;
+  top: .5rem;
+  left: .5rem;
 }
 
 @media(min-width: 600px) {

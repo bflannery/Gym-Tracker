@@ -9,6 +9,7 @@ export default React.createClass({
     return (
 
       <div className="form-container">
+        <img src="../../assets/images/blue-user.png" height="75" width="75" className="user-icon"/>
         <form onSubmit={this.handleSubmit} className="login-form">
           <input className="login-input" ref="login" type="email" placeholder="Email"/>
           <input className="login-input" ref="password" type="password" placeholder="Password"/>
