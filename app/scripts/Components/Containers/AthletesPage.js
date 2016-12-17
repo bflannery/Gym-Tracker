@@ -5,11 +5,13 @@ import store from '../../store';
 
 import AthleteList from '../AthleteList';
 import NewAthleteForm from '../NewAthleteForm';
+import AthleteModal from './AthleteModal';
 
 
 export default React.createClass ({
   getInitialState() {
     return {
+      isModalOpen: false,
       athleteList: {},
       athletes: store.athletes.toJSON(),
       session: store.session.toJSON()
@@ -48,11 +50,17 @@ export default React.createClass ({
         <div className="athletes-page">
           <h2 className= "section-title"> Athletes </h2>
         <div className="athletes">
-          <NewAthleteForm athletes={this.state.athletes}/>
+          <button onClick={() => this.openModal()}> New Athlete</button>
+          <AthleteModal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+          <NewAthleteForm modalState={this.state.isModalOpen} athletes={this.state.athletes} athleteId={this.state.athleteList.objectId}/>
+          </AthleteModal>
           <AthleteList athletes={this.state.athletes} athleteId={this.state.athleteList.objectId}/>
         </div>
       </div>
      </div>
     );
-  }
+  },
+  openModal() {
+  this.setState({ isModalOpen: true })
+}
 });
