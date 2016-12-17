@@ -3,6 +3,7 @@ import store from '../store';
 
 export default React.createClass({
   render() {
+    console.log(this.props)
     return (
       <li className="movement-preview">
       <h4 className="movement-name" ref="movement"> {this.props.movement.get('name')}</h4>

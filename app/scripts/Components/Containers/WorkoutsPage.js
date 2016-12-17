@@ -44,12 +44,11 @@ export default React.createClass ({
     }
   },
   render() {
-    console.log(this.state)
     return (
       <div className="main-container">
       <div className="workout-hero"></div>
         <div className="workout-page">
-          <h2 className="section-title"> Workouts </h2>
+          <h2 className="page-title"> Workouts </h2>
             <div className="workouts">
               <NewWorkoutForm/>
               <WorkoutList workouts={this.state.loggedWorkout} workoutId={this.state.workoutList.objectId}/>

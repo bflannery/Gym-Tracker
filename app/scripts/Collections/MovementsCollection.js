@@ -42,6 +42,7 @@ getMovements() {
         },
         contentType: 'application/json',
         success: (data) => {
+          console.log(data)
           let movements = data._embedded['activity_types'];
           let movementInfo = movements.forEach((movement, i, arr) => {
               this.add({

@@ -8,6 +8,7 @@ export default React.createClass({
   <div className="landing-page-container">
         <div className="form-container">
           <form onSubmit={this.handleSubmit} className="register-form">
+          <img src="../../assets/images/blue-user.png" height="75" width="75" className="user-icon"/>
             <input className="register-input" ref="name" type="text" placeholder="Name"/>
             <input className="register-input" ref="email" type="email" placeholder="Email"/>
             <input className="register-input" ref="password" type="password" placeholder="Password"/>

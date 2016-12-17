@@ -21,7 +21,7 @@ margin: 4rem 2rem 2rem 2rem;
 }
 
 .home-workout-container {
-   height: 16vh;
+   height: 21vh;
  // background-image: url('../assets/images/Workout.jpg');
  background: white;
  color: #393845;
@@ -29,31 +29,48 @@ margin: 4rem 2rem 2rem 2rem;
  background-position-y: -7rem;
  border: 3px solid darkgrey;
  margin-bottom: 1rem;
-
- -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
- -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
- box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
+ -webkit-box-shadow: 2px 2px 1px 0px  rgba(0,0,0,0.75);
+ -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+ box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
     padding: 2rem;
 }
 
+.home-workout-container:hover{
+  background: #127ebf;
+      h2{
+        color: white;
+      }
+      img {
+        color: white;
+      }
+}
+
 .home-cycle-container {
-  // background-image: url('../assets/images/Cycles.jpg');
-  height: 16vh;
+  height: 21vh;
   background: white;
   color: #393845;
   background-size: cover;
   background-position-y: -7rem;
   border: 3px solid darkgrey;
   margin-bottom: 1rem;
-
- -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
- -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
- box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
+ -webkit-box-shadow: 2px 2px 1px 0px  rgba(0,0,0,0.75);
+ -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+ box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
      padding: 2rem;
 }
 
+.home-cycle-container:hover{
+  background: #127ebf;
+  h2{
+    color: white;
+  }
+  img {
+    color: white;
+  }
+}
+
 .home-athlete-container {
-    height: 16vh;
+    height: 21vh;
   background: white;
   color: #393845;
   background-size: cover;
@@ -61,17 +78,33 @@ margin: 4rem 2rem 2rem 2rem;
   border: 3px solid darkgrey;
   margin-bottom: 1rem;
 
-  -webkit-box-shadow: 5px 5px 1px 0px  rgba(0,0,0,0.75);
-  -moz-box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
-  box-shadow: 5px 5px 1px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 1px 0px  rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
      padding: 2rem;
+}
+
+.home-athlete-container:hover{
+  background: #127ebf;
+  h2{
+    color: white;
+  }
+  img{
+    color: white;
+  }
+
+}
+
+.home-icon {
+  margin: 0 auto;
+  display: inherit;
+    color: #393845;
 }
 
 .section-title {
   text-align: center;
   font-size: 3rem;
   margin: 0 auto;
-  padding: 2rem;
   color: #393845;
 }
 

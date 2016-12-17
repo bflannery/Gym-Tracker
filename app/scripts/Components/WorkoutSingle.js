@@ -9,7 +9,6 @@ import LoggedMovements from './LoggedMovements';
 export default React.createClass({
 
   render() {
-      console.log(this.props)
       let workoutInfo;
         if(this.props.workout.description === null) {
           workoutInfo = (
