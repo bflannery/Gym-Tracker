@@ -18,6 +18,8 @@ import AthletesPage from './Components/Containers/AthletesPage';
 import AthleteProfileHome from './Components/Containers/AthleteProfileHome';
 import ImageUpload from './Components/ImageUpload';
 
+import GetLocations from './Components/Containers/GetLocations';
+
 import store from './store';
 
 let getAuth = function(nextState, replace, callback){
@@ -42,6 +44,8 @@ const router = (
         <Route path='/athletes' component={AthletesPage}/>
           <Route path='/athletes/:id' component={AthleteProfileHome}/>
           <Route path='/athletes/images/:id' component = {ImageUpload}/>
+
+        <Route path='/locations' component={GetLocations}/>
       </Route>
     </Router>
 );

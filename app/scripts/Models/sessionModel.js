@@ -13,7 +13,7 @@ export default Backbone.Model.extend({
 
   url: 'https://api.backendless.com/v1/data/Users',
   idAttribute: 'objectId',
-  defaults: { 
+  defaults: {
     authenticated: false
   },
 
@@ -55,5 +55,22 @@ export default Backbone.Model.extend({
         browserHistory.push('/');
       }
     })
+  },
+
+  translateCurrentLocation() {
+    let positionData = {};
+    let loadData = new Promise((resolve,reject) => {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        positionData.lat = position.coords.latitude;
+        positionData.long = position.coords.longitude;
+        if(positionData.lat && positionData.long) {
+          resolve(positionData);
+        } else {
+          reject;
+        }
+      });
+    });
+    console.log(loadData);
+    return loadData;
   }
 })

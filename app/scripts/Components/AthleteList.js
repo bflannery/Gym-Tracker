@@ -3,7 +3,6 @@ import AthleteSingle from './AthleteSingle';
 
 export default React.createClass({
   render() {
-    console.log(this.props)
     let athletes;
 
     if(this.props.athletes.length < 1) {

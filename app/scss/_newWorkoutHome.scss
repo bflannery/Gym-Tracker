@@ -87,19 +87,20 @@ color: white;
 }
 
 .logged-workout-container {
-  margin: 0em 0rem 2rem 0rem;
+  padding: 0;
+  margin: 1rem auto;
   width: 90%;
 }
 .loggedMovements span {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .logged-movement-name {
   vertical-align: middle;
-  display: inline-block;
+  display: block;
   margin-right: .2rem;
   margin: 1.2rem;
   color: #127ebf;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 @media(min-width: 600px) {

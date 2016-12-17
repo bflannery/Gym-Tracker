@@ -1,19 +1,19 @@
 .form-container {
   display: inline-block;
-  padding: 12.5rem 3rem;
+  padding: 1.5rem 0rem;
   background: white;
   border: 3px solid darkgray;
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 
 .login-input {
   display: block;
   margin: 1rem auto;
-  background: lightgray;
+  background: white;
   text-align: center;
-  font-size: 2rem;
-  width: 85%;
-  border-color: darkgray;
+  font-size: 1rem;
+  width: 65%;
+  border-color: #127ebf;
 }
 
 .login-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -23,12 +23,12 @@
 .login-button {
   display: block;
   margin: 1rem auto;
-  background: lightgray;
+  background: white;
   text-align: center;
-  font-size: 2rem;
-  width: 65%;
+  font-size: 1rem;
+  width: 35%;
   color:#393845;
-  border-color: darkgray;
+  border-color: #127ebf;
 }
 
 .landing-page-container {

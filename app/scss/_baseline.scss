@@ -12,6 +12,15 @@ body {
   margin: 0;
   }
 
+  .create-button {
+    background: white;
+    border: 1px solid #127ebf;
+    color: #127ebf;
+    padding: .5rem 2rem;
+    margin-bottom: 4rem;
+    font-size: 1.2rem;
+  }
+
 .save-button {
   background: transparent;
   border: 1px solid darkgray;
@@ -62,7 +71,8 @@ body {
 }
 
 .redirect-link {
-  font-size: 1.7rem;
+  font-size: 1rem;
+  padding: 0 1rem;
 }
 .redirect-link a {
   color: #127ebf;

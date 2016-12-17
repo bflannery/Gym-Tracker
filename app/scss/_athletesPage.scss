@@ -25,16 +25,6 @@
   font-size: 2rem;
 }
 
-.create-button {
-  background: transparent;
-  border: 1px solid darkgray;
-  border-radius: 10px;
-  color: #127ebf;
-  padding: 1rem;
-  margin-bottom: 4rem;
-  font-size: 1.2rem;
-}
-
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #127ebf;;
 }
@@ -119,11 +109,13 @@
 @media(min-width: 600px){
   .profile-page {
     width: 75%;
+
   }
 }
 
 @media(min-width: 850px){
   .profile-page {
     width: 60%;
+
   }
 }

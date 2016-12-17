@@ -16,8 +16,8 @@ export default React.createClass({
       </form>
   );
 },
-createAthlete(e){
-  e.preventDefault();
+createAthlete(){
+
   let athleteName = this.refs.name.value;
   let athleteAge = this.refs.age.value;
   let athleteWeight = this.refs.weight.value;
@@ -33,5 +33,7 @@ createAthlete(e){
    this.refs.age.value = "";
    this.refs.weight.value = "";
    this.refs.goal.value = "";
+
+   this.setState({ isModalOpen: false})
   }
 });

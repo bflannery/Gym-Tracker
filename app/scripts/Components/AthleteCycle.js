@@ -10,7 +10,6 @@ export default React.createClass({
 
   render() {
     let athleteCycle;
-    console.log(this.props)
 
     if(!this.props.athleteCycle.cycle.cycleStartDate) {
       athleteCycle = (
