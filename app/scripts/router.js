@@ -19,6 +19,7 @@ import AthleteProfileHome from './Components/Containers/AthleteProfileHome';
 import ImageUpload from './Components/ImageUpload';
 
 import GetLocations from './Components/Containers/GetLocations';
+import ForgotPassword from './Components/ForgotPassword';
 
 import store from './store';
 
@@ -33,6 +34,7 @@ const router = (
         <IndexRoute component={LandingPage}/>
         <Route path='/oauth' onEnter={getAuth}/>
         <Route path='/register' component={Register}/>
+        <Route path='/forgotpassword' component={ForgotPassword}/>
         <Route path='/home' component={HomePage}/>
 
         <Route path='/workouts' component={WorkoutsPage}/>

@@ -81,6 +81,13 @@
  background: white;
     text-align: center;
 }
+
+.cycle-preview-container:hover {
+  background: #127ebf;
+      h4{
+        color: white;
+      }
+}
 .cycle-preview {
   width: 80%;
   display: inline-block;
@@ -98,7 +105,7 @@
 .cycle-info {
   width: 13rem;
   background: white;
-  border: 2px solid #127ebf;
+  border: 1px solid #127ebf;
   color: #127ebf;
   padding: 1rem;
   font-size: 1.2rem;
@@ -131,7 +138,7 @@
     margin: 0 auto;
     width: 13rem;
     background: white;
-    border: 2px solid #127ebf;
+    border: 1px solid #127ebf;
     color: #127ebf;
     padding: 1rem;
     font-size: 1.2rem;

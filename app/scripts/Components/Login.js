@@ -15,6 +15,7 @@ export default React.createClass({
           <input className="login-input" ref="password" type="password" placeholder="Password"/>
           <input className="login-button" id="login-button" type="submit" value="Log In"/>
           <span className="redirect-link"> Not A Member? <Link to="/register">Signup Here!</Link></span>
+          <span className="redirect-link"> Forgot Password? <Link to="/forgotpassword">Click here</Link></span>
         </form>
       </div>
 

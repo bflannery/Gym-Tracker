@@ -14,7 +14,9 @@ export default Backbone.Model.extend({
   url: 'https://api.backendless.com/v1/data/Users',
   idAttribute: 'objectId',
   defaults: {
-    authenticated: false
+    authenticated: false,
+    passwordReset: null
+
   },
 
   register(name, email, password){
@@ -55,6 +57,24 @@ export default Backbone.Model.extend({
         browserHistory.push('/');
       }
     })
+  },
+
+  newPassword(email) {
+    $.ajax({
+      url: 'https://api.backendless.com/v1/users/restorepassword/' + email ,
+      type: 'GET',
+      success: () => {
+        console.log('New Password Sent');
+        this.set({passwordReset: `A temporary password has been sent to ${email}.`});
+      },
+      error: (response) => {
+        console.log(response.responseJSON.code);
+        if (response.responseJSON.code === 3020) {
+          this.set({passwordReset: `I\'m sorry, that email was not found in our system.`});
+          console.log(this.get('passwordReset'));
+        }
+      }
+    });
   },
 
   translateCurrentLocation() {

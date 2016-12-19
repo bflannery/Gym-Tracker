@@ -70,6 +70,13 @@
     padding: 1rem 0rem;
 }
 
+.athlete-preview-container:hover {
+  background: #127ebf;
+      h4{
+        color: white;
+      }
+}
+
 .athlete-preview {
   width: 80%;
   display: inline-block;
