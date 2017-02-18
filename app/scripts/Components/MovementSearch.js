@@ -8,14 +8,15 @@ export default React.createClass ({
   getInitialState() {
     return {
       movements: store.movements.toJSON(),
-    }
+    };
   },
   componentDidMount() {
     store.movements.on('change update', () => {
-      this.setState({movements: store.movements.toJSON()})
+      this.setState({movements: store.movements.toJSON()});
     });
   },
   render() {
+    console.log(this.state)
   let filteredSearch=store.movements.search(this.state.searchTerm);
     return (
       <div className="workout-search-container">
@@ -28,12 +29,12 @@ export default React.createClass ({
           </div>
           <MovementList movements={filteredSearch} workoutId={this.props.workoutId}/>
       </div>
-    )
+    );
   },
   handleSubmit(e){
     e.preventDefault();
-    let search = this.refs.search.value
-    let lowerSearch = search.toLowerCase()
+    let search = this.refs.search.value;
+    let lowerSearch = search.toLowerCase();
     this.setState({searchTerm : lowerSearch});
   }
 });

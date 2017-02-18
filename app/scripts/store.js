@@ -18,4 +18,4 @@ export default {
   loggedWorkout  : new LoggedWorkout(),
   loggedCycle    : new LoggedCycle()
 
-}
+};

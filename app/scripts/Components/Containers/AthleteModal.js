@@ -1,12 +1,11 @@
 import React from 'react';
-
 import store from '../../store';
 
 export default React.createClass ({
   render() {
 
     if (this.props.isOpen === false)
-      return null
+      return null;
 
     let modalStyle = {
       position: 'absolute',
@@ -15,7 +14,7 @@ export default React.createClass ({
       transform: 'translate(-50%, -50%)',
       zIndex: '9999',
       background: '#fff'
-    }
+    };
 
     let backdropStyle = {
       position: 'absolute',
@@ -25,11 +24,11 @@ export default React.createClass ({
       left: '0px',
       zIndex: '9998',
       background: 'rgba(0, 0, 0, 0.3)'
-    }
+    };
 
     if (this.props.backdropStyle) {
            for (let key in this.props.backdropStyle) {
-             backdropStyle[key] = this.props.backdropStyle[key]
+             backdropStyle[key] = this.props.backdropStyle[key];
            }
          }
 
@@ -42,7 +41,7 @@ export default React.createClass ({
                  <div className={this.props.backdropClassName} style={backdropStyle}
                       onClick={e => this.close(e)}/>}
            </div>
-         )
+         );
        },
 
 

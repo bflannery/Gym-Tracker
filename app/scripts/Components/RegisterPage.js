@@ -27,6 +27,6 @@ export default React.createClass({
       const password= this.refs.password.value;
       const confirmPassword= this.refs.confirmPassword.value;
       store.session.register(name, email, password);
-      store.movement.getToken();
+      store.movements.getToken();
   }
 });

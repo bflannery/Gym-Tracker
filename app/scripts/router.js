@@ -1,6 +1,8 @@
 import React from 'react';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import $ from 'jquery';
+import store from './store';
+
 
 import App from './Components/Containers/App';
 import Register from './Components/RegisterPage';
@@ -21,10 +23,9 @@ import ImageUpload from './Components/ImageUpload';
 import GetLocations from './Components/Containers/GetLocations';
 import ForgotPassword from './Components/ForgotPassword';
 
-import store from './store';
 
 let getAuth = function(nextState, replace, callback){
-    store.movement.getToken(nextState.location.query.code);
+    store.movements.getToken(nextState.location.query.code);
 }
 
 const router = (
