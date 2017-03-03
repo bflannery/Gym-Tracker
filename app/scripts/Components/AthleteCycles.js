@@ -8,7 +8,7 @@ export default React.createClass({
     let athleteCycles;
 
     if(!this.props.athleteCycles) {
-      athleteCycles = <div />
+      athleteCycles = <div />;
       } else {
       athleteCycles = this.props.athleteCycles.map((athleteCycle, i, arr)=>{
 

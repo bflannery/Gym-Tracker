@@ -22,8 +22,7 @@ addMovementToWorkout({name, reps, sets, weight, created, notes}) {
     success: (workout, response) => {
       this.trigger('change');
         }
-      }
-    );
+      });
   },
 removeMovementFromWorkout(objectId){
     let newWorkoutMovements = this.get('movements').filter((movement, i ,arr) => {
